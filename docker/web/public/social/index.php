@@ -75,7 +75,7 @@
         <div class="col-md-2">  </div>
         <div class="col-md-4">
           <div class="thumbnail">
-            <a href="https://www.artigianitecnologici.it">
+            <a href="https://robotics.surfweb.eu" target="_blank">
               <img style="display: block;margin-left: auto;margin-right: auto;" src="image/LogoCircolareATNero.png" alt="artigianitecnologici.it" width="40%">
               
             </a>
