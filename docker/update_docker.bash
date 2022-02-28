@@ -8,7 +8,7 @@ cd $MARRTINO_SOCIAL/docker
 git pull
 #python3 dockerconfig.py
 docker-compose pull
-docker build -t marrtino:system -f Dockerfile.system .
+docker build -t marrtino:social -f Dockerfile.system .
 docker-compose build
 cd -
 
