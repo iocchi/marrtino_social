@@ -1,0 +1,1 @@
+docker build -t marrtino:social -f Dockerfile.social .

@@ -1,0 +1,76 @@
+# Docker file for MARRtino social package
+# Ferrarini Fabio - robotics-3d.com 
+
+# docker build -t marrtino:social -f Dockerfile.social .
+
+FROM marrtino:system
+
+ARG MACHTYPE=default
+
+# System libs
+
+
+USER root
+
+RUN apt-get update && \
+    apt-get install -y \
+        v4l-utils \
+        ros-melodic-rgbd-launch ros-melodic-web-video-server \
+        ros-melodic-camera-info-manager ros-melodic-libuvc \
+        ros-melodic-image-view ros-melodic-rosbridge-server && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+#install prerequisite 
+RUN pip install --user sox
+
+USER robot
+
+
+RUN mkdir -p $HOME/src/dynamixel &&  cd $HOME/src/dynamixel && \
+    git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git && \
+    git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git && \
+    git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+ 
+RUN mkdir -p $HOME/src &&  cd $HOME/src && \
+    git clone https://github.com/arebgun/dynamixel_motor.git && \
+    git clone https://github.com/artigianitecnologici/talk.git && \
+    git clone https://github.com/artigianitecnologici/speech.git && \
+    git clone https://github.com/artigianitecnologici/face_tracker_pkg.git && \
+    git clone https://github.com/artigianitecnologici/face_tracker_control.git
+RUN cd $HOME/src && \
+   	git clone https://github.com/artigianitecnologici/social.git 
+#&& \
+#    git clone https://artigianitecnologici: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@github.com/artigianitecnologici/marrtino_r3d.git
+
+
+RUN cd $HOME/ros/catkin_ws/src && \
+    ln -s $HOME/src/dynamixel . && \
+    ln -s $HOME/src/face_tracker_pkg/ . && \
+    ln -s $HOME/src/face_tracker_control/ . && \
+    ln -s $HOME/src/dynamixel_motor/ . && \
+    ln -s $HOME/src/talk . && \
+    ln -s $HOME/src/speech . && \
+    ln -s $HOME/src/social .  
+
+ #    ln -s $HOME/src/marrtino_r3d . && \   
+#RUN bash -ci "cd $HOME/ros/catkin_ws; catkin_make -j1"
+
+# corregge l'errore di compilazione
+
+RUN mkdir -p $HOME/ros/catkin_ws/devel/include/face_tracker_control 
+RUN mkdir -p $HOME/ros/catkin_ws/devel/include/face_tracker_pkg
+RUN cp $HOME/src/social/install/include/face_tracker_control/centroid.h $HOME/ros/catkin_ws/devel/include/face_tracker_control/centroid.h
+RUN cp $HOME/src/social/install/include/face_tracker_pkg/centroid.h $HOME/ros/catkin_ws/devel/include/face_tracker_pkg/centroid.h
+
+RUN bash -ci "cd $HOME/ros/catkin_ws; catkin_make -j1"
+# Trick to force build from here
+
+RUN echo "20211227" > /tmp/lastdockerbuild
+
+# marrtino_apps
+
+WORKDIR /home/robot
+CMD [ "/bin/bash", "-ci", "cd ~/src/social/bringup && python social_bringup.py -server_port 9250" ]
+#CMD [ "/usr/bin/tmux" ]
+
