@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.3"
 
 services:
 
@@ -76,7 +76,14 @@ services:
         volumes:
             - "$HOME/src/data/db/mysql:/var/lib/mysql"
 
-  
+  nginx:
+    image: nginx
+    container_name: nginx
+    network_mode: "host"
+    volumes:
+    - $HOME/src/marrtino_apps/www:/usr/share/nginx/html
+
+
   stage:
     image: iocchi/stage_environments
     container_name: stage

@@ -87,6 +87,8 @@ To interact with docker containers, see
 
         docker exec -it <container_name> tmux a
         docker exec 5de4af7d973a tmux a
+        docker exec -it social tmux a
+
 
 ## Docker push
 
