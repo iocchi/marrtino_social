@@ -3,7 +3,7 @@ date
 
 export MARRTINO_APPS_HOME=$HOME/src/marrtino_apps
 export MODIM_HOME=$HOME/src/modim
-export MARRTINO_SOCIAL=HOME/src/marrtino_social
+export MARRTINO_SOCIAL=$HOME/src/marrtino_social
 
 if [ ! "$1" == "-docker" ]; then
   echo "Running inside docker container..."
