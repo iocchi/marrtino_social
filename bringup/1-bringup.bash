@@ -12,6 +12,8 @@ if [ ! "$1" == "-docker" ]; then
 
   echo "IP addresses: `hostname -I`"
   echo "docker exec -it <container name>  tmux   for shell access"
+  echo "sample "
+  echo "docker exec -it social tmux"
   #while [ ! -f "/tmp/quitrequest" ]; do
   #  sleep 5
   #done

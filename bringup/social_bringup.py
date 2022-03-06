@@ -22,7 +22,7 @@ def run_server(port):
     server_address = ('', port)
     sock.bind(server_address)
     sock.listen(1)
-    print("ROS navigation server started on port %d ..." %port)
+    print("ROS social server started on port %d ..." %port)
 
     tmux = TmuxSend('bringup', ['robot','cmd'])
 
@@ -72,6 +72,8 @@ def run_server(port):
                 cfolder = "~/src/social/config"
                 if data=='@social':
                     tmux.cmd(0,'cd %s' %rfolder)
+                    tmux.cmd(0,"echo '@usbcam' | netcat -w 1 localhost 9237") # webcam
+                    
                     tmux.cmd(0,'roslaunch social.launch')
                     time.sleep(1)
                     tmux.cmd(0,"rostopic pub -1 /tilt_controller/command std_msgs/Float64 0") 
