@@ -1,9 +1,6 @@
 # marrtino_social
 
 
-# prerequisite
-
-
 # config env
 
 export MARRTINO_APPS_HOME=$HOME/src/marrtino_apps
@@ -14,6 +11,10 @@ export MARRTINO_SOCIAL=$HOME/src/marrtino_social
 # Docker images
 
 ## Pre requisites
+
+sudo apt install tmux
+
+
 
 To use dockerized version of marrtino_apps you need on your OS
 
@@ -31,6 +32,7 @@ Set the environment variable `MARRTINO_APPS_HOME`to the folder where you downloa
 * navigation
 * vision
 * speech
+* social
 
 ## Configuration
 

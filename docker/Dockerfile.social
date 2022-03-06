@@ -2,6 +2,8 @@
 # Ferrarini Fabio - robotics-3d.com 
 
 # docker build -t marrtino:social -f Dockerfile.social .
+## remove
+## docker rmi marrtino:social
 
 FROM marrtino:system
 
@@ -39,7 +41,7 @@ RUN mkdir -p $HOME/src &&  cd $HOME/src && \
     git clone https://github.com/artigianitecnologici/face_tracker_pkg.git && \
     git clone https://github.com/artigianitecnologici/face_tracker_control.git
 RUN cd $HOME/src && \
-   	git clone https://github.com/artigianitecnologici/social.git 
+   	git clone https://github.com/artigianitecnologici/marrtino_social.git 
 #&& \
 #    git clone https://artigianitecnologici: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@github.com/artigianitecnologici/marrtino_r3d.git
 
@@ -60,8 +62,8 @@ RUN cd $HOME/ros/catkin_ws/src && \
 
 RUN mkdir -p $HOME/ros/catkin_ws/devel/include/face_tracker_control 
 RUN mkdir -p $HOME/ros/catkin_ws/devel/include/face_tracker_pkg
-RUN cp $HOME/src/social/install/include/face_tracker_control/centroid.h $HOME/ros/catkin_ws/devel/include/face_tracker_control/centroid.h
-RUN cp $HOME/src/social/install/include/face_tracker_pkg/centroid.h $HOME/ros/catkin_ws/devel/include/face_tracker_pkg/centroid.h
+RUN cp $HOME/src/marrtino_social/install/include/face_tracker_control/centroid.h $HOME/ros/catkin_ws/devel/include/face_tracker_control/centroid.h
+RUN cp $HOME/src/marrtino_social/install/include/face_tracker_pkg/centroid.h $HOME/ros/catkin_ws/devel/include/face_tracker_pkg/centroid.h
 
 RUN bash -ci "cd $HOME/ros/catkin_ws; catkin_make -j1"
 # Trick to force build from here
@@ -71,6 +73,7 @@ RUN echo "20211227" > /tmp/lastdockerbuild
 # marrtino_apps
 
 WORKDIR /home/robot
-CMD [ "/bin/bash", "-ci", "cd ~/src/social/bringup && python social_bringup.py -server_port 9250" ]
+CMD [ "/bin/bash", "-ci", "/home/robot/src/marrtino_social/bringup/1-bringup.bash", "-docker" ]
+#CMD [ "/bin/bash", "-ci", "cd ~/src/social/bringup && python social_bringup.py -server_port 9250" ]
 #CMD [ "/usr/bin/tmux" ]
 
