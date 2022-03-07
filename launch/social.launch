@@ -1,5 +1,6 @@
 <launch>
   <!-- Launching USB CAM launch -->
+  <include file="$(env MARRTINO_SOCIAL)/launch/webcam.launch"/> 
   <!-- tmux.cmd(0,"echo '@usbcam' | netcat -w 1 localhost 9237")  -->
   
   <!-- Starting face tracker node -->
@@ -19,6 +20,6 @@
 
   <!-- Speech -->
   
-  <include file="$(find social)/launch/speech.launch"/>
+  <include file="$(find speech)/launch/speech.launch"/>
   <include file="$(find talk)/launch/talk.launch"/> 
  </launch>
