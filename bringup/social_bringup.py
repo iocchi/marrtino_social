@@ -68,9 +68,24 @@ def run_server(port):
                 connected = False
             else:
                 print(data)
-                rfolder = "~/src/social/launch"
-                cfolder = "~/src/social/config"
-                if data=='@social':
+                rfolder = "~/src/marrtino_social/launch"
+                cfolder = "~/src/marrtino_social/config"
+                if data=='@robot':
+                    tmux.cmd(0,"echo '@robot' | netcat -w 1 localhost 9236") # robot
+                    tmux.cmd(0,"echo '@joystick' | netcat -w 1 localhost 9240") # teleop joy
+                    
+                   
+                elif data=='@robotkill':
+                    tmux.Cc(0)
+
+                elif data=='@tracker': 
+                    tmux.cmd(0,'cd %s' %rfolder)
+                    tmux.cmd(0,'roslaunch social.launch')
+                
+                elif data=='@trackerkill':
+                    tmux.Cc(0)
+
+                elif data=='@social':
                     tmux.cmd(0,'cd %s' %rfolder)
                     tmux.cmd(0,"echo '@usbcam' | netcat -w 1 localhost 9237") # webcam
                     

@@ -115,11 +115,12 @@
 <td><button id="social_quit_btn" onclick="send_cmd('social_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
 <tr height=40>
-<td width=80>Social no face recognition</td> 
+<td width=80>Social tracker</td> 
 <td width=80 align='center'><span id="social_status" style="color: red;">OFF</span></td>
-<td><button id="social_startnf_btn" onclick="send_cmd('socialnf_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
-<td><button id="social_quitnf_btn" onclick="send_cmd('socialnf_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
+<td><button id="tracker_start_btn" onclick="send_cmd('tracker_start')" class="btn waves-effect waves-light blue">Tracker Start</button></td>
+<td><button id="tracker_quit_btn" onclick="send_cmd('tracker_kill')" class="btn waves-effect waves-light blue">Tracker quit</button></td>
 </tr>
+
 </table>
 </div>
 <!--
