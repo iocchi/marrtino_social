@@ -26,7 +26,7 @@ source $HOME/ros/catkin_ws/devel/setup.bash
 
 mkdir -p $HOME/log
 cd $MARRTINO_SOCIAL/bringup
-python social_bringup.py &> $HOME/log/social_bringup.log  
+python social_bringup.py #&> $HOME/log/social_bringup.log  
 #cd $MARRTINO_APPS_HOME/config
 #python wsconfig.py &> $HOME/log/wsconfig.log &
 #roscore

@@ -98,7 +98,7 @@
 
 <div class="row">
 <div class="col-md-1"></div>
-    <div class="col-md-5">
+<div class="col-md-5">
 
  
 <table>
@@ -111,19 +111,21 @@
 <tr height=40>
 <td width=80>Social</td> 
 <td width=80 align='center'><span id="social_status" style="color: red;">OFF</span></td>
-<td><button id="social_start_btn" onclick="send_cmd('social_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
-<td><button id="social_quit_btn" onclick="send_cmd('social_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
+<td><button id="social_start_btn" onclick="send_cmd('social')" class="btn waves-effect waves-light blue">Social Start</button></td>
+<td><button id="social_quit_btn" onclick="send_cmd('socialkill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
 <tr height=40>
 <td width=80>Social tracker</td> 
-<td width=80 align='center'><span id="social_status" style="color: red;">OFF</span></td>
-<td><button id="tracker_start_btn" onclick="send_cmd('tracker_start')" class="btn waves-effect waves-light blue">Tracker Start</button></td>
-<td><button id="tracker_quit_btn" onclick="send_cmd('tracker_kill')" class="btn waves-effect waves-light blue">Tracker quit</button></td>
+<td width=80 align='center'><span id="social_trackerstatus" style="color: red;">OFF</span></td>
+<td><button id="tracker_start_btn" onclick="send_cmd('tracker')" class="btn waves-effect waves-light blue">Tracker Start</button></td>
+<td><button id="tracker_quit_btn" onclick="send_cmd('trackerkill')" class="btn waves-effect waves-light blue">Tracker quit</button></td>
 </tr>
 
 </table>
 </div>
-<!--
+</div>
+<div class="row">
+<div class="col-md-1"></div>
 <div class="col-md-5">
 <table>
 
@@ -143,30 +145,16 @@
 <tr height=40>
 <td width=100>Joystick</td> 
 <td width=80 align='center'><span id="joystick_status" style="color: red;">OFF</span></td>
-<td><button id="joystick_start_btn" onclick="send_cmd('joystick_start')" class="btn waves-effect waves-light blue">Joystick start</button></td>
-<td><button id="joystick_quit_btn" onclick="send_cmd('joystick_kill')" class="btn waves-effect waves-light blue">Joystick quit</button></td>
+
 </tr>
-<table>
-<tr height=40>
-  <td width=80>Social Head</td> 
-  <td width=80 align='center'><span id="social_status" style="color: red;">OFF</span></td>
-  <td><button id="social_start_btn" onclick="send_cmd('socialhead_start')" class="btn waves-effect waves-light blue">Social Head Start</button></td>
-  <td><button id="social_quit_btn" onclick="send_cmd('socialhead_kill')" class="btn waves-effect waves-light blue">Social Head quit</button></td>
-</tr>
- <tr height=40>
-  <td width=80>Social Head no face recognition</td> 
-  <td width=80 align='center'><span id="social_status" style="color: red;">OFF</span></td>
-  <td><button id="social_startnf_btn" onclick="send_cmd('sociaheadlnf_start')" class="btn waves-effect waves-light blue">Social Head Start</button></td>
-  <td><button id="social_quitnf_btn" onclick="send_cmd('sociaheadlnf_kill')" class="btn waves-effect waves-light blue">Social Head quit</button></td>
-</tr>
-</table>
+ 
 </div>
 <div class="col-md-1"></div>
 </div>
 
+</div>
 
-
-
+<!--
 
   <h2>GESTIONE SOCIAL </h2>
   

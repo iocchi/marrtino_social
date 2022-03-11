@@ -86,9 +86,9 @@ def run_server(port):
                     tmux.Cc(0)
 
                 elif data=='@social':
+                    #tmux.cmd(0,"echo '@usbcam' | netcat -w 1 localhost 9237") # webcam
                     tmux.cmd(0,'cd %s' %rfolder)
-                    tmux.cmd(0,"echo '@usbcam' | netcat -w 1 localhost 9237") # webcam
-                    
+                    #tmux.cmd(0,'roslaunch social.launch')
                     tmux.cmd(0,'roslaunch social.launch')
                     time.sleep(1)
                     tmux.cmd(0,"rostopic pub -1 /tilt_controller/command std_msgs/Float64 0") 
