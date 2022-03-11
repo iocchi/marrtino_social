@@ -70,12 +70,12 @@ def run_server(port):
                 print(data)
                 rfolder = "~/src/marrtino_social/launch"
                 cfolder = "~/src/marrtino_social/config"
-                if data=='@robot':
-                    tmux.cmd(0,"echo '@robot' | netcat -w 1 localhost 9236") # robot
+                if data=='@robot_social':
+                    #tmux.cmd(0,"echo '@robot' | netcat -w 1 localhost 9236") # robot
                     tmux.cmd(0,"echo '@joystick' | netcat -w 1 localhost 9240") # teleop joy
                     
                    
-                elif data=='@robotkill':
+                elif data=='@robot_socialkill':
                     tmux.Cc(0)
 
                 elif data=='@tracker': 

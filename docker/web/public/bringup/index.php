@@ -126,6 +126,27 @@
 <!--
 <div class="col-md-5">
 <table>
+
+<tr height=40>
+<td width=80>USB</td> 
+<td width=80 align='center'><span id="usbcam_status" style="color: red;">OFF</span></td>
+<td><button id="usbcam_start_btn" onclick="send_cmd('usbcam_start')" class="btn waves-effect waves-light blue">USB camera start</button></td>
+<td><button id="usbcam_quit_btn" onclick="send_cmd('usbcam_kill')" class="btn waves-effect waves-light blue">USB camera quit</button></td>
+</tr>
+
+<tr height=40>
+<td width=60>RPlidar</td> 
+<td width=80 align='center'><span id="rplidar_status" style="color: red;">OFF</span></td>
+<td><button id="rplidar_start_btn" onclick="send_cmd('rplidar_start')" class="btn waves-effect waves-light blue">RPlidar laser start</button></td>
+<td><button id="rplidar_quit_btn" onclick="send_cmd('rplidar_kill')" class="btn waves-effect waves-light blue">RPlidar laser quit</button></td>
+</tr>
+<tr height=40>
+<td width=100>Joystick</td> 
+<td width=80 align='center'><span id="joystick_status" style="color: red;">OFF</span></td>
+<td><button id="joystick_start_btn" onclick="send_cmd('joystick_start')" class="btn waves-effect waves-light blue">Joystick start</button></td>
+<td><button id="joystick_quit_btn" onclick="send_cmd('joystick_kill')" class="btn waves-effect waves-light blue">Joystick quit</button></td>
+</tr>
+<table>
 <tr height=40>
   <td width=80>Social Head</td> 
   <td width=80 align='center'><span id="social_status" style="color: red;">OFF</span></td>
