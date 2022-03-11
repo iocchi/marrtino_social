@@ -105,8 +105,8 @@
 <tr height=40>
 <td width=80>MARRtino</td> 
 <td width=80 align='center'><span id="robot_status" style="color: red;">OFF</span></td>
-<td><button id="robot_start_btn" onclick="send_cmd('robot_start')" class="btn waves-effect waves-light blue">Bringup</button></td>
-<td><button id="robot_quit_btn" onclick="send_cmd('robot_kill')" class="btn waves-effect waves-light blue">Robot quit</button></td>
+<td><button id="robot_start_btn" onclick="send_cmd('social_robot_start')" class="btn waves-effect waves-light blue">Bringup</button></td>
+<td><button id="robot_quit_btn" onclick="send_cmd('social_robot_kill')" class="btn waves-effect waves-light blue">Robot quit</button></td>
 </tr>
 <tr height=40>
 <td width=80>Social</td> 
@@ -299,7 +299,7 @@
     }
 
     function connect() {
-        wsrobot_init(9991);  // init websocket robot
+        wsrobot_init(9912);  // init websocket robot
         setTimeout(check_connection, 1000);
         websocket.onmessage = eventproc;
     }

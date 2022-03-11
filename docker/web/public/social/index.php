@@ -97,7 +97,7 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                        
-                      <a class="btn btn-primary" href="../bringup/index.html" role="button">BRINGUP</a>
+                      <a class="btn btn-primary" href="../bringup/index.php" role="button">BRINGUP</a>
                     </div>
                    
                   </div>
