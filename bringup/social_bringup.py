@@ -80,7 +80,7 @@ def run_server(port):
 
                 elif data=='@tracker': 
                     tmux.cmd(0,'cd %s' %rfolder)
-                    tmux.cmd(0,'roslaunch social.launch')
+                    tmux.cmd(0,'roslaunch tracker.launch')
                 
                 elif data=='@trackerkill':
                     tmux.Cc(0)
