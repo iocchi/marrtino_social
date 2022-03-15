@@ -12,15 +12,19 @@ ARG MACHTYPE=default
 
 # System libs
 
+# System libs
+
 
 USER root
+
+
 
 RUN apt-get update && \
     apt-get install -y \
         v4l-utils  \
         ros-melodic-rgbd-launch ros-melodic-web-video-server \
         ros-melodic-camera-info-manager ros-melodic-libuvc \
-        ros-melodic-image-view ros-melodic-rosbridge-server && \
+        ros-melodic-image-view ros-melodic-rosbridge-server  \
         alsa-base alsa-utils pulseaudio pulseaudio-utils \
         libasound2-dev sox v4l-utils libttspico-utils \
         ros-melodic-audio-common && \

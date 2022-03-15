@@ -1,7 +1,7 @@
 <launch>
   <!-- Launching USB CAM launch -->
-  <include file="$(env MARRTINO_SOCIAL)/launch/webcam.launch"/> 
-  <!-- tmux.cmd(0,"echo '@usbcam' | netcat -w 1 localhost 9237")  -->
+  <!--<include file="$(env MARRTINO_SOCIAL)/launch/webcam.launch"/> --> 
+  tmux.cmd(0,"echo '@usbcam' | netcat -w 1 localhost 9237")  
   
    <!-- Start ROS Bridge Server  -->
   <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
