@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<launch>  
+  <!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>-->
+   <node pkg="speech" type="speech_node" name="speech_node" output="screen"/>
+  
+</launch>
