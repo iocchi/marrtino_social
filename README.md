@@ -3,75 +3,40 @@
 
 # config env
 
-export MARRTINO_APPS_HOME=$HOME/src/marrtino_apps
-export ROS_IP=127.0.0.1
-export ROBOT_TYPE=marrtino
-export MARRTINO_SOCIAL=$HOME/src/marrtino_social
+    export MARRTINO_APPS_HOME=$HOME/src/marrtino_apps
+    export MARRTINO_SOCIAL=$HOME/src/marrtino_social
+    export ROS_IP=127.0.0.1
+    export ROBOT_TYPE=marrtino
 
 # Docker images
 
 ## Pre requisites
 
-sudo apt install tmux
+Follow instructions for installing and using [marrtino_apps](https://bitbucket.org/iocchi/marrtino_apps/src/master/docker)
 
-
-
-To use dockerized version of marrtino_apps you need on your OS
-
-* docker (tested on v. 19.03)
-* docker-compose (tested on v. 1.28.2)
-* python
-
-Set the environment variable `MARRTINO_APPS_HOME`to the folder where you downloaded your repository.
-
-## Images available
-
-* orazio
-* base
-* teleop
-* navigation
-* vision
-* speech
-* social
 
 ## Configuration
 
-Copy and edit `system_config.yaml`
+Enable the `social` feature in `system_config.yaml`
 
-        cd ~
-        cp <...>/marrtino_apps/docker/system_config_template.yaml system_config.yaml
         nano system_config.yaml
 
-            system:
-              nginx: off
-
-            simulator:
-              stage: off
-
-            robot:
-              motorboard: off  # arduino|ln298|pka03|marrtino2019
-              4wd: off
-              joystick: off
-              laser: off
-              camera: off
+            ...
 
             functions:
-              navigation: off
-              vision: off
-              speech: off
-              mapping: off
-              social: off
+              ...
+              social: on
 
 
 
 ## Update and build
 
-        cd <...>/marrtino_apps/docker
+        cd $MARRTINO_APPS_HOME/docker
         ./system_update.bash
 
 ## Run
 
-        cd <...>/marrtino_apps/docker
+        cd $MARRTINO_APPS_HOME/docker
         ./start_docker.bash
 
 ## Quit
