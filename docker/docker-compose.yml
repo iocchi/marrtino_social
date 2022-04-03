@@ -25,6 +25,7 @@ services:
         volumes:
             - "./etc/php/php.ini:/usr/local/etc/php/conf.d/php.ini"
             - "./web:/var/www/html"
+
   composer:
         image: "composer"
         volumes:
@@ -58,6 +59,7 @@ services:
         volumes:
             - "$HOME/src/data/db/mysql:/var/lib/mysql"
 
+
   social:
     image: marrtino:social
     build:
@@ -74,4 +76,9 @@ services:
     - /dev:/dev
     - $MARRTINO_APPS_HOME:/home/robot/src/marrtino_apps
     - $MARRTINO_SOCIAL:/home/robot/src/marrtino_social
+
+
+networks:
+  default:
+    name: marrtino-social-network
 
