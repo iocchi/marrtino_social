@@ -43,10 +43,9 @@
                     
                     <?php    
                           $mylink =  $_SERVER['HTTP_HOST'];
-                                                
                           $mylink = "http://" . substr($mylink,0, strpos($mylink,":8080"));
                              ?>
-                    <p class="card-text">Link of MARRTINO Robot</p>
+                    <p class="card-text">In this section you can start MARRtino or a simulators and their services, such as sensors or actuators.</p>
                         
                     <a href="<?php echo $mylink;?>" class="btn btn-primary">MARRtino Robot</a>
                 </div>
@@ -59,7 +58,7 @@
                 <img class="card-img-top" src="images/MarrtinaSocial.jpg" alt="Marrino Social Robot">
                 <div class="card-body">
                     <h5 class="card-title">Marrino Social Robot</h5>
-                    <p class="card-text">Link MARRTINO Social</p>
+                    <p class="card-text">In this section you can start MARRtino Social or a simulators and their services, such as sensors or actuators.</p>
                     <a href="/social/index.php" class="btn btn-primary">MARRtina Social</a>
                 </div>
             </div>

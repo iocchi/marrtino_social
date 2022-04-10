@@ -93,7 +93,7 @@
                  </a>
 
                 <div class="card-body">
-                  <p class="card-text">BRINGUP</p>
+                  <p class="card-text">In this section you can start MARRtina Social or a simulators and their services, such as sensors or actuators.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                        
@@ -107,14 +107,14 @@
             <div class="col-md-4">
               <div class="card mb-4 box-shadow"> 
                 <a  href="facerobot.php">
-                <img class="card-img-top" src="image/MarrtinoInterface.jpg" alt="Marrtina">
+                <img class="card-img-top" src="image/SocialInterface.png" alt="Marrtina">
                  </a>
                 <div class="card-body">
-                  <p class="card-text">Social interface Marrtino Robot.</p>
+                  <p class="card-text">In this section you can start  Social interface Marrtino Robot.</br></br></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       
-                       <a class="btn btn-primary" href="facerobot.php" role="button">Social Interface</a>
+                       <a class="btn btn-primary" href="facerobot.php" role="button"> Social Interface</a>
                     </div>
                     
                   </div>
@@ -126,14 +126,17 @@
             <div class="col-md-4">
               <div class="card mb-4 box-shadow"> 
                 <a  href="../chess">
-                <img class="card-img-top" src="image/chess.jpg" alt="Scacchi">
+                <img class="card-img-top" src="image/Marrtino.jpg" alt="Scacchi">
                  </a>
                 <div class="card-body">
-                  <p class="card-text">Chess.</p>
+                  <p class="card-text">In this section you can start MARRtino or a simulators and their services, such as sensors or actuators.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      
-                       <a class="btn btn-primary" href="../chess" role="button">Chess</a>
+                        <?php    
+                          $mylink =  $_SERVER['HTTP_HOST'];
+                          $mylink = "http://" . substr($mylink,0, strpos($mylink,":8080"));
+                             ?>
+                       <a class="btn btn-primary" href="<?php echo $mylink;?>" role="button">MARRtino ROBOT</a>
                     </div>
                     
                   </div>

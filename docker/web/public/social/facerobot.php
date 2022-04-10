@@ -358,8 +358,7 @@ initPanTilt= function() {
    </div>
  </div>
 
-      <p>Connection status: <span id="status"></span></p>
-      <p> on /emotion: <span id="emotion"></span></p>
+    
 </body>
 
 </html>
