@@ -22,6 +22,7 @@
   position: relative;
 }
 
+
 </style>
 </head>
 
@@ -39,8 +40,15 @@
                 <img class="card-img-top" src="images/Marrtino.jpg" alt="Marrtino Robot">
                 <div class="card-body">
                     <h5 class="card-title">Marrino Robot</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="/www/index.html" class="btn btn-primary">MARRtino</a>
+                    
+                    <?php    
+                          $mylink =  $_SERVER['HTTP_HOST'];
+                                                
+                          $mylink = "http://" . substr($mylink,0, strpos($mylink,":8080"));
+                             ?>
+                    <p class="card-text">Link of MARRTINO Robot</p>
+                        
+                    <a href="<?php echo $mylink;?>" class="btn btn-primary">MARRtino Robot</a>
                 </div>
             </div>
         </div>
@@ -51,7 +59,7 @@
                 <img class="card-img-top" src="images/MarrtinaSocial.jpg" alt="Marrino Social Robot">
                 <div class="card-body">
                     <h5 class="card-title">Marrino Social Robot</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Link MARRTINO Social</p>
                     <a href="/social/index.php" class="btn btn-primary">MARRtina Social</a>
                 </div>
             </div>
@@ -63,7 +71,7 @@
 
 </div>
 
-  
+ 
 
 
 </body>

@@ -24,7 +24,7 @@ def run_server(port):
     sock.listen(1)
     print("ROS social server started on port %d ..." %port)
 
-    tmux = TmuxSend('social', ['robot','cmd'])
+    tmux = TmuxSend('socialrobot', ['robot','cmd'])
 
     connected = False
     dorun = True
@@ -86,29 +86,22 @@ def run_server(port):
                     tmux.Cc(0)
 
                 elif data=='@social':
-                    #tmux.cmd(0,"echo '@usbcam' | netcat -w 1 localhost 9237") # webcam
+                    # 
                     tmux.cmd(0,'cd %s' %rfolder)
-                    #tmux.cmd(0,'roslaunch social.launch')
-                    tmux.cmd(0,"roslaunch talk talk.launch")
-                    time.sleep(1)
-                    tmux.cmd(0,"roslaunch speech speech.launch")
-                    time.sleep(1)
-                    tmux.cmd(0,'cd %s' %rfolder)
-                    tmux.cmd(0,'roslaunch tracker.launch')
-                    time.sleep(1)
-
-
                     tmux.cmd(0,'roslaunch social.launch')
                     time.sleep(5)
+                    #                 
                     tmux.cmd(0,"rostopic pub -1 /tilt_controller/command std_msgs/Float64 0") 
                     tmux.cmd(0,"rostopic pub -1 /pan_controller/command std_msgs/Float64 0") 
-                    #self.waitfor('social',5)
+                    
                     time.sleep(1)
                     #tmux.cmd(0,"DISPLAY=:0 midori -e Fullscreen -a  http://localhost/social/marrtina.html &")
                     #time.sleep(6)
                     tmux.cmd(0,"rostopic pub -1 /social/emotion std_msgs/String \"startblinking\"")
                     time.sleep(1)
                     tmux.cmd(0,"rostopic pub -1 /talk/to_talk std_msgs/String \"ciao sono martina e sono operativa\"")
+                    #self.waitfor('social',5)
+
    
                 elif data=='@socialkill':
                     tmux.Cc(0)

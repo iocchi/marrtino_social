@@ -8,6 +8,7 @@ class TmuxSend:
         self.nwindows = len(listwindows)
         self.sessionname = sessionname
         os.system('tmux -2 new-session -d -s %s' %self.sessionname) # tmux session  -- \; setenv ROS_IP "`hostname -I`"
+        print('tmux -2 new-session -d -s %s' %self.sessionname) 
         # os.system('tmux send-keys -t %s:0 "export ROS_IP=\"`hostname -I`\"" C-m' %self.sessionname)
         #os.system('tmux select-window -t %s:0' %self.sessionname)
         os.system('tmux rename-window -t %s:0 \'%s\'' %(self.sessionname,listwindows[0]))   # window 0
@@ -16,12 +17,12 @@ class TmuxSend:
 
     def roslaunch(self, wid, mdir, mlaunch, mparams=''):
         #os.system('tmux select-window -t %s:%d' %(self.sessionname,wid))
-        os.system('tmux send-keys -t %s:%d "cd $MARRTINO_SOCIAL/%s" C-m' \
-            %(self.sessionname,wid,mdir))
+        #os.system('tmux send-keys -t %s:%d "cd $MARRTINO_SOCIAL " C-m' \
+        #    %(self.sessionname,wid,mdir))
         os.system('tmux send-keys -t %s:%d "roslaunch %s.launch %s" C-m' \
             %(self.sessionname,wid,mlaunch, mparams))
-        print('tmux send-keys -t %s:%d "cd $MARRTINO_SOCIAL/%s" C-m' \
-            %(self.sessionname,wid,mdir))
+        #print('tmux send-keys -t %s:%d "cd $MARRTINO_SOCIAL " C-m' \
+        #   %(self.sessionname,wid,mdir))
         print('tmux send-keys -t %s:%d "roslaunch %s.launch %s" C-m' \
             %(self.sessionname,wid,mlaunch, mparams))
 
@@ -56,9 +57,9 @@ class TmuxSend:
 
 
     def waitfor(self, wforlabel):
-        #print('Waiting for tmux laber %s ...' %wforlabel)
+        print('Waiting for tmux laber %s ...' %wforlabel)
         os.system('tmux wait-for %s' %(wforlabel))
-        #print('  ... done')
+        print('  ... done')
 
     def killall(self, wid):
         self.Cc(wid)
