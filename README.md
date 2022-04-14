@@ -1,5 +1,11 @@
 # marrtino_social
 
+# NOVNC Installation
+## 
+   sudo apt install x11vnc
+## 
+   /usr/share/novnc/utils/launch.sh --listen 8084 --vnc localhost:5900
+
 
 # config env
 

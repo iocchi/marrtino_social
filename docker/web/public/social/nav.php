@@ -28,6 +28,7 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
+      <!--
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Games
@@ -47,7 +48,7 @@
           <a class="dropdown-item" href="../quizapp">Quiz</a>
           <a class="dropdown-item" href="../quizapp/adminpanel">Admin panel</a>
         
-      </li>
+      </li>-->
 	  <li class="nav-item">
         <a class="nav-link" href="../social/demorobotics.php" tabindex="-1" >Demo Social</a>
       </li>

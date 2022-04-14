@@ -155,7 +155,7 @@
             <div class="col-md-4">
               <div class="card mb-4 box-shadow"> 
                 <a  href="../program/index.html">
-                <img class="card-img-top" src="image/MarrtinoInterface.jpg" alt="Marrtina">
+                <img class="card-img-top" src="image/Programming.png" alt="Marrtina">
                  </a>
                 <div class="card-body">
                   <p class="card-text">Program interface Marrtino Robot.</p>
@@ -174,14 +174,15 @@
             <div class="col-md-4">
               <div class="card mb-4 box-shadow"> 
                 <a  href="marrtina.html">
-                <img class="card-img-top" src="image/face01/MarrtinaIcona.jpg" alt="Marrtina">
+                <img class="card-img-top" src="image/telepresence.png" alt="Marrtina">
                  </a>
                 <div class="card-body">
+</br></br></br></br></br>
                   <p class="card-text">Telepresenza.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       
-                       <a class="btn btn-primary" href="4WD_offline.html" role="button">telepresenza</a>
+                       <a class="btn btn-primary" href="navigation.php" role="button">TELEPRESENCE</a>
                     </div>
                     
                   </div>
@@ -191,9 +192,11 @@
             
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <img class="card-img-top"  src="image/demo.png" alt="Card image cap">
                 <div class="card-body">
+                </br>
                   <p class="card-text">Demo Social</p>
+
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                        
