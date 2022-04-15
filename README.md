@@ -18,6 +18,10 @@
 
 ## Pre requisites
 
+
+sudo apt install xdotool
+
+
 Follow instructions for installing and using [marrtino_apps](https://bitbucket.org/iocchi/marrtino_apps/src/master/docker)
 
 
