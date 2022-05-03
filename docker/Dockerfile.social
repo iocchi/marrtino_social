@@ -24,15 +24,10 @@ RUN apt-get update && \
         v4l-utils  \
         ros-melodic-rgbd-launch ros-melodic-web-video-server \
         ros-melodic-camera-info-manager ros-melodic-libuvc \
-        ros-melodic-image-view ros-melodic-rosbridge-server  \
-        alsa-base alsa-utils pulseaudio pulseaudio-utils \
-        libasound2-dev sox v4l-utils libttspico-utils \
-        ros-melodic-audio-common && \
+        ros-melodic-image-view ros-melodic-rosbridge-server  && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-#install prerequisite 
-RUN pip install --user sox
 
 USER robot
 
@@ -44,8 +39,6 @@ RUN mkdir -p $HOME/src/dynamixel &&  cd $HOME/src/dynamixel && \
  
 RUN mkdir -p $HOME/src &&  cd $HOME/src && \
     git clone https://github.com/arebgun/dynamixel_motor.git && \
-    git clone https://github.com/artigianitecnologici/talk.git && \
-    git clone https://github.com/artigianitecnologici/speech.git && \
     git clone https://github.com/artigianitecnologici/face_tracker_pkg.git && \
     git clone https://github.com/artigianitecnologici/face_tracker_control.git && \
     git clone https://github.com/ros-drivers/usb_cam.git
@@ -60,8 +53,6 @@ RUN cd $HOME/ros/catkin_ws/src && \
     ln -s $HOME/src/face_tracker_pkg/ . && \
     ln -s $HOME/src/face_tracker_control/ . && \
     ln -s $HOME/src/dynamixel_motor/ . && \
-    ln -s $HOME/src/talk . && \
-    ln -s $HOME/src/speech . && \
     ln -s $HOME/src/marrtino_social .  && \
     ln -s $HOME/src/usb_cam .
 
