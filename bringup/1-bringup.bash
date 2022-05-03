@@ -35,6 +35,3 @@ python speech.py &> $HOME/log/speech.log
 #python wsconfig.py &> $HOME/log/wsconfig.log &
 #roscore
 echo "Social start ........"
-
-
-
