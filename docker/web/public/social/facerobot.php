@@ -102,14 +102,13 @@ var speechTopic = new ROSLIB.Topic({
 
 function speak( testo){
 var msg_speak = new ROSLIB.Message({
-      text: testo  ,
-      wav:  ''   
+      data: testo
  });
  start_speak();
  speechTopic.publish(msg_speak); // error here als
  console.log(msg_speak);
  normal();
- console.log("speak");   
+ console.log("speech");   
 }
 
 function normal(){
@@ -125,7 +124,7 @@ var msg_speak = new ROSLIB.Message({
       data :  'speak'   
  });
  emotionTopic.publish(msg_speak); // error here als
- console.log("start speak");   
+ console.log("start speech");   
 }
 
 

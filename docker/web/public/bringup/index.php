@@ -105,22 +105,29 @@
 <tr height=40>
 <td width=80>MARRtino</td> 
 <td width=80 align='center'><span id="robot_status" style="color: red;">OFF</span></td>
-<td><button id="robot_start_btn" onclick="send_cmd('social_robot_start')" class="btn waves-effect waves-light blue">Bringup</button></td>
-<td><button id="robot_quit_btn" onclick="send_cmd('social_robot_kill')" class="btn waves-effect waves-light blue">Robot quit</button></td>
+<td><button id="robot_start_btn" onclick="send_cmd('robot_start')" class="btn waves-effect waves-light blue">Robot start</button></td>
+<td><button id="robot_quit_btn" onclick="send_cmd('robot_kill')" class="btn waves-effect waves-light blue">Robot quit</button></td>
 </tr>
 <tr height=40>
-<td width=80>Social</td> 
+<td width=80>Social (tracker)</td> 
+<td width=80 align='center'><span id="robot_status" style="color: red;">OFF</span></td>
+<td><button id="robot_start_btn" onclick="send_cmd('social_robot_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
+<td><button id="robot_quit_btn" onclick="send_cmd('social_robot_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
+</tr>
+<tr height=40>
+<td width=80>Social </td> 
 <td width=80 align='center'><span id="social_status" style="color: red;">OFF</span></td>
 <td><button id="social_start_btn" onclick="send_cmd('social_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
 <td><button id="social_quit_btn" onclick="send_cmd('social_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
+<!--
 <tr height=40>
 <td width=80>Social tracker</td> 
 <td width=80 align='center'><span id="social_trackerstatus" style="color: red;">OFF</span></td>
 <td><button id="tracker_start_btn" onclick="send_cmd('social_tracker')" class="btn waves-effect waves-light blue">Tracker Start</button></td>
 <td><button id="tracker_quit_btn" onclick="send_cmd('social_trackerkill')" class="btn waves-effect waves-light blue">Tracker quit</button></td>
 </tr>
-
+-->
 </table>
 </div>
 </div>

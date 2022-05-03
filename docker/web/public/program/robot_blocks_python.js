@@ -128,12 +128,7 @@ Blockly.Python['status'] = function(block) {
   return code;
 }
 
-Blockly.Python['talk'] = function(block) {
-  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
-  var value_lang = Blockly.Python.valueToCode(block, 'lang', Blockly.Python.ORDER_ATOMIC);
-  var code = 'talk('+value_text+')\n';
-  return code;
-}
+
 
 
 Blockly.Python['head_position'] = function(block) {
@@ -170,7 +165,7 @@ Blockly.Python['tilt'] = function(block) {
   return code;
 };
 
-Blockly.Python['Spalla_DX_flessione"'] = function(block) {
+Blockly.Python['spalla_flessione_dx"'] = function(block) {
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
   var value_pos = (value_steps); /// 100 -0.5;
   var code = 'spalla_flessione_dx('+value_pos+')\n';
@@ -178,7 +173,7 @@ Blockly.Python['Spalla_DX_flessione"'] = function(block) {
 };
 
 
-Blockly.Python['Spalla_SX_flessione"'] = function(block) {
+Blockly.Python['spalla_flessione_sx"'] = function(block) {
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
   var value_pos = (value_steps); // 100 -0.5;
   var code = 'spalla_flessione_sx('+value_pos+')\n';

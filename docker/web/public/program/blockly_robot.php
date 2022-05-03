@@ -146,18 +146,6 @@
 <block type="head_position"> </block>
 <block type="status"> </block>
 <block type="face"> </block>
-<block type="talk">
-  <value name="text">
-    <block type="text">
-      <field name="TEXT">ciao</field>
-    </block>
-  </value>
-  <value name="lang">
-    <block type="text">
-      <field name="TEXT">it</field>
-    </block>
-  </value>
-</block>
 <block type="pan"> </block>
 <block type="tilt"> </block>
 <block type="spalla_flessione_dx"> </block>

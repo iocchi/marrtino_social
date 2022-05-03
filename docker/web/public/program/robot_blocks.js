@@ -278,19 +278,7 @@ Blockly.Blocks['face'] = {
   }
 };
 
-Blockly.Blocks['talk'] = {
-  init: function() {
-    this.appendDummyInput().appendField("talk");
-    this.appendValueInput("text");
-    this.appendValueInput("lang").appendField("language");
-    this.setInputsInline(true); 
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(50);
- this.setTooltip("talk the argument through audio server. languages: en, it, fr, de, es");
- this.setHelpUrl("");
-  }
-};
+
 
 Blockly.Blocks['head_position'] = {
   init: function() {
@@ -365,7 +353,7 @@ Blockly.Blocks['spalla_flessione_dx'] = {
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Spalla DX flessione %"));
     this.appendValueInput("steps")
         .setCheck("Number")
-        .appendField("Spalla_DX_flessione");
+        .appendField("spalla_flessione_dx");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -374,14 +362,13 @@ Blockly.Blocks['spalla_flessione_dx'] = {
  this.setHelpUrl("");
   }
 };
-
-Blockly.Blocks['Spalla_SX_flessione"'] = {
+Blockly.Blocks['spalla_flessione_sx"'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Spalla SX flessione %"));
     this.appendValueInput("steps")
         .setCheck("Number")
-        .appendField("spalla_sx_fle");
+        .appendField("spalla_flessione_sx");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -391,13 +378,14 @@ Blockly.Blocks['Spalla_SX_flessione"'] = {
   }
 };
 
+
 Blockly.Blocks['spalla_rotazione_dx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Spalla DX rotazione %"));
     this.appendValueInput("steps")
         .setCheck("Number")
-        .appendField("spalladxrot");
+        .appendField("spalla_rotazione_dx");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -407,13 +395,15 @@ Blockly.Blocks['spalla_rotazione_dx'] = {
   }
 };
 
+
+
 Blockly.Blocks['spalla_rotazione_sx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Spalla SX rotazione %"));
     this.appendValueInput("steps")
         .setCheck("Number")
-        .appendField("spallasxrot");
+        .appendField("spalla_rotazione_sx");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

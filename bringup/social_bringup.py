@@ -70,23 +70,38 @@ def run_server(port):
                 print(data)
                 rfolder = "~/src/marrtino_social/launch"
                 cfolder = "~/src/marrtino_social/config"
+                sfolter = "~/src/marrtino_social/script"
+                
+                # social senza pan & tilt
                 if data=='@robot_social':
+                    tmux.cmd(0,'cd %s' %sfolder
+                    tmux.cmd(0,'python speech.py')
                     #tmux.cmd(0,"echo '@robot' | netcat -w 1 localhost 9236") # robot
-                    tmux.cmd(0,"echo '@joystick' | netcat -w 1 localhost 9240") # teleop joy
+                    #tmux.cmd(0,"echo '@joystick' | netcat -w 1 localhost 9240") # teleop joy
                     
                    
                 elif data=='@robot_socialkill':
                     tmux.Cc(0)
-
+                    
+                elif data=='@robot_start': 
+                    tmux.cmd(0,"echo '@robot' | netcat -w 1 localhost 9236") # robot
+                
+                elif data=='@robot_kill': 
+                    tmux.cmd(0,"echo '@robotkill' | netcat -w 1 localhost 9236") # robot
+                
                 elif data=='@tracker': 
                     tmux.cmd(0,'cd %s' %rfolder)
                     tmux.cmd(0,'roslaunch tracker.launch')
                 
                 elif data=='@trackerkill':
                     tmux.Cc(0)
-
+                # social completo
                 elif data=='@social':
                     # 
+                    tmux.cmd(0,'cd %s' %sfolder
+                    tmux.cmd(0,'python speech.py & ')
+                    time.sleep(5)
+
                     tmux.cmd(0,'cd %s' %rfolder)
                     tmux.cmd(0,'roslaunch social.launch')
                     time.sleep(5)

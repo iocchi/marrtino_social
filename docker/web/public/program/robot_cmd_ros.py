@@ -66,7 +66,6 @@ TOPIC_odom = 'odom'
 TOPIC_joints = 'cmd_joints_jog'
 TOPIC_joy = 'joy'
 # SOCIAL
-TOPIC_talk = "talk/to_talk"
 TOPIC_emotion = "social/emotion"
 TOPIC_pan = "pan_controller/command"
 TOPIC_tilt = "tilt_controller/command"
@@ -168,7 +167,7 @@ def setRobotNamePrefix(prefix):
     global TOPIC_tag_detections,TOPIC_scan,TOPIC_amcl_pose,TOPIC_cmd_vel,TOPIC_desired_cmd_vel, \
            TOPIC_odom,TOPIC_joy,TOPIC_joints,ACTION_move_base, \
            TOPIC_sonar_0,TOPIC_sonar_1,TOPIC_sonar_2,TOPIC_sonar_3, \
-           TOPIC_emotion,TOPIC_talk, TOPIC_pan, TOPIC_tilt, \
+           TOPIC_emotion, TOPIC_pan, TOPIC_tilt, \
            TOPIC_spalla_dx_rot ,TOPIC_spalla_dx_fle,TOPIC_gomito_dx , \
            TOPIC_spalla_sx_rot ,TOPIC_spalla_sx_fle,TOPIC_gomito_sx 
 
@@ -187,7 +186,6 @@ def setRobotNamePrefix(prefix):
     TOPIC_sonar_3 = prefix+'/'+TOPIC_sonar_3
     #SOCIAL
     TOPIC_emotion = prefix+'/'+TOPIC_emotion
-    TOPIC_talk = prefix+'/'+TOPIC_talk
     TOPIC_pan = prefix+'/'+TOPIC_pan
     TOPIC_tilt = prefix+'/'+TOPIC_tilt
 
@@ -375,7 +373,6 @@ stage_setpose_pub = None # Stage setpose (needs stagerosPeople)
 stage_say_pub = None # Stage say (needs stagerosPeople)
 # Social Fabio 05/12/2021
 emotion_pub = None
-talk_pub = None
 pan_pub = None
 titl_pub = None
 spalla_dx_rot_pub = None 
@@ -553,7 +550,7 @@ def begin(nodename='robot_cmd', init_node=True):
            stage_say_pub, stage_setpose_pub, \
            odom_robot_pose, robot_initialized, stop_request, \
            use_robot, use_audio, audio_connected,\
-           emotion_pub , talk_pub, pan_pub , tilt_pub,\
+           emotion_pub ,  pan_pub , tilt_pub,\
            spalla_dx_rot_pub,spalla_dx_fle_pub,gomito_dx_pub, \
            spalla_sx_rot_pub,spalla_sx_fle_pub,gomito_sx_pub  
 
@@ -602,7 +599,6 @@ def begin(nodename='robot_cmd', init_node=True):
         stage_say_pub = rospy.Publisher(TOPIC_STAGESAY, String, queue_size=1,   latch=True)
         #SOCIAL
         print("Enable Social publisher")
-        talk_pub = rospy.Publisher(TOPIC_talk,String, queue_size=1,   latch=True)
         emotion_pub = rospy.Publisher(TOPIC_emotion, String, queue_size=1,   latch=True)
         pan_pub = rospy.Publisher(TOPIC_pan, String, queue_size=1,   latch=True)
         tilt_pub = rospy.Publisher(TOPIC_tilt, String, queue_size=1,   latch=True)
@@ -1011,10 +1007,7 @@ def wait(r=1):
 
 #### SOCIAL ####
 
-def talk(msg):
-    #
-    print('talk %s' %(msg))
-    talk_pub.publish(msg)
+
 
 
 def emotion(msg):
