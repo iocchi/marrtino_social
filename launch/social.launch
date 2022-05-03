@@ -16,8 +16,5 @@
     <param name="port" value="29090" />
   </node>  
 
-  <!-- Speech -->
   
-  <include file="$(find speech)/launch/speech.launch"/>
-  <include file="$(find talk)/launch/talk.launch"/> 
  </launch>
