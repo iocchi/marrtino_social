@@ -1037,7 +1037,7 @@ def spalla_dx_fle_pub(msg):
 def gomito_dx_pub(msg):
     #
     print('sgomito dx: %s' %(msg))
-   gomito_dx_pub.publish(msg)
+    gomito_dx_pub.publish(msg)
 
 
         
@@ -1054,7 +1054,7 @@ def spalla_sx_fle_pub(msg):
 def gomito_sx_pub(msg):
     #
     print('gomito sx: %s' %(msg))
-   gomito_sx_pub.publish(msg)
+    gomito_sx_pub.publish(msg)
 
 
 def pan(msg):
