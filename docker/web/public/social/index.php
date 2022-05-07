@@ -85,7 +85,7 @@
       </div>
   
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="card mb-4 box-shadow">
 
                 <a  href="../bringup/index.html">
@@ -104,7 +104,7 @@
                 </div>
               </div>
             </div> 
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="card mb-4 box-shadow"> 
                 <a  href="facerobot.php">
                 <img class="card-img-top" src="image/SocialInterface.png" alt="Marrtina">
@@ -123,7 +123,7 @@
             </div>
             <h3> </h3>
     
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="card mb-4 box-shadow"> 
                 <a  href="../chess">
                 <img class="card-img-top" src="image/Marrtino.jpg" alt="Scacchi">
@@ -143,6 +143,25 @@
                 </div>
               </div>
             </div>
+            <div class="col-md-3">
+              <div class="card mb-4 box-shadow"> 
+                 <?php  $mylink =  $_SERVER['HTTP_HOST']; 
+                       $mylink = "https://" . substr($mylink,0, strpos($mylink,":8085"));?>
+                <a  href="<?php echo $mylink;?>">
+                <img class="card-img-top" src="image/vnc.png" alt="vnc">
+                 </a>
+                <div class="card-body">
+                  <p class="card-text">VNC interface </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                       
+                       <a class="btn btn-primary" href="<?php echo $mylink;?>" role="button">VNC</a>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
             
           
 
@@ -152,7 +171,7 @@
  
   <div class="row">
            
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="card mb-4 box-shadow"> 
                 <a  href="../program/index.html">
                 <img class="card-img-top" src="image/Programming.png" alt="Marrtina">
@@ -171,14 +190,14 @@
             </div>
             <h3> </h3>
     
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="card mb-4 box-shadow"> 
                 <a  href="marrtina.html">
                 <img class="card-img-top" src="image/telepresence.png" alt="Marrtina">
                  </a>
                 <div class="card-body">
-</br></br></br></br></br>
-                  <p class="card-text">Telepresenza.</p>
+
+                  <p class="card-text"></br></br></br>Telepresenza.</br></br></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       
@@ -190,7 +209,7 @@
               </div>
             </div>
             
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="card mb-4 box-shadow">
                 <img class="card-img-top"  src="image/demo.png" alt="Card image cap">
                 <div class="card-body">
@@ -208,7 +227,26 @@
               </div>
             </div>
 
-
+            <div class="col-md-3">
+              <div class="card mb-4 box-shadow"> 
+                <?php  $mylink =  $_SERVER['HTTP_HOST']; 
+                       $mylink = "https://" . substr($mylink,0, strpos($mylink,":9200"));?>
+              
+                <a  href="<?php echo $mylink;?>">
+                <img class="card-img-top" src="image/ssh.png" alt="SSH">
+                 </a>
+                <div class="card-body">
+                  <p class="card-text">SHELL INTERFACE</br></br>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                                                   
+                       <a class="btn btn-primary" href="<?php echo $mylink;?>" role="button">SSH</a>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
 </div>
 
   
