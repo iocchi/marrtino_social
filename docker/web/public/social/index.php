@@ -145,7 +145,7 @@
             </div>
             <div class="col-md-3">
               <div class="card mb-4 box-shadow"> 
-                 <?php  $mylink =  $_SERVER['HTTP_HOST']; 
+                 <?php  $mylink =  $_SERVER['SERVER_ADDR']; 
                        $mylink = "https://" . substr($mylink,0, strpos($mylink,":8085"));?>
                 <a  href="<?php echo $mylink;?>">
                 <img class="card-img-top" src="image/vnc.png" alt="vnc">
@@ -239,8 +239,12 @@
                   <p class="card-text">SHELL INTERFACE</br></br>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                                                   
-                       <a class="btn btn-primary" href="<?php echo $mylink;?>" role="button">SSH</a>
+                    <script>
+                      document.write("<a  class='btn btn-primary' target=\"_blank\" href=\"http://" + window.location.hostname + ":9200\" class=\"btn waves-effect waves-light blue\"/>")
+document.write("ssh " + window.location.hostname)
+document.write("</a>")
+</script>  
+                     
                     </div>
                     
                   </div>
