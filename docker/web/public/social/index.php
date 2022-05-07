@@ -240,7 +240,7 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                     <script>
-                      document.write("<a  class='btn btn-primary' target=\"_blank\" href=\"http://" + window.location.hostname + ":9200\" class=\"btn waves-effect waves-light blue\"/>")
+                      document.write("<a  class='btn btn-primary' target=\"_blank\" href=\"https://" + window.location.hostname + ":9200\" class=\"btn waves-effect waves-light blue\"/>")
 document.write("ssh " + window.location.hostname)
 document.write("</a>")
 </script>  
