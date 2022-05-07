@@ -2,6 +2,31 @@ version: "3.3"
 
 services:
 
+  base:
+    image: marrtino:base
+    build:
+      context: $MARRTINO_APPS_HOME/docker
+      dockerfile: Dockerfile.base
+    container_name: base
+    dns: 8.8.8.8
+    network_mode: "host"
+    tty: true
+    environment:
+    - DISPLAY=$DISPLAY
+    - ROS_IP=$ROS_IP
+    - ROBOT_TYPE=$ROBOT_TYPE
+    volumes:
+    - $MARRTINO_APPS_HOME:/home/robot/src/marrtino_apps
+    - $HOME/log:/home/robot/log
+
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - $MARRTINO_APPS_HOME/www:/usr/share/nginx/html
+
   web:
         image: nginx:alpine
         volumes:
@@ -76,6 +101,22 @@ services:
     - /dev:/dev
     - $MARRTINO_APPS_HOME:/home/robot/src/marrtino_apps
     - $MARRTINO_SOCIAL:/home/robot/src/marrtino_social
+
+  speech:
+    image: marrtino:speech
+    build:
+      context: $MARRTINO_APPS_HOME/docker
+      dockerfile: Dockerfile.speech
+    container_name: speech
+    dns: 8.8.8.8
+    network_mode: "host"
+    tty: true
+    privileged: true
+    environment:
+    - ROS_IP=$ROS_IP
+    volumes:
+    - /dev:/dev
+    - $MARRTINO_APPS_HOME:/home/robot/src/marrtino_apps
 
 
 networks:
