@@ -74,7 +74,7 @@ def run_server(port):
                 
                 # social senza pan & tilt
                 if data=='@robot_social':
-                    tmux.cmd(0,'cd %s' %sfolder
+                    tmux.cmd(0,'cd %s' %sfolder)
                     tmux.cmd(0,'python speech.py')
                     #tmux.cmd(0,"echo '@robot' | netcat -w 1 localhost 9236") # robot
                     #tmux.cmd(0,"echo '@joystick' | netcat -w 1 localhost 9240") # teleop joy
@@ -98,7 +98,7 @@ def run_server(port):
                 # social completo
                 elif data=='@social':
                     # 
-                    tmux.cmd(0,'cd %s' %sfolder
+                    tmux.cmd(0,'cd %s' %sfolder)
                     tmux.cmd(0,'python speech.py & ')
                     time.sleep(5)
 
