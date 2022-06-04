@@ -146,7 +146,7 @@
             <div class="col-md-3">
               <div class="card mb-4 box-shadow"> 
                  <?php  $mylink =  $_SERVER['SERVER_ADDR']; 
-                       $mylink = "https://" . substr($mylink,0, strpos($mylink,":8085"));?>
+                       $mylink = "https://" . substr($mylink,0, strpos($mylink ,":8085/vnc.html"));?>
                 <a  href="<?php echo $mylink;?>">
                 <img class="card-img-top" src="image/vnc.png" alt="vnc">
                  </a>
