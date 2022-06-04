@@ -14,7 +14,7 @@ import actionlib
 
 import cv2
 
-from std_msgs.msg import String
+from std_msgs.msg import String,Float64
 from geometry_msgs.msg import Twist, Quaternion, Pose, PoseWithCovarianceStamped
 from sensor_msgs.msg import LaserScan, Range, Image, Joy
 from control_msgs.msg import JointJog
@@ -600,14 +600,14 @@ def begin(nodename='robot_cmd', init_node=True):
         #SOCIAL
         print("Enable Social publisher")
         emotion_pub = rospy.Publisher(TOPIC_emotion, String, queue_size=1,   latch=True)
-        pan_pub = rospy.Publisher(TOPIC_pan, String, queue_size=1,   latch=True)
-        tilt_pub = rospy.Publisher(TOPIC_tilt, String, queue_size=1,   latch=True)
-        spalla_dx_rot_pub = rospy.Publisher(TOPIC_spalla_dx_rot, String, queue_size=1,   latch=True)
-        spalla_dx_fle_pub = rospy.Publisher(TOPIC_spalla_dx_fle, String, queue_size=1,   latch=True)
-        gomito_dx_pub = rospy.Publisher(TOPIC_gomito_dx, String, queue_size=1,   latch=True) 
-        spalla_sx_rot_pub = rospy.Publisher(TOPIC_spalla_sx_rot, String, queue_size=1,   latch=True)
-        spalla_sx_fle_pub = rospy.Publisher(TOPIC_spalla_sx_fle, String, queue_size=1,   latch=True)
-        gomito_sx_pub = rospy.Publisher(TOPIC_gomito_sx, String, queue_size=1,   latch=True)  
+        pan_pub = rospy.Publisher(TOPIC_pan, Float64, queue_size=1,   latch=True)
+        tilt_pub = rospy.Publisher(TOPIC_tilt, Float64, queue_size=1,   latch=True)
+        spalla_dx_rot_pub = rospy.Publisher(TOPIC_spalla_dx_rot, Float64, queue_size=1,   latch=True)
+        spalla_dx_fle_pub = rospy.Publisher(TOPIC_spalla_dx_fle, Float64, queue_size=1,   latch=True)
+        gomito_dx_pub = rospy.Publisher(TOPIC_gomito_dx, Float64, queue_size=1,   latch=True) 
+        spalla_sx_rot_pub = rospy.Publisher(TOPIC_spalla_sx_rot, Float64, queue_size=1,   latch=True)
+        spalla_sx_fle_pub = rospy.Publisher(TOPIC_spalla_sx_fle, Float64, queue_size=1,   latch=True)
+        gomito_sx_pub = rospy.Publisher(TOPIC_gomito_sx, Float64, queue_size=1,   latch=True)  
         
         print("Waiting for robot pose... (5 seconds)")
         delay = 0.25 # sec
@@ -1006,6 +1006,7 @@ def wait(r=1):
         return e
 
 #### SOCIAL ####
+################
 
 
 
@@ -1059,6 +1060,19 @@ def tilt(msg):
     #
     print('Tilt Position: %s' %(msg))
     tilt_pub.publish(msg)
+
+def head(msg):
+    print('Head : %s' %(msg))
+    if (msg == 'front'):
+        pan_pub.publish(0)
+        tilt_pub.publish(0)
+    if (msg == 'left'):
+        pan_pub.publish(1)
+        tilt_pub.publish(0)
+    if (msg == 'right'):
+        pan_pub.publish(0)
+        tilt_pub.publish(1)
+
 # Sounds
 
 def sound(name):
