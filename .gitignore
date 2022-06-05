@@ -8,3 +8,11 @@ www/viewer/img/lastimage.jpg
 camera/config/*
 docker-compose.yml
 
+docker/web/app/vendor/autoload.php
+docker/web/app/vendor/composer/InstalledVersions.php
+docker/web/app/vendor/composer/autoload_classmap.php
+docker/web/app/vendor/composer/autoload_files.php
+docker/web/app/vendor/composer/autoload_namespaces.php
+docker/web/app/vendor/composer/autoload_psr4.php
+docker/web/app/vendor/composer/autoload_real.php
+
