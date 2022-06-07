@@ -39,25 +39,24 @@ var emotionTopic = new ROSLIB.Topic({
 });
 
    //* A topic for messaging.
-   
+ 
+
+// new
 var speechTopic = new ROSLIB.Topic({
   ros: ros,
   name : '/speech/to_speak',
   messageType: 'std_msgs/String'
 });
 
-
 function speak( testo){
 var msg_speak = new ROSLIB.Message({
-      text:  testo  ,
-      wav:  ''   
+      data: testo
  });
- console.log("speak");  
  start_speak();
  speechTopic.publish(msg_speak); // error here als
  console.log(msg_speak);
  normal();
- console.log("speak");   
+ console.log("speech");   
 }
 
 function normal(){
@@ -71,11 +70,11 @@ var msg_happy = new ROSLIB.Message({
 function start_speak(){
 var msg_speak = new ROSLIB.Message({
       data :  'speak'   
+
  });
  emotionTopic.publish(msg_speak); // error here als
  console.log("start speak");   
 }
-
 
 function FaceExpression( face){
   var mymsg = new ROSLIB.Message({

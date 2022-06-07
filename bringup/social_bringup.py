@@ -24,7 +24,7 @@ def run_server(port):
     sock.listen(1)
     print("ROS social server started on port %d ..." %port)
 
-    tmux = TmuxSend('socialrobot', ['robot','cmd'])
+    tmux = TmuxSend('bringup', ['social','cmd'])
 
     connected = False
     dorun = True
@@ -71,64 +71,41 @@ def run_server(port):
                 rfolder = "~/src/marrtino_social/launch"
                 cfolder = "~/src/marrtino_social/config"
                                 
-                # social senza pan & tilt
-                if data=='@robot_social':
-                    tmux.cmd(0,"echo '@robot' | netcat -w 1 localhost 9236") # robot
-                    #tmux.cmd(0,"echo '@robot' | netcat -w 1 localhost 9236") # robot
-                    #tmux.cmd(0,"echo '@joystick' | netcat -w 1 localhost 9240") # teleop joy
-                    
-                   
-                elif data=='@robot_socialkill':
-                    tmux.Cc(0)
-                    
+                # social normale con pan e
+                if data=='@social_robot_start':
+                    tmux.cmd(0,'cd %s' %rfolder)
+                    tmux.cmd(0,'roslaunch social.launch')             
                 elif data=='@robot_start': 
                     tmux.cmd(0,"echo '@robot' | netcat -w 1 localhost 9236") # robot
-                
+
                 elif data=='@robot_kill': 
                     tmux.cmd(0,"echo '@robotkill' | netcat -w 1 localhost 9236") # robot
                 
                 
                 elif data=='@audio_start': 
                     tmux.cmd(0,"echo '@audio' | netcat -w 1 localhost 9239") # audio start
+                    
+               
+                elif data=='@speech_start': 
+                    tmux.cmd(0,"echo '@audio' | netcat -w 1 localhost 9239") # audio start
                     sfolder = "~/src/marrtino_social/script"
                     tmux.cmd(0,'cd %s' %sfolder)
-                    tmux.cmd(0,'python sppech.py')
-               
+                    tmux.cmd(0,'python speech.py')
 
-
-
+                # start social no servo 
+                elif data=='@socialns_start': 
+                    tmux.cmd(0,'cd %s' %rfolder)
+                    tmux.cmd(0,'roslaunch socialnoservo.launch')
                      
                 elif data=='@audio_stop': 
                     tmux.cmd(0,"echo '@audiokill' | netcat -w 1 localhost 9239") # audio stop    
                     
-                elif data=='@tracker': 
+                elif data=='@tracker_start': 
                     tmux.cmd(0,'cd %s' %rfolder)
                     tmux.cmd(0,'roslaunch tracker.launch')
                 
-                elif data=='@trackerkill':
-                    tmux.Cc(0)
-                # social completo
-                elif data=='@social':
-                    # 
-                    tmux.cmd(0,'cd %s' %rfolder)
-                    tmux.cmd(0,'roslaunch social.launch')
-                    time.sleep(5)
-                    #                 
-                    tmux.cmd(0,"rostopic pub -1 /tilt_controller/command std_msgs/Float64 0") 
-                    tmux.cmd(0,"rostopic pub -1 /pan_controller/command std_msgs/Float64 0") 
-                    
-                    time.sleep(1)
-                    #tmux.cmd(0,"DISPLAY=:0 midori -e Fullscreen -a  http://localhost/social/marrtina.html &")
-                    #time.sleep(6)
-                    tmux.cmd(0,"rostopic pub -1 /social/emotion std_msgs/String \"startblinking\"")
-                    time.sleep(1)
-                    tmux.cmd(0,"rostopic pub -1 /talk/to_talk std_msgs/String \"ciao sono martina e sono operativa\"")
-                    #self.waitfor('social',5)
-
    
-                elif data=='@socialkill':
-                    tmux.Cc(0)
-                
+                                
                 else:
                     print('Unknown command %s')
 

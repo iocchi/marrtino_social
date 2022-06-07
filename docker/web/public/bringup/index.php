@@ -118,8 +118,14 @@
 <tr height=40>
 <td width=80>Social (no tracker)</td> 
 <td width=80 align='center'><span id="social_status" style="color: red;">OFF</span></td>
-<td><button id="social_start_btn" onclick="send_cmd('social_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
-<td><button id="social_quit_btn" onclick="send_cmd('social_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
+<td><button id="social_start_btn" onclick="send_cmd('tracker_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
+<td><button id="social_quit_btn" onclick="send_cmd('tracker_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
+</tr>
+<tr height=40>
+<td width=80>Social (no servo)</td> 
+<td width=80 align='center'><span id="socialns_status" style="color: red;">OFF</span></td>
+<td><button id="social_start_btn" onclick="send_cmd('socialns_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
+<td><button id="social_quit_btn" onclick="send_cmd('socialns_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
  
 <tr height=40>
@@ -129,7 +135,12 @@
 <td><button id="audio_quit_btn" onclick="send_cmd('audio_kill')"class="btn waves-effect waves-light blue">Audio quit</button></td>
 </tr>
 
-
+<tr height=40>
+<td width=80>SPEECH </td> 
+<td width=80 align='center'></td>
+<td><button id="speech_start_btn" onclick="send_cmd('speech_start')" class="btn waves-effect waves-light blue" style="margin-right:10px">Speech start</button></td>
+<td><button id="speech_quit_btn" onclick="send_cmd('speech_kill')"class="btn waves-effect waves-light blue">Speech quit</button></td>
+</tr>
 </table>
 </div>
 </div>
@@ -317,7 +328,7 @@
     }
 
     function connect() {
-        wsrobot_init(9912);  // init websocket robot
+        wsrobot_init(9250);  // init websocket robot
         setTimeout(check_connection, 1000);
         websocket.onmessage = eventproc;
     }
