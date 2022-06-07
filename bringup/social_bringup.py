@@ -70,12 +70,10 @@ def run_server(port):
                 print(data)
                 rfolder = "~/src/marrtino_social/launch"
                 cfolder = "~/src/marrtino_social/config"
-                sfolter = "~/src/marrtino_social/script"
-                
+                                
                 # social senza pan & tilt
                 if data=='@robot_social':
-                    tmux.cmd(0,'cd %s' %sfolder)
-                    tmux.cmd(0,'python speech.py')
+                    tmux.cmd(0,"echo '@robot' | netcat -w 1 localhost 9236") # robot
                     #tmux.cmd(0,"echo '@robot' | netcat -w 1 localhost 9236") # robot
                     #tmux.cmd(0,"echo '@joystick' | netcat -w 1 localhost 9240") # teleop joy
                     
@@ -89,6 +87,20 @@ def run_server(port):
                 elif data=='@robot_kill': 
                     tmux.cmd(0,"echo '@robotkill' | netcat -w 1 localhost 9236") # robot
                 
+                
+                elif data=='@audio_start': 
+                    tmux.cmd(0,"echo '@audio' | netcat -w 1 localhost 9239") # audio start
+                    sfolder = "~/src/marrtino_social/script"
+                    tmux.cmd(0,'cd %s' %sfolder)
+                    tmux.cmd(0,'python sppech.py')
+               
+
+
+
+                     
+                elif data=='@audio_stop': 
+                    tmux.cmd(0,"echo '@audiokill' | netcat -w 1 localhost 9239") # audio stop    
+                    
                 elif data=='@tracker': 
                     tmux.cmd(0,'cd %s' %rfolder)
                     tmux.cmd(0,'roslaunch tracker.launch')
@@ -98,10 +110,6 @@ def run_server(port):
                 # social completo
                 elif data=='@social':
                     # 
-                    tmux.cmd(0,'cd %s' %sfolder)
-                    tmux.cmd(0,'python speech.py & ')
-                    time.sleep(5)
-
                     tmux.cmd(0,'cd %s' %rfolder)
                     tmux.cmd(0,'roslaunch social.launch')
                     time.sleep(5)

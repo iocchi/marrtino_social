@@ -241,9 +241,9 @@
                     <div class="btn-group">
                     <script>
                       document.write("<a  class='btn btn-primary' target=\"_blank\" href=\"https://" + window.location.hostname + ":9200\" class=\"btn waves-effect waves-light blue\"/>")
-document.write("ssh " + window.location.hostname)
-document.write("</a>")
-</script>  
+                      document.write("ssh " + window.location.hostname)
+                      document.write("</a>")
+                    </script>  
                      
                     </div>
                     

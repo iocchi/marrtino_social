@@ -115,19 +115,20 @@
 <td><button id="robot_quit_btn" onclick="send_cmd('social_robot_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
 <tr height=40>
-<td width=80>Social </td> 
+<td width=80>Social (no tracker)</td> 
 <td width=80 align='center'><span id="social_status" style="color: red;">OFF</span></td>
 <td><button id="social_start_btn" onclick="send_cmd('social_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
 <td><button id="social_quit_btn" onclick="send_cmd('social_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
-<!--
+ 
 <tr height=40>
-<td width=80>Social tracker</td> 
-<td width=80 align='center'><span id="social_trackerstatus" style="color: red;">OFF</span></td>
-<td><button id="tracker_start_btn" onclick="send_cmd('social_tracker')" class="btn waves-effect waves-light blue">Tracker Start</button></td>
-<td><button id="tracker_quit_btn" onclick="send_cmd('social_trackerkill')" class="btn waves-effect waves-light blue">Tracker quit</button></td>
+<td width=80>AUDIO </td> 
+<td width=80 align='center'></td>
+<td><button id="audio_start_btn" onclick="send_cmd('audio_start')" class="btn waves-effect waves-light blue" style="margin-right:10px">Audio start</button></td>
+<td><button id="audio_quit_btn" onclick="send_cmd('audio_kill')"class="btn waves-effect waves-light blue">Audio quit</button></td>
 </tr>
--->
+
+
 </table>
 </div>
 </div>
