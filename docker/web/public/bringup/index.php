@@ -328,7 +328,7 @@
     }
 
     function connect() {
-        wsrobot_init(9250);  // init websocket robot
+        wsrobot_init(9912);  // init websocket robot
         setTimeout(check_connection, 1000);
         websocket.onmessage = eventproc;
     }
