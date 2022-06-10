@@ -79,18 +79,18 @@ def run_server(port):
                 elif data=='@robotsocialkill':
                     tmux.Cc(1)
 
-                # start social no servo 
-                elif data=='@social': 
+                # start social no servo demo
+                elif data=='@socialnoservo': 
                     tmux.cmd(1,'cd %s' %rfolder)
                     tmux.cmd(1,'roslaunch socialnoservo.launch')
-                elif data=='@socialkill':
+                elif data=='@socialnoservokill':
                     tmux.Cc(1)
 
-                # tracker
-                elif data=='@tracker': 
+                # social no tracker face
+                elif data=='@socialnotracker': 
                     tmux.cmd(2,'cd %s' %rfolder)
-                    tmux.cmd(2,'roslaunch tracker.launch')
-                elif data=='@trackerkill': 
+                    tmux.cmd(2,'roslaunch socialnotracker.launch')
+                elif data=='@socialnotrackerkill': 
                     tmux.Cc(2)
                                 
                 else:

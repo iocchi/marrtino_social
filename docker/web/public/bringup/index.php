@@ -118,8 +118,8 @@
 <tr height=40>
 <td width=80>Social (no tracker)</td> 
 <td width=80 align='center'><span id="social_status" style="color: red;">OFF</span></td>
-<td><button id="social_start_btn" onclick="send_cmd('tracker_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
-<td><button id="social_quit_btn" onclick="send_cmd('tracker_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
+<td><button id="social_start_btn" onclick="send_cmd('socialnt_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
+<td><button id="social_quit_btn" onclick="send_cmd('socialnt_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
 <tr height=40>
 <td width=80>Social (no servo)</td> 
