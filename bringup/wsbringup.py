@@ -635,9 +635,21 @@ class MyWebSocketServer(tornado.websocket.WebSocketHandler):
             #self.waitfor('social',5)
             time.sleep(1)
 
+        # speech  script/speech.py
+        elif (message=='speech_start'):
+            self.tmux.cmd(self.wnet,"echo '@speech' | netcat -w 1 localhost 9250")
+            #self.waitfor('social',5)
+            time.sleep(1)
+        elif (message=='speech_kill'):
+            self.tmux.cmd(self.wnet,"echo '@speechkill' | netcat -w 1 localhost 9250")
+            #self.waitfor('social',5)
+            time.sleep(1)
 
-
-
+        # EOF 
+        # ************************
+        # S O C I A L 
+        # ************************
+        
         # shutdown
         elif (message=='shutdown'):
             #self.tmux.quitall()

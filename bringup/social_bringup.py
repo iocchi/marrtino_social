@@ -24,7 +24,7 @@ def run_server(port):
     sock.listen(1)
     print("ROS social server started on port %d ..." %port)
 
-    tmux = TmuxSend('bringup', ['netcat','social','tracker','speech','cmd'])
+    tmux = TmuxSend('bringup', ['netcat','social','speech','cmd'])
 
     connected = False
     dorun = True
@@ -88,9 +88,18 @@ def run_server(port):
 
                 # social no tracker face
                 elif data=='@socialnotracker': 
-                    tmux.cmd(2,'cd %s' %rfolder)
-                    tmux.cmd(2,'roslaunch socialnotracker.launch')
+                    tmux.cmd(1,'cd %s' %rfolder)
+                    tmux.cmd(1,'roslaunch socialnotracker.launch')
                 elif data=='@socialnotrackerkill': 
+                    tmux.Cc(1)
+
+
+               
+                # start speech_start
+                elif data=='@speech': 
+                    tmux.cmd(2,'cd %s' %sfolder)
+                    tmux.cmd(2,'python speech.py')
+                elif data=='@speechkill':
                     tmux.Cc(2)
                                 
                 else:

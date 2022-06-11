@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>SOCIAL BRINGUP</title>
+  <title>SOCIAL BRINGUP v.2.0</title>
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -111,13 +111,13 @@
 </tr>
 <tr height=40>
 <td width=80>Social (tracker)</td> 
-<td width=80 align='center'><span id="robot_status" style="color: red;">OFF</span></td>
+<td width=80 align='center'><span id="social_robot_status" style="color: red;">OFF</span></td>
 <td><button id="robot_start_btn" onclick="send_cmd('social_robot_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
 <td><button id="robot_quit_btn" onclick="send_cmd('social_robot_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
 <tr height=40>
 <td width=80>Social (no tracker)</td> 
-<td width=80 align='center'><span id="social_status" style="color: red;">OFF</span></td>
+<td width=80 align='center'><span id="socialnt_status" style="color: red;">OFF</span></td>
 <td><button id="social_start_btn" onclick="send_cmd('socialnt_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
 <td><button id="social_quit_btn" onclick="send_cmd('socialnt_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
