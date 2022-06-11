@@ -637,6 +637,7 @@ class MyWebSocketServer(tornado.websocket.WebSocketHandler):
 
         # speech  script/speech.py
         elif (message=='speech_start'):
+            self.tmux.python(self.waudio,'audio','audio_server.py')
             self.tmux.cmd(self.wnet,"echo '@speech' | netcat -w 1 localhost 9250")
             #self.waitfor('social',5)
             time.sleep(1)

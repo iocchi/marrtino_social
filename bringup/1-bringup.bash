@@ -41,8 +41,8 @@ tmux send-keys -t $SESSION:0 "cd \$MARRTINO_SOCIAL/bringup" C-m
 tmux send-keys -t $SESSION:0 "python social_bringup.py" C-m
 
 
-#tmux send-keys -t $SESSION:1 "cd \$MARRTINO_APPS_HOME/blockly" C-m
-#tmux send-keys -t $SESSION:1 "python websocket_robot.py" C-m
+tmux send-keys -t $SESSION:1 "cd \$MARRTINO_APPS_HOME/blockly" C-m
+tmux send-keys -t $SESSION:1 "python websocket_robot.py" C-m
 
 
 
