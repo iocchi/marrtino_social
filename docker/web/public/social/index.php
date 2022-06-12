@@ -229,12 +229,13 @@
 
             <div class="col-md-3">
               <div class="card mb-4 box-shadow"> 
-                <?php  $mylink =  $_SERVER['HTTP_HOST']; 
-                       $mylink = "https://" . substr($mylink,0, strpos($mylink,":9200"));?>
+                <script>
+                      document.write("<a  class='btn' target=\"_blank\" href=\"https://" + window.location.hostname + ":9200\" class=\"btn waves-effect waves-light blue\"/>")
+                      document.write("<img class='card-img-top' src='image/ssh.png' alt='SSH'>")
+                      document.write("</a>")
+                  </script>  
               
-                <a  href="<?php echo $mylink;?>">
-                <img class="card-img-top" src="image/ssh.png" alt="SSH">
-                 </a>
+                
                 <div class="card-body">
                   <p class="card-text">SHELL INTERFACE</br></br>
                   <div class="d-flex justify-content-between align-items-center">

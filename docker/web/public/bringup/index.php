@@ -111,19 +111,19 @@
 </tr>
 <tr height=40>
 <td width=80>Social (tracker)</td> 
-<td width=80 align='center'><span id="social_robot_status" style="color: red;">OFF</span></td>
+<td width=80 align='center'><!--<span id="socialns_status" style="color: red;">OFF</span>--></td>
 <td><button id="robot_start_btn" onclick="send_cmd('social_robot_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
 <td><button id="robot_quit_btn" onclick="send_cmd('social_robot_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
 <tr height=40>
 <td width=80>Social (no tracker)</td> 
-<td width=80 align='center'><span id="socialnt_status" style="color: red;">OFF</span></td>
+<td width=80 align='center'><!--<span id="socialns_status" style="color: red;">OFF</span>--></td>
 <td><button id="social_start_btn" onclick="send_cmd('socialnt_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
 <td><button id="social_quit_btn" onclick="send_cmd('socialnt_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
 <tr height=40>
 <td width=80>Social (no servo)</td> 
-<td width=80 align='center'><span id="socialns_status" style="color: red;">OFF</span></td>
+<td width=80 align='center'><!--<span id="socialns_status" style="color: red;">OFF</span>--></td>
 <td><button id="social_start_btn" onclick="send_cmd('socialns_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
 <td><button id="social_quit_btn" onclick="send_cmd('socialns_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
