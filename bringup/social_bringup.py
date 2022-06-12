@@ -95,12 +95,12 @@ def run_server(port):
 
 
                
-                # start speech_start
+                # start speech_start ( 2 speech)
                 elif data=='@speech': 
-                    tmux.cmd(1,'cd %s' %sfolder)
-                    tmux.cmd(1,'python speech.py')
+                    tmux.cmd(2,'cd %s' %sfolder)
+                    tmux.cmd(2,'python speech.py')
                 elif data=='@speechkill':
-                    tmux.Cc(1)
+                    tmux.Cc(2)
                                 
                 else:
                     print('Unknown command %s' %data)
