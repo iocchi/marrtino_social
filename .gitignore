@@ -16,4 +16,8 @@ docker/web/app/vendor/composer/autoload_files.php
 docker/web/app/vendor/composer/autoload_namespaces.php
 docker/web/app/vendor/composer/autoload_psr4.php
 docker/web/app/vendor/composer/autoload_real.php
+docker/web/app/vendor/composer/autoload_static.php
+docker/web/app/vendor/composer/installed.php
+
+
 
