@@ -34,11 +34,11 @@ from robot_cmd_ros import *
 
 robot_cmd_ros.use_robot = True
 
-# Global variables
+# Global variables 
 
 websocket_server = None     # websocket handler
 run = True                  # main_loop run flag
-server_port = 9020          # web server port
+server_port = 9030          # web server port
 code = None
 status = "Idle"             # robot status sent to websocket
 
