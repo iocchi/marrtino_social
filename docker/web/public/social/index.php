@@ -177,11 +177,11 @@
                 <img class="card-img-top" src="image/Programming.png" alt="Marrtina">
                  </a>
                 <div class="card-body">
-                  <p class="card-text">Program interface Marrtino Robot.</p>
+                  <p class="card-text">Blocly Program interface Marrtino Robot.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       
-                       <a class="btn btn-primary" href="../program/index.html" role="button">Program Interface</a>
+                       <a class="btn btn-primary" href="../program/blockly_robot.php" role="button">Blockly Program Interface</a>
                     </div>
                     
                   </div>

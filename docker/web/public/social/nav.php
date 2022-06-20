@@ -16,20 +16,10 @@
       <li class="nav-item">
         <a class="nav-link" href="../social/facerobot.php" aria-haspopup="true"  >Social Interface</a>
       </li>
-      <!--
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Programming
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="../program/tile_robot.html">Tile</a>
-          <a class="dropdown-item" href="../program/blockly_robot.php">Blockly</a>
-          <a class="dropdown-item" href="../program/python_robot.html">python</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="../program/blockly_robot.php" aria-haspopup="true"  >Blocky</a>
       </li>
--->
+      
       <!--
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
