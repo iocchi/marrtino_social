@@ -145,8 +145,7 @@
             </div>
             <div class="col-md-3">
               <div class="card mb-4 box-shadow"> 
-                 <?php  $mylink =  $_SERVER['SERVER_ADDR']; 
-                       $mylink = "https://" . substr($mylink,0, strpos($mylink ,":8085/vnc.html"));?>
+                 <?php    $mylink = "https://" . substr($mylink,0, strpos($mylink ,":8085/vnc.html"));?>
                 <a  href="<?php echo $mylink;?>">
                 <img class="card-img-top" src="image/vnc.png" alt="vnc">
                  </a>
@@ -154,7 +153,11 @@
                   <p class="card-text">VNC interface </p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                       
+                      <script>
+                      document.write("<a  class='btn btn-primary' target=\"_blank\" href=\"https://" + window.location.hostname + ":8085/vnc.html\" class=\"btn waves-effect waves-light blue\"/>")
+                      document.write("VNC " + window.location.hostname)
+                      document.write("</a>")
+                    </script>  
                        <a class="btn btn-primary" href="<?php echo $mylink;?>" role="button">VNC</a>
                     </div>
                     

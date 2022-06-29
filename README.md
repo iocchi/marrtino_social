@@ -18,8 +18,7 @@
 
 ## Pre requisites
 
-
-sudo apt install xdotool
+sudo apt install chromium-browser
 
 
 Follow instructions for installing and using [marrtino_apps](https://bitbucket.org/iocchi/marrtino_apps/src/master/docker)

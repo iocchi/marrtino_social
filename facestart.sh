@@ -1,4 +1,4 @@
 #!/bin/sh
-echo "Launch Browser"
-DISPLAY=:0 firefox http://localhost:8080/social/marrtina.html 
-DISPLAY=:0 xdotool search --sync --onlyvisible --pid $! windowactivate key F11
+# echo "Launch Browser"
+#DISPLAY=:0 midori -p -e Fullscreen -a http://localhost:8080/social/marrtina.html 
+chromium-browser --app=http://localhost:8080/social/marrtina.html   -start-maximized
