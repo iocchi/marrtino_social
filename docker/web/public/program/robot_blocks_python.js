@@ -132,7 +132,7 @@ Blockly.Python['status'] = function(block) {
 
 
 Blockly.Python['head_position'] = function(block) {
-  var dropdown_position = block.getFieldValue('POSITION');
+  var dropdown_position = block.getFieldValue('HEAD POSITION');
   // TODO: Assemble Python into code variable.
   var code = 'head("'+dropdown_position+'")\n';
   return code;
@@ -165,7 +165,7 @@ Blockly.Python['tilt'] = function(block) {
   return code;
 };
 
-Blockly.Python['spalla_flessione_dx"'] = function(block) {
+Blockly.Python['spalla_flessione_dx'] = function(block) {
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
   var value_pos = (value_steps); /// 100 -0.5;
   var code = 'spalla_flessione_dx('+value_pos+')\n';
@@ -173,7 +173,7 @@ Blockly.Python['spalla_flessione_dx"'] = function(block) {
 };
 
 
-Blockly.Python['spalla_flessione_sx"'] = function(block) {
+Blockly.Python['spalla_flessione_sx'] = function(block) {
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
   var value_pos = (value_steps); // 100 -0.5;
   var code = 'spalla_flessione_sx('+value_pos+')\n';
@@ -191,5 +191,19 @@ Blockly.Python['spalla_rotazione_sx'] = function(block) {
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
   var value_pos = (value_steps); // 100 -0.5;
   var code = 'spalla_rotazione_sx('+value_pos+')\n';
+  return code;
+};
+Blockly.Python['gomito_dx'] = function(block) {
+  var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
+  var value_pos = (value_steps); /// 100 -0.5;
+  var code = 'gomito_dx('+value_pos+')\n';
+  return code;
+};
+
+
+Blockly.Python['gomito_sx'] = function(block) {
+  var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
+  var value_pos = (value_steps); // 100 -0.5;
+  var code = 'gomito_sx('+value_pos+')\n';
   return code;
 };

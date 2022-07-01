@@ -418,7 +418,7 @@ Blockly.Blocks['gomito_dx'] = {
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Gomito DX %"));
     this.appendValueInput("steps")
         .setCheck("Number")
-        .appendField("spalladxrot");
+        .appendField("gomito_dx");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -434,7 +434,7 @@ Blockly.Blocks['gomito_sx'] = {
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Gomito SX %"));
     this.appendValueInput("steps")
         .setCheck("Number")
-        .appendField("spallasxrot");
+        .appendField("gomito_sx");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

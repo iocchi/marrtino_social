@@ -1067,11 +1067,17 @@ def head(msg):
         pan_pub.publish(0)
         tilt_pub.publish(0)
     if (msg == 'left'):
-        pan_pub.publish(1)
+        pan_pub.publish(0.5)
         tilt_pub.publish(0)
     if (msg == 'right'):
+        pan_pub.publish(-0.5)
+        tilt_pub.publish(0)
+    if (msg == 'up'):
         pan_pub.publish(0)
-        tilt_pub.publish(1)
+        tilt_pub.publish(0.5)
+    if (msg == 'down'):
+        pan_pub.publish(0)
+        tilt_pub.publish(-0.5)
 
 # Sounds
 
