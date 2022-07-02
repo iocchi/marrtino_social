@@ -149,14 +149,13 @@
 <block type="pan"> </block>
 <block type="tilt"> </block>
 <block type="spalla_flessione_dx"> </block>
-<block type="spalla_rotazione_dx"> </block>
-<block type="gomito_dx"> </block>
 <block type="spalla_flessione_sx"> </block>
+<block type="spalla_rotazione_dx"> </block>
 <block type="spalla_rotazione_sx"> </block>
+<block type="gomito_dx"> </block>
 <block type="gomito_sx"> </block>
 <block type="get_stt"></block>
 <block type="get_nro_of_face"></block>
-
 </category>
 <category colour="50" name="Audio">
 
@@ -421,10 +420,11 @@
                               var file = files[0];
                               var reader = new FileReader();
                               reader.onload = function () {
-                                  workspace.clear();
+                                  demoWorkspace.clear();
+                              
                                   var xml = Blockly.Xml.textToDom(this.result);
                                   console.log("Loading workspace from file.");
-                                  Blockly.Xml.domToWorkspace(workspace, xml);
+                                  Blockly.Xml.domToWorkspace(demoWorkspace, xml);
                               };
                               reader.readAsText(file);
                               // This is done in order to allow open the same file several times in the row

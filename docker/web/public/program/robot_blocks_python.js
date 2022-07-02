@@ -129,12 +129,10 @@ Blockly.Python['status'] = function(block) {
 }
 
 
-
-
 Blockly.Python['head_position'] = function(block) {
-  var dropdown_position = block.getFieldValue('HEAD POSITION');
+  var dropdown_position = block.getFieldValue('HEAD_POSITION');
   // TODO: Assemble Python into code variable.
-  var code = 'head("'+dropdown_position+'")\n';
+  var code = 'head_position("'+dropdown_position+'")\n';
   return code;
 }
 
@@ -172,13 +170,14 @@ Blockly.Python['spalla_flessione_dx'] = function(block) {
   return code;
 };
 
-
 Blockly.Python['spalla_flessione_sx'] = function(block) {
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
-  var value_pos = (value_steps); // 100 -0.5;
+  var value_pos = (value_steps); /// 100 -0.5;
   var code = 'spalla_flessione_sx('+value_pos+')\n';
   return code;
 };
+
+
 Blockly.Python['spalla_rotazione_dx'] = function(block) {
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
   var value_pos = (value_steps); /// 100 -0.5;

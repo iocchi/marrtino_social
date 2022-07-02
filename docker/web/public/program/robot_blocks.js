@@ -283,8 +283,8 @@ Blockly.Blocks['face'] = {
 Blockly.Blocks['head_position'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("position")
-        .appendField(new Blockly.FieldDropdown([["front","front"],["up","up"],["down","down"], ["left","left"],["right","right"]]), "POSITION");
+        .appendField("head_position")
+        .appendField(new Blockly.FieldDropdown([["front","front"],["up","up"],["down","down"], ["left","left"],["right","right"]]), "HEAD_POSITION");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
@@ -362,7 +362,8 @@ Blockly.Blocks['spalla_flessione_dx'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.Blocks['spalla_flessione_sx"'] = {
+
+Blockly.Blocks['spalla_flessione_sx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Spalla SX flessione %"));

@@ -602,6 +602,7 @@ def begin(nodename='robot_cmd', init_node=True):
         emotion_pub = rospy.Publisher(TOPIC_emotion, String, queue_size=1,   latch=True)
         pan_pub = rospy.Publisher(TOPIC_pan, Float64, queue_size=1,   latch=True)
         tilt_pub = rospy.Publisher(TOPIC_tilt, Float64, queue_size=1,   latch=True)
+        # per una corretta esecuzione ho invertito i nodi dx e sx
         spalla_dx_rot_pub = rospy.Publisher(TOPIC_spalla_dx_rot, Float64, queue_size=1,   latch=True)
         spalla_dx_fle_pub = rospy.Publisher(TOPIC_spalla_dx_fle, Float64, queue_size=1,   latch=True)
         gomito_dx_pub = rospy.Publisher(TOPIC_gomito_dx, Float64, queue_size=1,   latch=True) 
@@ -1008,8 +1009,8 @@ def wait(r=1):
 #### SOCIAL ####
 ################
 
-
-
+def head_status(msg):
+    print('social/emotion %s' %(msg))
 
 def emotion(msg):
     #
@@ -1018,34 +1019,34 @@ def emotion(msg):
 
 
         
-def spalla_dx_rot_pub(msg):
+def spalla_rotazione_dx(msg):
     # valori da -0.5  0 0.5 
     print('Spalla DX rot Position: %s' %(msg))
     spalla_dx_rot_pub.publish(msg)
 
-def spalla_dx_fle_pub(msg):
+def spalla_flessione_dx(msg):
     #
     print('spalla_dx_flessione: %s' %(msg))
     spalla_dx_fle_pub.publish(msg)
 
-def gomito_dx_pub(msg):
+def gomito_dx(msg):
     #
     print('sgomito dx: %s' %(msg))
     gomito_dx_pub.publish(msg)
 
 
         
-def spalla_sx_rot_pub(msg):
+def spalla_rotazione_sx(msg):
     # valori da -0.5  0 0.5 
     print('Spalla SX rot Position: %s' %(msg))
     spalla_sx_rot_pub.publish(msg)
 
-def spalla_sx_fle_pub(msg):
+def spalla_flessione_sx(msg):
     #
     print('spalla_sx_flessione: %s' %(msg))
     spalla_sx_fle_pub.publish(msg)
 
-def gomito_sx_pub(msg):
+def gomito_sx(msg):
     #
     print('gomito sx: %s' %(msg))
     gomito_sx_pub.publish(msg)
@@ -1061,7 +1062,7 @@ def tilt(msg):
     print('Tilt Position: %s' %(msg))
     tilt_pub.publish(msg)
 
-def head(msg):
+def head_position(msg):
     print('Head : %s' %(msg))
     if (msg == 'front'):
         pan_pub.publish(0)
@@ -1072,13 +1073,16 @@ def head(msg):
     if (msg == 'right'):
         pan_pub.publish(-0.5)
         tilt_pub.publish(0)
-    if (msg == 'up'):
+    if (msg == 'down'):
         pan_pub.publish(0)
         tilt_pub.publish(0.5)
-    if (msg == 'down'):
+    if (msg == 'up'):
         pan_pub.publish(0)
         tilt_pub.publish(-0.5)
 
+# 
+
+    
 # Sounds
 
 def sound(name):
