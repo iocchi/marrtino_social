@@ -314,7 +314,7 @@ Blockly.Blocks['get_nro_of_face'] = {
  this.setHelpUrl("");
   }
 };
-
+/*
 Blockly.Blocks['pan'] = {
   init: function() {
     this.appendDummyInput()
@@ -347,10 +347,14 @@ Blockly.Blocks['tilt'] = {
  this.setHelpUrl("");
   }
 };
+*/
 Blockly.Blocks['spalla_flessione_dx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Spalla DX flessione %"));
+    this.appendDummyInput()
+        .appendField("sign")
+        .appendField(new Blockly.FieldDropdown([["+","+"],["-","-"]]), "Sign");
     this.appendValueInput("steps")
         .setCheck("Number")
         .appendField("spalla_flessione_dx");
@@ -367,6 +371,9 @@ Blockly.Blocks['spalla_flessione_sx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Spalla SX flessione %"));
+    this.appendDummyInput()
+        .appendField("sign")
+        .appendField(new Blockly.FieldDropdown([["+","+"],["-","-"]]), "Sign");
     this.appendValueInput("steps")
         .setCheck("Number")
         .appendField("spalla_flessione_sx");
@@ -384,6 +391,9 @@ Blockly.Blocks['spalla_rotazione_dx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Spalla DX rotazione %"));
+    this.appendDummyInput()
+        .appendField("sign")
+        .appendField(new Blockly.FieldDropdown([["+","+"],["-","-"]]), "Sign");
     this.appendValueInput("steps")
         .setCheck("Number")
         .appendField("spalla_rotazione_dx");
@@ -402,6 +412,9 @@ Blockly.Blocks['spalla_rotazione_sx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Spalla SX rotazione %"));
+    this.appendDummyInput()
+        .appendField("sign")
+        .appendField(new Blockly.FieldDropdown([["+","+"],["-","-"]]), "Sign");
     this.appendValueInput("steps")
         .setCheck("Number")
         .appendField("spalla_rotazione_sx");
@@ -417,6 +430,9 @@ Blockly.Blocks['gomito_dx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Gomito DX %"));
+    this.appendDummyInput()
+        .appendField("sign")
+        .appendField(new Blockly.FieldDropdown([["+","+"],["-","-"]]), "Sign");
     this.appendValueInput("steps")
         .setCheck("Number")
         .appendField("gomito_dx");
@@ -433,9 +449,12 @@ Blockly.Blocks['gomito_sx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Gomito SX %"));
+    this.appendDummyInput()
+        .appendField("sign")
+        .appendField(new Blockly.FieldDropdown([["+","+"],["-","-"]]), "Sign");
     this.appendValueInput("steps")
         .setCheck("Number")
-        .appendField("gomito_sx");
+        .appendField("gomito_sx"); 
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

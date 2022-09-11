@@ -25,7 +25,10 @@
 <!-- Eof Nav Bar -->
 
 <div class="container-fluid">
-  
+  <div class="row">
+    <div class="col-md-12"  style="background-color:yellow;" align="center" ><h2>MARRTINO SOCIAL BRINGUP</h2></div>
+
+  </div>
   <div class="row">
     <div class="col-md-12">. </div>
     IP:
@@ -41,10 +44,7 @@
     <!--<p class="text-white">Connection status: <span id="status"></span></p>-->
   </div>
 
-  <div class="row">
-    <div class="col-md-12"  style="background-color:yellow;" align="center" ><h2>SOCIAL</h2></div>
-
-  </div>
+  
 </div>
 
 
@@ -110,29 +110,35 @@
 <td><button id="robot_quit_btn" onclick="send_cmd('robot_kill')" class="btn waves-effect waves-light blue">Robot quit</button></td>
 </tr>
 <tr height=40>
-<td width=80>Social (tracker)</td> 
+<td width=280>Social (tracker)</td> 
 <td width=80 align='center'><!--<span id="socialns_status" style="color: red;">OFF</span>--></td>
 <td><button id="robot_start_btn" onclick="send_cmd('social_robot_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
 <td><button id="robot_quit_btn" onclick="send_cmd('social_robot_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
 <tr height=40>
-<td width=80>Social (no tracker)</td> 
+<td width=280>Social (no tracker)</td> 
 <td width=80 align='center'><!--<span id="socialns_status" style="color: red;">OFF</span>--></td>
 <td><button id="social_start_btn" onclick="send_cmd('socialnt_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
 <td><button id="social_quit_btn" onclick="send_cmd('socialnt_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
 <tr height=40>
-<td width=80>Social (no servo)</td> 
+<td width=280>Social (no servo)</td> 
 <td width=80 align='center'><!--<span id="socialns_status" style="color: red;">OFF</span>--></td>
 <td><button id="social_start_btn" onclick="send_cmd('socialns_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
 <td><button id="social_quit_btn" onclick="send_cmd('socialns_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
 </tr>
  
 <tr height=40>
-<td width=80>AUDIO </td> 
+<td width=280>AUDIO </td> 
 <td width=80 align='center'></td>
 <td><button id="audio_start_btn" onclick="send_cmd('audio_start')" class="btn waves-effect waves-light blue" style="margin-right:10px">Audio start</button></td>
 <td><button id="audio_quit_btn" onclick="send_cmd('audio_kill')"class="btn waves-effect waves-light blue">Audio quit</button></td>
+</tr>
+<tr height=40>
+<td width=280>USB</td> 
+<td width=80 align='center'><span id="usbcam_status" style="color: red;">OFF</span></td>
+<td><button id="usbcam_start_btn" onclick="send_cmd('usbcam_start')" class="btn waves-effect waves-light blue">USB camera start</button></td>
+<td><button id="usbcam_quit_btn" onclick="send_cmd('usbcam_kill')" class="btn waves-effect waves-light blue">USB camera quit</button></td>
 </tr>
 <!--
 <tr height=40>
@@ -142,35 +148,7 @@
 <td><button id="speech_quit_btn" onclick="send_cmd('speech_kill')"class="btn waves-effect waves-light blue">Speech quit</button></td>
 </tr>-->
 </table>
-</div>
-</div>
-<div class="row">
-<div class="col-md-1"></div>
-<div class="col-md-5">
-<table>
 
-<tr height=40>
-<td width=80>USB</td> 
-<td width=80 align='center'><span id="usbcam_status" style="color: red;">OFF</span></td>
-<td><button id="usbcam_start_btn" onclick="send_cmd('usbcam_start')" class="btn waves-effect waves-light blue">USB camera start</button></td>
-<td><button id="usbcam_quit_btn" onclick="send_cmd('usbcam_kill')" class="btn waves-effect waves-light blue">USB camera quit</button></td>
-</tr>
-
-<tr height=40>
-<td width=60>RPlidar</td> 
-<td width=80 align='center'><span id="rplidar_status" style="color: red;">OFF</span></td>
-<td><button id="rplidar_start_btn" onclick="send_cmd('rplidar_start')" class="btn waves-effect waves-light blue">RPlidar laser start</button></td>
-<td><button id="rplidar_quit_btn" onclick="send_cmd('rplidar_kill')" class="btn waves-effect waves-light blue">RPlidar laser quit</button></td>
-</tr>
-<tr height=40>
-<td width=100>Joystick</td> 
-<td width=80 align='center'><span id="joystick_status" style="color: red;">OFF</span></td>
-
-</tr>
- 
-</div>
-<div class="col-md-1"></div>
-</div>
 
 </div>
 
@@ -191,7 +169,7 @@
     </div>
  </div>
 
---> 
+
 
   <div class="row">
     <div class="col">
@@ -202,7 +180,7 @@
    </div>
   
   </div>
-
+--> 
  
    
   
