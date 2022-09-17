@@ -244,3 +244,19 @@ Blockly.Python['gomito_sx'] = function(block) {
   var code = 'gomito_sx('+value_pos+')\n';
   return code;
 };
+
+
+
+
+Blockly.Python['run_python'] = function(block) {
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+   
+  var code = value_text+'\n';
+  var str = code.substring(1, code.length - 2);
+
+  //len = code.length;
+
+  
+  return str;
+
+};

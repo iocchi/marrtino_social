@@ -146,8 +146,6 @@
 <block type="head_position"> </block>
 <block type="status"> </block>
 <block type="face"> </block>
-<block type="pan"> </block>
-<block type="tilt"> </block>
 <block type="spalla_flessione_dx"> </block>
 <block type="spalla_flessione_sx"> </block>
 <block type="spalla_rotazione_dx"> </block>
@@ -156,6 +154,18 @@
 <block type="gomito_sx"> </block>
 <block type="get_stt"></block>
 <block type="get_nro_of_face"></block>
+</category>
+<category colour="0" name="Code">
+
+<block type="run_python">
+
+   <value name="text">
+      <block type="text">
+        <field name="TEXT">#your code here</field>
+      </block>
+  </value>
+</block>
+
 </category>
 <category colour="50" name="Audio">
 
@@ -260,7 +270,7 @@
 
 
  
-    <!--<div class="iframe-container"><iframe loading="lazy" src="/social/marrtina.html"></iframe></div>-->
+    <div class="iframe-container"><iframe loading="lazy" src="/social/marrtina.html"></iframe></div>
     
     
    
@@ -386,7 +396,7 @@
             document.getElementById("stop_btn").disabled = true;
         }
     }
-
+ 
     function connect() {
         wsrobot_init(9030);  // init websocket robot
         setTimeout(check_connection, 1000);

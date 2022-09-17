@@ -463,3 +463,36 @@ Blockly.Blocks['gomito_sx'] = {
  this.setHelpUrl("");
   }
 };
+
+
+/**
+ * Common HSV hue for all blocks in this category.
+ 
+ Blockly.Blocks.variables.HUE = 160; 
+
+ Blockly.Blocks['run_python'] = {
+   init: function() {
+     this.appendDummyInput()
+         .appendField("Run code")
+         .appendField(new Blockly.FieldTextInput("#Enter your own python code"), "CODE_TEXT");
+     this.setInputsInline(true);
+     this.setPreviousStatement(true);
+     this.setNextStatement(true);
+     this.setColour(160);
+     this.setTooltip('');
+     this.setHelpUrl('http://robotics.surfweb.eu');
+   }
+ };
+ */
+ Blockly.Blocks['run_python'] = {
+  init: function() {
+    this.appendDummyInput().appendField("run_python");
+    this.appendValueInput("text");
+    this.setInputsInline(true); 
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(50);
+    this.setHelpUrl('http://robotics.surfweb.eu');
+ this.setHelpUrl("");
+  }
+};
