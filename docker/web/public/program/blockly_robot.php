@@ -13,6 +13,8 @@
   <script src="robot_blocks.js"></script>
   <script src="robot_blocks_python.js"></script>
   <script src="websocket_robot.js"></script>
+  
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <!--<script src="js/jquery-3.4.1.min.js"></script>-->
@@ -29,17 +31,24 @@
   </style>
 </head>
 <body>
+
+
   <?php include "../social/nav.php" ?>
 
   <div class="container-fluid">
+
+
+  </div>
     <div class="row">
        <div class="col-md-6">
-        <button class="btn btn-primary" onclick="showCode()">Show code</button>
-        <button class="btn btn-primary" id="run_btn" onclick="runCode()">Run</button>
-        <button class="btn btn-danger" id="stop_btn" onclick="stopCode()">Stop</button>
-         <button class="btn btn-warning" id="loadfile_btn" onclick="load_from_file()">Load file</button>
-        <button class="btn btn-success"  id="savefile_btn" onclick="save_to_file()">Save file</button>
-         
+        <!--<button class="btn btn-outline-success" id="hide_code" onclick="hide_blockly() ">Python</button>-->
+        <button class="btn btn-outline-success" id="hide_code" onclick="show_blockly() ">Blockly</button>
+        <button class="btn btn-outline-primary" onclick="showCode()">Show code</button>
+        <button class="btn btn-outline-primary" id="run_btn" onclick="runCode()">Run</button>
+        <button class="btn btn-outline-danger" id="stop_btn" onclick="stopCode()">Stop</button>
+        <button class="btn btn-outline-warning" id="loadfile_btn" onclick="load_from_file()">Load file</button>
+        <button class="btn btn-outline-success"  id="savefile_btn" onclick="save_to_file()">Save file</button>
+        
         </div>
        <div class="col-md-6">
           Robot IP 
@@ -49,24 +58,20 @@
         </script>
          <button onclick="connect()">Connect</button> 
           <button onclick="disconnect()">Disconnect</button> 
+          <!--
           <div id="connection"><font color='red'>Not Connected</font> </div>
      
           Status 
-          <div id="status" style="color: blue;" >Idle</div> 
+          <div id="status" style="color: blue;" >Idle</div>  -->
       </div>
 
     </div>
+    
     <div class="row">
        <div class="col-md-9">
-       </div>
-       <div class="col-md-9">
-       </div>
-     </div>
-         
-    <div class="row">
-       <div class="col-md-9">
-           Blockly workspace
-           <div id="blocklyDiv" style="height: 480px; width: 100%;"></div>
+           
+           <div id="codeDiv" style="height: 480px; width: 100%; background-color: #DDDDDD; font-size: 120%;display: none;">Python Code</div>
+           <div id="blocklyDiv" style="height: 480px; width: 100%;display: block;">Blockly workspace </div>
 
 <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
 
@@ -259,10 +264,8 @@
 
 
       </div>
-      <div class="col-md-3">
-      Python Code
-        <div id="codeDiv" style="height: 480px; width: 240px; background-color: #DDDDDD; font-size: 120%;"></div>
-      </div>
+      <div class="col-md-3">Face<div class="iframe-container"><iframe loading="lazy" src="/social/marrtina.html"></iframe></div>
+         </div>
 
     </div>
   </div>
@@ -270,7 +273,7 @@
 
 
  
-    <div class="iframe-container"><iframe loading="lazy" src="/social/marrtina.html"></iframe></div>
+    
     
     
    
@@ -344,6 +347,7 @@
 
     function showCode() {
       // Generate Python code and display it.
+      hide_blockly();
       Blockly.Python.INFINITE_LOOP_TRAP = null;
       var code = Blockly.Python.workspaceToCode(demoWorkspace);
       //alert(code);
@@ -468,6 +472,20 @@
       console.log("Workspace saved.");
     }
 
+
+    function hide_blockly() {
+      document.getElementById("blocklyDiv").style.display = 'none';
+      document.getElementById("codeDiv").style.display = 'block';
+      //window.location.reload(true);
+    }
+
+    function show_blockly() {
+      document.getElementById("blocklyDiv").style.display = 'block';
+      document.getElementById("codeDiv").style.display = 'none';
+      //window.location.reload(true);
+      // alert("resizing");
+      // window.dispatchEvent(new Event('resize'));
+  };
   </script>
 
 </body>
