@@ -496,3 +496,39 @@ Blockly.Blocks['gomito_sx'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['user_say'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("user_say()");
+    this.setOutput(true, null);
+    this.setColour(0);
+ this.setTooltip("returns user say");
+ this.setHelpUrl("");
+  }
+};
+
+
+
+
+Blockly.Blocks['wait_user_speaking'] = {
+  init: function() {
+    this.appendValueInput("seconds")
+        .setCheck("Number")
+        .appendField("wait_user_speaking");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(0);
+ this.setTooltip("returns distance from obstable front|left|right");
+ this.setHelpUrl("");
+  }
+};
+/*
+this.appendValueInput("seconds")
+        .setCheck("Number")
+        .appendField("wait");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("robot waits [seconds]");*/

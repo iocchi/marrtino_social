@@ -251,12 +251,34 @@ Blockly.Python['gomito_sx'] = function(block) {
 Blockly.Python['run_python'] = function(block) {
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
    
-  var code = value_text+'\n';
-  var str = code.substring(1, code.length - 2);
-
-  //len = code.length;
-
+  var code = value_text;
+  code = code.substring(1, code.length - 1) +'\n';
+ 
   
-  return str;
+  return code;
 
 };
+
+
+Blockly.Python['user_say'] = function(block) {
+  var code = 'user_say()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['wait_user_speacking'] = function(block) {
+  var value_seconds = Blockly.Python.valueToCode(block, 'seconds', Blockly.Python.ORDER_ATOMIC);
+  var code = 'wait_user_speaking('+value_seconds+')\n';
+  return code;
+};
+
+Blockly.Python['logic_boolean'] = function(block) {
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+   
+  var code = value_text;
+  code = code.substring(1, code.length - 1) +'\n';
+ 
+  
+  return code;
+
+};
+

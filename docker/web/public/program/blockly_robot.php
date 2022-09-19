@@ -157,21 +157,37 @@
 <block type="spalla_rotazione_sx"> </block>
 <block type="gomito_dx"> </block>
 <block type="gomito_sx"> </block>
-<block type="get_stt"></block>
 <block type="get_nro_of_face"></block>
 </category>
 <category colour="0" name="Code">
-
+<block type="user_say"></block>
+<block type="wait_user_speaking">
+  <value name="seconds">
+    <block type="math_number">
+      <field name="NUM">1</field>
+    </block>
+  </value>
+</block>
 <block type="run_python">
 
    <value name="text">
       <block type="text">
         <field name="TEXT">#your code here</field>
       </block>
+      
   </value>
 </block>
 
 </category>
+<category id="catLogic" name="Logic">
+      <block type="controls_if"></block>
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_negate"></block>
+      <block type="logic_boolean"></block>
+      <block type="logic_null"></block>
+      <block type="logic_ternary"></block>
+    </category>
 <category colour="50" name="Audio">
 
 <block type="say">
@@ -289,30 +305,7 @@
   </td>
   </tr>
   </table>
-<!--
-  <hr>
-
-  <h3> Blockly XML code </h3>
-
-  <p>  <button onclick="saveCode()">Export block code</button> </p>
-
-  <p>
-     <textarea id="xmlSave" rows="6" cols="108"></textarea> 
-   div id="xmlDiv" style="height: 120px; width: 800px; background-color: #DDDDDD; font-size: 80%;"></div  
-  </p>
-
-  <br>
-
-  <p>  <button onclick="loadCode()">Import block code</button> </p>
-
-  <p>
-    <textarea id="xmlLoad" rows="6" cols="108"></textarea> 
-  </p>
-
-  <br>
   
-  -->
-
                 <!-- ****** SCRIPTS ****** -->
 
   <script>
@@ -331,18 +324,18 @@
 	    zoom : {
 		    controls : true, 
 		    wheel : true, 
-		    startScale : 1.2, 
+		    startScale : 1.0, 
 		    maxScale : 3, 
-		    minScale : 0.3, 
-		    scaleSpeed : 1.2
+		    minScale : 0.25, 
+		    scaleSpeed : 1.1
 	      }
         });
 
     Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),
                                demoWorkspace);
 
-    document.getElementById("run_btn").disabled = true;
-    document.getElementById("stop_btn").disabled = true;
+    //document.getElementById("run_btn").disabled = true;
+    //document.getElementById("stop_btn").disabled = true;
 
 
     function showCode() {
