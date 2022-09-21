@@ -1084,7 +1084,17 @@ def user_say():
     print('user_say')
     retval = asr()
     return retval
-    
+
+def wait_user_speaking(msg):
+    print('wait_user_speaking')
+    timeout = time.time() + msg  # second timeout
+    retval = ''
+    while retval == '':
+        retval = asr()
+        if time.time() > timeout:
+            break
+
+    return retval
 
 # EOF Social
 
