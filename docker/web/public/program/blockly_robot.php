@@ -395,7 +395,7 @@
     }
  
     function connect() {
-        wsrobot_init(9030);  // init websocket robot
+        wsrobot_init(9913);  // init websocket robot old 9930
         setTimeout(check_connection, 1000);
     }
 

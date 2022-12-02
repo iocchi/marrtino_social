@@ -519,7 +519,7 @@ Blockly.Blocks['wait_user_speaking'] = {
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(0);
- this.setTooltip("returns distance from obstable front|left|right");
+ this.setTooltip("return user say and wait xx second");
  this.setHelpUrl("");
   }
 };
