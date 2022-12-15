@@ -26,11 +26,13 @@
 
 <div class="container-fluid">
   <div class="row">
+ 
     <div class="col-md-12"  style="background-color:yellow;" align="center" ><h2>MARRTINO SOCIAL BRINGUP</h2></div>
 
   </div>
   <div class="row">
-    <div class="col-md-12">. </div>
+  <div class="col-md-1"></div>
+    <div class="col-md-4">
     IP:
     <script>
       document.write("<td><input type=\"text\" name=\"IP\" id=\"IP\" value=\"" + 
@@ -38,10 +40,13 @@
     </script>
     <button onclick="connect()" class="btn btn-primary btn-sm my-2 my-sm-0" type="submit">Connect</button>
   	<button onclick="disconnect()" class="btn btn-light btn-sm" style="margin-right:10px">Disconnect</button>
+    </div>
+    <div class="col-md-4">
     <div id="connection"><font color='red'>Not Connected</font></div>
-    / 
-    <div id="status" style="color: blue;" >Idle</div></td>
-    <!--<p class="text-white">Connection status: <span id="status"></span></p>-->
+    <!-- /
+    <div id="status" style="color: blue;" >Idle</div>
+   <p class="text-white">Connection status: <span id="status"></span></p>-->
+     </div>
   </div>
 
   
@@ -113,20 +118,20 @@
 <tr height=40>
 <td width=280>Social (tracker)</td> 
 <td width=80 align='center'><!--<span id="socialns_status" style="color: red;">OFF</span>--></td>
-<td><button id="robot_start_btn" onclick="send_cmd('social_robot_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
-<td><button id="robot_quit_btn" onclick="send_cmd('social_robot_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
+<td><button id="robot_start_btn" onclick="send_cmd('social_robot_start')" class="btn btn-primary btn-lg">Social Start</button></td>
+<td><button id="robot_quit_btn" onclick="send_cmd('social_robot_kill')" class="btn btn-light btn-lg">Social quit</button></td>
 </tr>
 <tr height=40>
 <td width=280>Social (no tracker)</td> 
 <td width=80 align='center'><!--<span id="socialns_status" style="color: red;">OFF</span>--></td>
-<td><button id="social_start_btn" onclick="send_cmd('socialnt_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
-<td><button id="social_quit_btn" onclick="send_cmd('socialnt_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
+<td><button id="social_start_btn" onclick="send_cmd('socialnt_start')" class="btn btn-primary btn-lg">Social Start</button></td>
+<td><button id="social_quit_btn" onclick="send_cmd('socialnt_kill')" class="btn btn-light btn-lg">Social quit</button></td>
 </tr>
 <tr height=40>
 <td width=280>Social (no servo)</td> 
 <td width=80 align='center'><!--<span id="socialns_status" style="color: red;">OFF</span>--></td>
-<td><button id="social_start_btn" onclick="send_cmd('socialns_start')" class="btn waves-effect waves-light blue">Social Start</button></td>
-<td><button id="social_quit_btn" onclick="send_cmd('socialns_kill')" class="btn waves-effect waves-light blue">Social quit</button></td>
+<td><button id="social_start_btn" onclick="send_cmd('socialns_start')" class="btn btn-primary btn-lg">Social Start</button></td>
+<td><button id="social_quit_btn" onclick="send_cmd('socialns_kill')" class="btn btn-light btn-lg">Social quit</button></td>
 </tr>
 <!-- 
 <tr height=40>
