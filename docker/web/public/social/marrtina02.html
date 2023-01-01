@@ -10,6 +10,13 @@
   <script type="text/javascript" src="js/roslib.min.js"></script>
   <script type="text/javascript" src="js/eventemitter2.min.js"></script>
   <script type="text/javascript" type="text/javascript">
+    function refreshPage(t){
+  
+      setTimeout("location.reload(true);", t);
+  
+    } 
+    </script>
+  <script type="text/javascript" type="text/javascript">
     var teleop;
     var ros = new ROSLIB.Ros({
       	 url: 'ws:' + window.location.hostname +':9090'
@@ -85,7 +92,7 @@
   
 </head>
 
-<body>
+<body onload= "JavaScript:refreshPage(90000);>
   
   <div class="buttons">
     <button onclick="eyes.startBlinking()">Start Blinking</button>
@@ -105,7 +112,7 @@
   <div class="face">
    <div class="eyebrow left"><img id="soprdx" src="image/face02/sopracciglio2.png" width="100%"></div>
    <div class="bulb left">
-    <img id="occhiosx" src="image/face02/oc1s-r.png" width="100%">
+    <img id="occhiosx" src="image/face02/eyesx.png" width="100%">
      <div class="eye left">
 	  
       <div class="eyelid upper"></div>
@@ -114,7 +121,7 @@
    </div>	
    <div class="eyebrow right"><img id="soprsx" src="image/face02/sopracciglio2.png" width="100%"></div>
    <div class="bulb right">
-   <img id="occhiodx" src="image/face02/oc1d-r.png" width="100%">
+   <img id="occhiodx" src="image/face02/eyedx.png" width="100%">
     <div class="eye right">
       <div class="eyelid upper"></div>
       <div class="eyelid lower"></div>
