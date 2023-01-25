@@ -190,7 +190,7 @@ def setRobotNamePrefix(prefix):
     TOPIC_tilt = prefix+'/'+TOPIC_tilt
 
     TOPIC_spalla_dx_rot = prefix+'/'+ TOPIC_spalla_dx_rot
-    TOPIC_spalla_dx_fle = prefix+'/'+ TOPIC_spalla_sx_fle
+    TOPIC_spalla_dx_fle = prefix+'/'+ TOPIC_spalla_dx_fle
     TOPIC_gomito_dx = prefix+'/'+ TOPIC_gomito_dx 
     TOPIC_spalla_sx_rot = prefix+'/'+ TOPIC_spalla_sx_rot
     TOPIC_spalla_sx_fle = prefix+'/'+ TOPIC_spalla_sx_fle
@@ -381,6 +381,7 @@ gomito_dx_pub = None
 spalla_sx_rot_pub = None
 spalla_sx_fle_pub = None
 gomito_sx_pub  = None
+# eof social
 
 
 # ROS Callback functions
@@ -602,14 +603,15 @@ def begin(nodename='robot_cmd', init_node=True):
         emotion_pub = rospy.Publisher(TOPIC_emotion, String, queue_size=1,   latch=True)
         pan_pub = rospy.Publisher(TOPIC_pan, Float64, queue_size=1,   latch=True)
         tilt_pub = rospy.Publisher(TOPIC_tilt, Float64, queue_size=1,   latch=True)
-        # per una corretta esecuzione ho invertito i nodi dx e sx
+        # 
         spalla_dx_rot_pub = rospy.Publisher(TOPIC_spalla_dx_rot, Float64, queue_size=1,   latch=True)
         spalla_dx_fle_pub = rospy.Publisher(TOPIC_spalla_dx_fle, Float64, queue_size=1,   latch=True)
         gomito_dx_pub = rospy.Publisher(TOPIC_gomito_dx, Float64, queue_size=1,   latch=True) 
         spalla_sx_rot_pub = rospy.Publisher(TOPIC_spalla_sx_rot, Float64, queue_size=1,   latch=True)
         spalla_sx_fle_pub = rospy.Publisher(TOPIC_spalla_sx_fle, Float64, queue_size=1,   latch=True)
-        gomito_sx_pub = rospy.Publisher(TOPIC_gomito_sx, Float64, queue_size=1,   latch=True)  
-        
+        gomito_sx_pub = rospy.Publisher(TOPIC_gomito_sx, Float64, queue_size=1,   latch=True)
+	# eof Social
+
         print("Waiting for robot pose... (5 seconds)")
         delay = 0.25 # sec
         rate = rospy.Rate(1/delay) # Hz
@@ -1018,37 +1020,35 @@ def emotion(msg):
     emotion_pub.publish(msg)
 
 
-        
 def spalla_rotazione_dx(msg):
     # valori da -0.5  0 0.5 
-    print('Spalla DX rot Position: %s' %(msg))
+    print('spalla_rotazione_dx: %s' %(msg))
     spalla_dx_rot_pub.publish(msg)
 
 def spalla_flessione_dx(msg):
     #
-    print('spalla_dx_flessione: %s' %(msg))
+    print('spalla_flessione_dx: %s' %(msg))
     spalla_dx_fle_pub.publish(msg)
 
 def gomito_dx(msg):
     #
-    print('sgomito dx: %s' %(msg))
+    print('gomito_dx: %s' %(msg))
     gomito_dx_pub.publish(msg)
 
 
-        
 def spalla_rotazione_sx(msg):
     # valori da -0.5  0 0.5 
-    print('Spalla SX rot Position: %s' %(msg))
+    print('spalla_rotazione_sx: %s'  %(msg))
     spalla_sx_rot_pub.publish(msg)
 
 def spalla_flessione_sx(msg):
     #
-    print('spalla_sx_flessione: %s' %(msg))
+    print('spalla_flessione_sx: %s'  %(msg))
     spalla_sx_fle_pub.publish(msg)
 
 def gomito_sx(msg):
     #
-    print('gomito sx: %s' %(msg))
+    print('gomito_sx: %s' %(msg))
     gomito_sx_pub.publish(msg)
 
 
@@ -1080,7 +1080,23 @@ def head_position(msg):
         pan_pub.publish(0)
         tilt_pub.publish(-0.5)
 
-# 
+def user_say():
+    print('user_say')
+    retval = asr()
+    return retval
+
+def wait_user_speaking(msg):
+    print('wait_user_speaking')
+    timeout = time.time() + msg  # second timeout
+    retval = ''
+    while retval == '':
+        retval = asr()
+        if time.time() > timeout:
+            break
+
+    return retval
+
+# EOF Social
 
     
 # Sounds

@@ -13,6 +13,8 @@
   <script src="robot_blocks.js"></script>
   <script src="robot_blocks_python.js"></script>
   <script src="websocket_robot.js"></script>
+  
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <!--<script src="js/jquery-3.4.1.min.js"></script>-->
@@ -29,17 +31,24 @@
   </style>
 </head>
 <body>
+
+
   <?php include "../social/nav.php" ?>
 
   <div class="container-fluid">
+
+
+  </div>
     <div class="row">
        <div class="col-md-6">
-        <button class="btn btn-primary" onclick="showCode()">Show code</button>
-        <button class="btn btn-primary" id="run_btn" onclick="runCode()">Run</button>
-        <button class="btn btn-danger" id="stop_btn" onclick="stopCode()">Stop</button>
-         <button class="btn btn-warning" id="loadfile_btn" onclick="load_from_file()">Load file</button>
-        <button class="btn btn-success"  id="savefile_btn" onclick="save_to_file()">Save file</button>
-         
+        <!--<button class="btn btn-outline-success" id="hide_code" onclick="hide_blockly() ">Python</button>-->
+        <button class="btn btn-outline-success" id="hide_code" onclick="show_blockly() ">Blockly</button>
+        <button class="btn btn-outline-primary" onclick="showCode()">Show code</button>
+        <button class="btn btn-outline-primary" id="run_btn" onclick="runCode()">Run</button>
+        <button class="btn btn-outline-danger" id="stop_btn" onclick="stopCode()">Stop</button>
+        <button class="btn btn-outline-warning" id="loadfile_btn" onclick="load_from_file()">Load file</button>
+        <button class="btn btn-outline-success"  id="savefile_btn" onclick="save_to_file()">Save file</button>
+        
         </div>
        <div class="col-md-6">
           Robot IP 
@@ -49,24 +58,20 @@
         </script>
          <button onclick="connect()">Connect</button> 
           <button onclick="disconnect()">Disconnect</button> 
+          <!--
           <div id="connection"><font color='red'>Not Connected</font> </div>
      
           Status 
-          <div id="status" style="color: blue;" >Idle</div> 
+          <div id="status" style="color: blue;" >Idle</div>  -->
       </div>
 
     </div>
+    
     <div class="row">
        <div class="col-md-9">
-       </div>
-       <div class="col-md-9">
-       </div>
-     </div>
-         
-    <div class="row">
-       <div class="col-md-9">
-           Blockly workspace
-           <div id="blocklyDiv" style="height: 480px; width: 100%;"></div>
+           
+           <div id="codeDiv" style="height: 480px; width: 100%; background-color: #DDDDDD; font-size: 120%;display: none;">Python Code</div>
+           <div id="blocklyDiv" style="height: 480px; width: 100%;display: block;">Blockly workspace </div>
 
 <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
 
@@ -146,17 +151,43 @@
 <block type="head_position"> </block>
 <block type="status"> </block>
 <block type="face"> </block>
-<block type="pan"> </block>
-<block type="tilt"> </block>
 <block type="spalla_flessione_dx"> </block>
 <block type="spalla_flessione_sx"> </block>
 <block type="spalla_rotazione_dx"> </block>
 <block type="spalla_rotazione_sx"> </block>
 <block type="gomito_dx"> </block>
 <block type="gomito_sx"> </block>
-<block type="get_stt"></block>
 <block type="get_nro_of_face"></block>
 </category>
+<category colour="0" name="Code">
+<block type="user_say"></block>
+<block type="wait_user_speaking">
+  <value name="seconds">
+    <block type="math_number">
+      <field name="NUM">1</field>
+    </block>
+  </value>
+</block>
+<block type="run_python">
+
+   <value name="text">
+      <block type="text">
+        <field name="TEXT">#your code here</field>
+      </block>
+      
+  </value>
+</block>
+
+</category>
+<category id="catLogic" name="Logic">
+      <block type="controls_if"></block>
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_negate"></block>
+      <block type="logic_boolean"></block>
+      <block type="logic_null"></block>
+      <block type="logic_ternary"></block>
+    </category>
 <category colour="50" name="Audio">
 
 <block type="say">
@@ -249,10 +280,8 @@
 
 
       </div>
-      <div class="col-md-3">
-      Python Code
-        <div id="codeDiv" style="height: 480px; width: 240px; background-color: #DDDDDD; font-size: 120%;"></div>
-      </div>
+      <div class="col-md-3">Face<div class="iframe-container"><iframe loading="lazy" src="/social/marrtina.html"></iframe></div>
+         </div>
 
     </div>
   </div>
@@ -260,7 +289,7 @@
 
 
  
-    <!--<div class="iframe-container"><iframe loading="lazy" src="/social/marrtina.html"></iframe></div>-->
+    
     
     
    
@@ -276,30 +305,7 @@
   </td>
   </tr>
   </table>
-<!--
-  <hr>
-
-  <h3> Blockly XML code </h3>
-
-  <p>  <button onclick="saveCode()">Export block code</button> </p>
-
-  <p>
-     <textarea id="xmlSave" rows="6" cols="108"></textarea> 
-   div id="xmlDiv" style="height: 120px; width: 800px; background-color: #DDDDDD; font-size: 80%;"></div  
-  </p>
-
-  <br>
-
-  <p>  <button onclick="loadCode()">Import block code</button> </p>
-
-  <p>
-    <textarea id="xmlLoad" rows="6" cols="108"></textarea> 
-  </p>
-
-  <br>
   
-  -->
-
                 <!-- ****** SCRIPTS ****** -->
 
   <script>
@@ -318,22 +324,23 @@
 	    zoom : {
 		    controls : true, 
 		    wheel : true, 
-		    startScale : 1.2, 
+		    startScale : 1.0, 
 		    maxScale : 3, 
-		    minScale : 0.3, 
-		    scaleSpeed : 1.2
+		    minScale : 0.25, 
+		    scaleSpeed : 1.1
 	      }
         });
 
     Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),
                                demoWorkspace);
 
-    document.getElementById("run_btn").disabled = true;
-    document.getElementById("stop_btn").disabled = true;
+    //document.getElementById("run_btn").disabled = true;
+    //document.getElementById("stop_btn").disabled = true;
 
 
     function showCode() {
       // Generate Python code and display it.
+      hide_blockly();
       Blockly.Python.INFINITE_LOOP_TRAP = null;
       var code = Blockly.Python.workspaceToCode(demoWorkspace);
       //alert(code);
@@ -386,9 +393,9 @@
             document.getElementById("stop_btn").disabled = true;
         }
     }
-
+ 
     function connect() {
-        wsrobot_init(9030);  // init websocket robot
+        wsrobot_init(9913);  // init websocket robot old 9930
         setTimeout(check_connection, 1000);
     }
 
@@ -458,6 +465,20 @@
       console.log("Workspace saved.");
     }
 
+
+    function hide_blockly() {
+      document.getElementById("blocklyDiv").style.display = 'none';
+      document.getElementById("codeDiv").style.display = 'block';
+      //window.location.reload(true);
+    }
+
+    function show_blockly() {
+      document.getElementById("blocklyDiv").style.display = 'block';
+      document.getElementById("codeDiv").style.display = 'none';
+      //window.location.reload(true);
+      // alert("resizing");
+      // window.dispatchEvent(new Event('resize'));
+  };
   </script>
 
 </body>

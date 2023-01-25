@@ -147,62 +147,138 @@ Blockly.Python['get_nro_of_face'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-
+/*
 
 Blockly.Python['pan'] = function(block) {
+  var value_sign = block.getFieldValue('Sign');
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
+  if ( value_sign == '-') { 
+    value_steps = -value_steps;
+  }
   var value_pos = (value_steps); // / 100) -0.5;
   var code = 'pan('+value_pos+')\n';
   return code;
 };
 
 Blockly.Python['tilt'] = function(block) {
+  var value_sign = block.getFieldValue('Sign');
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
+  if ( value_sign == '-') { 
+    value_steps = -value_steps;
+  }
   var value_pos = (value_steps / 100) -0.5 * -1;
   var code = 'tilt('+value_pos+')\n';
   return code;
 };
+*/
 
+// 150 Rappresenza 0 
 Blockly.Python['spalla_flessione_dx'] = function(block) {
+  var value_sign = block.getFieldValue('Sign');
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
-  var value_pos = (value_steps); /// 100 -0.5;
+  if ( value_sign == '-') { 
+    value_steps = -value_steps;
+  }
+  var value_pos = (((150 + parseInt(value_steps))* 3.14 )/ 180) ; 
   var code = 'spalla_flessione_dx('+value_pos+')\n';
   return code;
 };
 
 Blockly.Python['spalla_flessione_sx'] = function(block) {
+  var value_sign = block.getFieldValue('Sign');
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
-  var value_pos = (value_steps); /// 100 -0.5;
+  if ( value_sign == '+') { 
+    value_steps = -value_steps;
+  }
+  var value_pos = (((150 + parseInt(value_steps))* 3.14 )/ 180) ;
   var code = 'spalla_flessione_sx('+value_pos+')\n';
   return code;
 };
 
 
 Blockly.Python['spalla_rotazione_dx'] = function(block) {
+  var value_sign = block.getFieldValue('Sign');
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
-  var value_pos = (value_steps); /// 100 -0.5;
+  if ( value_sign == '+') { 
+    value_steps = -value_steps;
+  }
+  var value_pos = (((150 + parseInt(value_steps))* 3.14 )/ 180) ;
   var code = 'spalla_rotazione_dx('+value_pos+')\n';
   return code;
 };
 
 
 Blockly.Python['spalla_rotazione_sx'] = function(block) {
+  var value_sign = block.getFieldValue('Sign');
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
-  var value_pos = (value_steps); // 100 -0.5;
+  if ( value_sign == '-') { 
+    value_steps = -value_steps;
+  }
+  var value_pos = (((150 + parseInt(value_steps))* 3.14 )/ 180) ;
   var code = 'spalla_rotazione_sx('+value_pos+')\n';
   return code;
 };
 Blockly.Python['gomito_dx'] = function(block) {
+  var value_sign = block.getFieldValue('Sign');
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
-  var value_pos = (value_steps); /// 100 -0.5;
+  if ( value_sign == '+') { 
+    if ( parseInt(value_steps) > 30 ) { value_steps = 30  }
+    value_steps = -value_steps;
+  }
+  var value_pos = (((150 + parseInt(value_steps))* 3.14 )/ 180) ;
   var code = 'gomito_dx('+value_pos+')\n';
   return code;
 };
 
 
 Blockly.Python['gomito_sx'] = function(block) {
+  var value_sign = block.getFieldValue('Sign');
   var value_steps = Blockly.Python.valueToCode(block, 'steps', Blockly.Python.ORDER_ATOMIC);
-  var value_pos = (value_steps); // 100 -0.5;
+  if ( value_sign == '-') { 
+    if ( value_steps > 30 )
+      if ( parseInt(value_steps) > 30 ) { value_steps = 30  }
+      value_steps = -value_steps;
+
+  }
+  var value_pos = (((150 + parseInt(value_steps))* 3.14 )/ 180) ;
   var code = 'gomito_sx('+value_pos+')\n';
   return code;
 };
+
+
+
+
+Blockly.Python['run_python'] = function(block) {
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+   
+  var code = value_text;
+  code = code.substring(1, code.length - 1) +'\n';
+ 
+  
+  return code;
+
+};
+
+
+Blockly.Python['user_say'] = function(block) {
+  var code = 'user_say()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['wait_user_speaking'] = function(block) {
+  var value_seconds = Blockly.Python.valueToCode(block, 'seconds', Blockly.Python.ORDER_ATOMIC);
+  var code = 'wait_user_speaking('+value_seconds+') # second \n';
+  return code;
+};
+
+Blockly.Python['logic_boolean'] = function(block) {
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+   
+  var code = value_text;
+  code = code.substring(1, code.length - 1) +'\n';
+ 
+  
+  return code;
+
+};
+

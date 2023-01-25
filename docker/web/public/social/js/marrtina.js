@@ -59,103 +59,7 @@ class EyeController {
     const options = {
       duration: duration,
     };
-    /*
-    switch(type) {
-      case 'happy':
-        return {
-          lowerLeftEyelid: this._lowerLeftEyelid.animate(this._createKeyframes({
-            tgtTranYVal: `calc(${this._eyeSize} * -2 / 3)`,
-            tgtRotVal: `30deg`,
-            enteredOffset: enterDuration / duration,
-            exitingOffset: 1 - (exitDuration / duration),
-          }), options),
-          lowerRightEyelid: this._lowerRightEyelid.animate(this._createKeyframes({
-            tgtTranYVal: `calc(${this._eyeSize} * -2 / 3)`,
-            tgtRotVal: `-30deg`,
-            enteredOffset: enterDuration / duration,
-            exitingOffset: 1 - (exitDuration / duration),
-          }), options),
-        };
-
-      case 'sad':
-        return {
-          upperLeftEyelid: this._upperLeftEyelid.animate(this._createKeyframes({
-            tgtTranYVal: `calc(${this._eyeSize} * 1 / 3)`,
-            tgtRotVal: `-20deg`,
-            enteredOffset: enterDuration / duration,
-            exitingOffset: 1 - (exitDuration / duration),
-          }), options),
-          upperRightEyelid: this._upperRightEyelid.animate(this._createKeyframes({
-            tgtTranYVal: `calc(${this._eyeSize} * 1 / 3)`,
-            tgtRotVal: `20deg`,
-            enteredOffset: enterDuration / duration,
-            exitingOffset: 1 - (exitDuration / duration),
-          }), options),
-        };
-
-      case 'angry':
-        return {
-          upperLeftEyelid: this._upperLeftEyelid.animate(this._createKeyframes({
-            tgtTranYVal: `calc(${this._eyeSize} * 1 / 4)`,
-            tgtRotVal: `30deg`,
-            enteredOffset: enterDuration / duration,
-            exitingOffset: 1 - (exitDuration / duration),
-          }), options),
-          upperRightEyelid: this._upperRightEyelid.animate(this._createKeyframes({
-            tgtTranYVal: `calc(${this._eyeSize} * 1 / 4)`,
-            tgtRotVal: `-30deg`,
-            enteredOffset: enterDuration / duration,
-            exitingOffset: 1 - (exitDuration / duration),
-          }), options),
-        };
-
-      case 'focused':
-        return {
-          upperLeftEyelid: this._upperLeftEyelid.animate(this._createKeyframes({
-            tgtTranYVal: `calc(${this._eyeSize} * 1 / 3)`,
-            enteredOffset: enterDuration / duration,
-            exitingOffset: 1 - (exitDuration / duration),
-          }), options),
-          upperRightEyelid: this._upperRightEyelid.animate(this._createKeyframes({
-            tgtTranYVal: `calc(${this._eyeSize} * 1 / 3)`,
-            enteredOffset: enterDuration / duration,
-            exitingOffset: 1 - (exitDuration / duration),
-          }), options),
-          lowerLeftEyelid: this._lowerLeftEyelid.animate(this._createKeyframes({
-            tgtTranYVal: `calc(${this._eyeSize} * -1 / 3)`,
-            enteredOffset: enterDuration / duration,
-            exitingOffset: 1 - (exitDuration / duration),
-          }), options),
-          lowerRightEyelid: this._lowerRightEyelid.animate(this._createKeyframes({
-            tgtTranYVal: `calc(${this._eyeSize} * -1 / 3)`,
-            enteredOffset: enterDuration / duration,
-            exitingOffset: 1 - (exitDuration / duration),
-          }), options),
-        }
-
-      case 'confused':
-        return {
-          upperRightEyelid: this._upperRightEyelid.animate(this._createKeyframes({
-            tgtTranYVal: `calc(${this._eyeSize} * 1 / 3)`,
-            tgtRotVal: `-10deg`,
-            enteredOffset: enterDuration / duration,
-            exitingOffset: 1 - (exitDuration / duration),
-          }), options),
-        }
-
-      case 'speak':
-        return {
-          upperRightEyelid: this._upperRightEyelid.animate(this._createKeyframes({
-            tgtTranYVal: `calc(${this._eyeSize} * 1 / 3)`,
-            tgtRotVal: `-10deg`,
-            enteredOffset: enterDuration / duration,
-            exitingOffset: 1 - (exitDuration / duration),
-          }), options),
-        }
-
-      default:
-        console.warn(`Invalid input type=${type}`);
-    } */
+    
   }
 
   blink({
@@ -195,27 +99,36 @@ class EyeController {
   }
   
   normal() {
-	document.getElementById("soprdx").src = "image/eyebrowsx1.gif"; 
+	  document.getElementById("soprdx").src = "image/eyebrowsx1.gif"; 
     document.getElementById("soprsx").src = "image/eyebrowdx1.gif"; 
-	document.getElementById("occhiodx").src = "image/eyedx.png"; 
+	  document.getElementById("occhiodx").src = "image/eyedx.png"; 
     document.getElementById("occhiosx").src = "image/eyesx.png"; 	
     document.getElementById("bocca").src = "image/bocca.gif"; 
     document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
   }	 
+
+  normal02() {
+	  document.getElementById("soprdx").src = "image/eyebrowsx1.gif"; 
+    document.getElementById("soprsx").src = "image/eyebrowdx1.gif"; 
+	  document.getElementById("occhiodx").src = "image/face02/eyedx.png"; 
+    document.getElementById("occhiosx").src = "image/face02/eyesx.png"; 	
+    document.getElementById("bocca").src = "image/face02/bocca.png"; 
+    document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
+  }	
   
   happy() {
-	document.getElementById("soprdx").src = "image/face01/Happy/eyebrowdx.png"; 
+	  document.getElementById("soprdx").src = "image/face01/Happy/eyebrowdx.png"; 
     document.getElementById("soprsx").src = "image/face01/Happy/eyebrowsx.png"; 
-	document.getElementById("occhiodx").src = "image/face01/Happy/eyedx.png"; 
+	  document.getElementById("occhiodx").src = "image/face01/Happy/eyedx.png"; 
     document.getElementById("occhiosx").src = "image/face01/Happy/eyesx.png"; 	
     document.getElementById("bocca").src = "image/face01/Happy/mouthsmile.png"; 
     document.getElementById("naso").src = "image/face01/Happy/nose.png"; 
   }	 
 
   angry() {
-	document.getElementById("soprdx").src = "image/face01/Angry/eyebrowdxangry.png"; 
+	  document.getElementById("soprdx").src = "image/face01/Angry/eyebrowdxangry.png"; 
     document.getElementById("soprsx").src = "image/face01/Angry/eyebrowsxangry.png"; 
-	document.getElementById("occhiodx").src = "image/face01/Angry/eyedxangry.png"; 
+	  document.getElementById("occhiodx").src = "image/face01/Angry/eyedxangry.png"; 
     document.getElementById("occhiosx").src = "image/face01/Angry/eyesxangry.png"; 	
     document.getElementById("bocca").src = "image/face01/Angry/mouthangry.png"; 
     document.getElementById("naso").src = "image/face01/Angry/nose.png"; 

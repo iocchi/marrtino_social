@@ -314,7 +314,7 @@ Blockly.Blocks['get_nro_of_face'] = {
  this.setHelpUrl("");
   }
 };
-
+/*
 Blockly.Blocks['pan'] = {
   init: function() {
     this.appendDummyInput()
@@ -347,10 +347,14 @@ Blockly.Blocks['tilt'] = {
  this.setHelpUrl("");
   }
 };
+*/
 Blockly.Blocks['spalla_flessione_dx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Spalla DX flessione %"));
+    this.appendDummyInput()
+        .appendField("sign")
+        .appendField(new Blockly.FieldDropdown([["+","+"],["-","-"]]), "Sign");
     this.appendValueInput("steps")
         .setCheck("Number")
         .appendField("spalla_flessione_dx");
@@ -367,6 +371,9 @@ Blockly.Blocks['spalla_flessione_sx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Spalla SX flessione %"));
+    this.appendDummyInput()
+        .appendField("sign")
+        .appendField(new Blockly.FieldDropdown([["+","+"],["-","-"]]), "Sign");
     this.appendValueInput("steps")
         .setCheck("Number")
         .appendField("spalla_flessione_sx");
@@ -384,6 +391,9 @@ Blockly.Blocks['spalla_rotazione_dx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Spalla DX rotazione %"));
+    this.appendDummyInput()
+        .appendField("sign")
+        .appendField(new Blockly.FieldDropdown([["+","+"],["-","-"]]), "Sign");
     this.appendValueInput("steps")
         .setCheck("Number")
         .appendField("spalla_rotazione_dx");
@@ -402,6 +412,9 @@ Blockly.Blocks['spalla_rotazione_sx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Spalla SX rotazione %"));
+    this.appendDummyInput()
+        .appendField("sign")
+        .appendField(new Blockly.FieldDropdown([["+","+"],["-","-"]]), "Sign");
     this.appendValueInput("steps")
         .setCheck("Number")
         .appendField("spalla_rotazione_sx");
@@ -417,6 +430,9 @@ Blockly.Blocks['gomito_dx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Gomito DX %"));
+    this.appendDummyInput()
+        .appendField("sign")
+        .appendField(new Blockly.FieldDropdown([["+","+"],["-","-"]]), "Sign");
     this.appendValueInput("steps")
         .setCheck("Number")
         .appendField("gomito_dx");
@@ -433,9 +449,12 @@ Blockly.Blocks['gomito_sx'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("img/tilt.png", 20, 20, "Gomito SX %"));
+    this.appendDummyInput()
+        .appendField("sign")
+        .appendField(new Blockly.FieldDropdown([["+","+"],["-","-"]]), "Sign");
     this.appendValueInput("steps")
         .setCheck("Number")
-        .appendField("gomito_sx");
+        .appendField("gomito_sx"); 
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -444,3 +463,72 @@ Blockly.Blocks['gomito_sx'] = {
  this.setHelpUrl("");
   }
 };
+
+
+/**
+ * Common HSV hue for all blocks in this category.
+ 
+ Blockly.Blocks.variables.HUE = 160; 
+
+ Blockly.Blocks['run_python'] = {
+   init: function() {
+     this.appendDummyInput()
+         .appendField("Run code")
+         .appendField(new Blockly.FieldTextInput("#Enter your own python code"), "CODE_TEXT");
+     this.setInputsInline(true);
+     this.setPreviousStatement(true);
+     this.setNextStatement(true);
+     this.setColour(160);
+     this.setTooltip('');
+     this.setHelpUrl('http://robotics.surfweb.eu');
+   }
+ };
+ */
+ Blockly.Blocks['run_python'] = {
+  init: function() {
+    this.appendDummyInput().appendField("run_python");
+    this.appendValueInput("text");
+    this.setInputsInline(true); 
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(50);
+    this.setHelpUrl('http://robotics.surfweb.eu');
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['user_say'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("user_say()");
+    this.setOutput(true, null);
+    this.setColour(0);
+ this.setTooltip("returns user say");
+ this.setHelpUrl("");
+  }
+};
+
+
+
+
+Blockly.Blocks['wait_user_speaking'] = {
+  init: function() {
+    this.appendValueInput("seconds")
+        .setCheck("Number")
+        .appendField("wait_user_speaking");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(0);
+ this.setTooltip("return user say and wait xx second");
+ this.setHelpUrl("");
+  }
+};
+/*
+this.appendValueInput("seconds")
+        .setCheck("Number")
+        .appendField("wait");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("robot waits [seconds]");*/
