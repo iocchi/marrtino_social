@@ -86,3 +86,43 @@ To interact with docker containers, see
         ./docker_push.bash
 
 
+## Command line instructions to manage MARRtina display
+
+Set display (if connected through ssh)
+
+    export DISPLAY=:0
+
+Rotation
+
+    xrandr -o <normal,inverted,left,right,0,1,2,3>
+
+Launch MARRtina face
+
+    firefox --safe-mode --kiosk localhost:8080/social/marrtina.html
+
+Go fullscreen
+    
+    xdotool search --sync --onlyvisible --class "Firefox" windowactivate key F11
+
+Refresh page (e.g., after restarting social node)
+
+    xdotool search --sync --onlyvisible --class "Firefox" windowactivate key F5
+
+Kill firefox page
+
+    xdotool search --sync --onlyvisible --class "Firefox" windowkill
+
+
+Remove warning windows in firefox (use a remote connection `ssh -Y marrtino@10.3.1.1` to launch firefox on remote desktop)
+
+    enter about:config into the firefox address bar (confirm the info message in case it shows up) 
+    search for the preference named browser.sessionstore.resume_from_crash change its value to false
+
+
+Remove screen saver
+
+    sudo gsettings set org.gnome.desktop.screensaver lock-delay 0
+    sudo gsettings set org.gnome.desktop.screensaver lock-enabled false
+    sudo gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
+
+
