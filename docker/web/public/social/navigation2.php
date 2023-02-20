@@ -185,7 +185,7 @@ var msg_tilt = new ROSLIB.Message({
     } 
   } 
     window.onload = function () {
-      initPanTilt();
+     // initPanTilt();
       video = document.getElementById('video');
 	   // Populate video source 
          
@@ -228,7 +228,7 @@ img {
 </head>
 
 <body>
-<?php include "nav.php" ?>
+
 
  
 
@@ -237,7 +237,7 @@ img {
   <div class="row">
    
     <div class="col-md-12">
-	    <input  type="range" min="0" max="100" style="width:80%;" id="robot-pan" >
+        <img style="width:640;height:480;" src=""  alt="" id="video" />
     </div>
      
   
