@@ -40,17 +40,11 @@ RUN mkdir -p $HOME/src/dynamixel &&  cd $HOME/src/dynamixel && \
 RUN mkdir -p $HOME/src &&  cd $HOME/src && \
     git clone https://github.com/arebgun/dynamixel_motor.git && \
     git clone https://github.com/artigianitecnologici/face_tracker_pkg.git && \
-    git clone https://github.com/artigianitecnologici/face_tracker_control.git 
+    git clone https://github.com/artigianitecnologici/face_tracker_control.git  && \
+    git clone https://github.com/artigianitecnologici/marrtino_social.git && \
+    git clone https://github.com/artigianitecnologici/chatbot_aiml.git
     
-    # && \
-    #git clone https://github.com/ros-drivers/usb_cam.git
-    
-RUN cd $HOME/src && \
-
-git clone https://github.com/artigianitecnologici/marrtino_social.git 
-#&& \
-#    git clone https://artigianitecnologici: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@github.com/artigianitecnologici/marrtino_r3d.git
-
+       
 
 RUN cd $HOME/ros/catkin_ws/src && \
     ln -s $HOME/src/dynamixel . && \
@@ -58,12 +52,8 @@ RUN cd $HOME/ros/catkin_ws/src && \
     ln -s $HOME/src/face_tracker_control/ . && \
     ln -s $HOME/src/dynamixel_motor/ . && \
     ln -s $HOME/src/marrtino_social 
-    #.  && \
-    #ln -s $HOME/src/usb_cam .
-
- #    ln -s $HOME/src/marrtino_r3d . && \   
-#RUN bash -ci "cd $HOME/ros/catkin_ws; catkin_make -j1"
-
+    
+# ln -s $HOME/src/chatbot_aiml/ . && \
 # corregge l'errore di compilazione
 
 RUN mkdir -p $HOME/ros/catkin_ws/devel/include/face_tracker_control 
