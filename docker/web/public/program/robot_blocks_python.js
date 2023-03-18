@@ -124,7 +124,7 @@ Blockly.Python['face'] = function(block) {
 Blockly.Python['status'] = function(block) {
   var dropdown_status = block.getFieldValue('STATUS');
   // TODO: Assemble Python into code variable.
-  var code = 'head_status("'+dropdown_status+'")\n';
+  var code = 'emotion("'+dropdown_status+'")\n';
   return code;
 }
 
@@ -147,7 +147,7 @@ Blockly.Python['get_nro_of_face'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-/*
+
 
 Blockly.Python['pan'] = function(block) {
   var value_sign = block.getFieldValue('Sign');
@@ -170,7 +170,6 @@ Blockly.Python['tilt'] = function(block) {
   var code = 'tilt('+value_pos+')\n';
   return code;
 };
-*/
 
 // 150 Rappresenza 0 
 Blockly.Python['spalla_flessione_dx'] = function(block) {
@@ -250,11 +249,8 @@ Blockly.Python['gomito_sx'] = function(block) {
 
 Blockly.Python['run_python'] = function(block) {
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
-   
   var code = value_text;
   code = code.substring(1, code.length - 1) +'\n';
- 
-  
   return code;
 
 };

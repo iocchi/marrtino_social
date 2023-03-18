@@ -250,13 +250,13 @@ Blockly.Blocks['sound'] = {
  this.setHelpUrl("");
   }
 };
-
+ 
 Blockly.Blocks['status'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Face Status")
       
-        .appendField(new Blockly.FieldDropdown([["blink eye","blinking"],["speech","speech"], ["stop speech","stop_speech"] ]), "STATUS");
+        .appendField(new Blockly.FieldDropdown([["blink eye","startblinking"],["speech","speak"], ["stop speech","normal"] ]), "STATUS");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
@@ -314,7 +314,7 @@ Blockly.Blocks['get_nro_of_face'] = {
  this.setHelpUrl("");
   }
 };
-/*
+
 Blockly.Blocks['pan'] = {
   init: function() {
     this.appendDummyInput()
@@ -347,7 +347,7 @@ Blockly.Blocks['tilt'] = {
  this.setHelpUrl("");
   }
 };
-*/
+
 Blockly.Blocks['spalla_flessione_dx'] = {
   init: function() {
     this.appendDummyInput()
