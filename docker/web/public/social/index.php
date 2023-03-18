@@ -149,7 +149,11 @@ h6 {text-align: center;}
             </div>
             <div class="col-md-3">
               <div class="card mb-4 box-shadow"> 
-                 <?php    $mylink = "http://" . substr($mylink,0, strpos($mylink ,":8085/vnc.html"));?>
+                  <script>
+                      document.write("<a  class='btn btn-primary' target=\"_blank\" href=\"http://" + window.location.hostname + ":8085/vnc.html\" class=\"btn waves-effect waves-light blue\"/>")
+                      document.write("VNC " + window.location.hostname)
+                      document.write("</a>")
+                  </script> 
                 <a  href="<?php echo $mylink;?>">
                 <img class="card-img-top" src="image/vnc.png" alt="vnc">
                  </a>
