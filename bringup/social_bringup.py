@@ -94,14 +94,9 @@ def run_server(port):
                 elif data=='@socialnotrackerkill': 
                     tmux.Cc(1)
 
-                 # social no tracker face
-                elif data=='@updatesocialapp': 
-                    tmux.cmd(1,'cd %s' %rfolder)
-                    tmux.cmd(1,'roslaunch socialnotracker.launch')
-                elif data=='@socialnotrackerkill': 
-                    tmux.Cc(1)
+                
 
-                elif (data=='updatesocialapps'):
+                elif (data=='@updatesocialapps'):
                     print('marrtino_apps update')
                     #self.setStatus('Updating...')
                     tmux.cmd(3,'cd %s' %homefolder)
