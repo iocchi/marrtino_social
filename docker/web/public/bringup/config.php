@@ -108,67 +108,17 @@
 <div class="col-md-1"></div>
 <div class="col-md-5">
 
- 
-<table>
-<!--
-<tr height=40>
-<td width=80>MARRtino</td> 
-<td width=80 align='center'><span id="robot_status" style="color: red;">OFF</span></td>
-<td><button id="robot_start_btn" onclick="send_cmd('robot_start')" class="btn waves-effect waves-light blue">Robot start</button></td>
-<td><button id="robot_quit_btn" onclick="send_cmd('robot_kill')" class="btn waves-effect waves-light blue">Robot quit</button></td>
-</tr> 
-<tr height=40>
-<td width=280>Avvia il social attivando il riconoscimento dei volti</td> 
-<td width=80 align='center'> <span id="dynamixel_manager_status" style="color: red;">OFF</span> </td>
-
-<td><button id="robot_start_btn" onclick="send_cmd('social_robot_start')" class="btn btn-primary btn-lg">Social Start</button></td>
-<td><button id="robot_quit_btn" onclick="send_cmd('social_robot_kill')" class="btn btn-light btn-lg">Social quit</button></td>
-</tr>
-<tr height=40>
-<td width=280>Avvia il social normalmente</td> 
-<td width=80 align='center'>-<span id="dynamixel_manager_status" style="color: red;">OFF</span></td>
-<td><button id="social_start_btn" onclick="send_cmd('socialnt_start')" class="btn btn-primary btn-lg">Social Start</button></td>
-<td><button id="social_quit_btn" onclick="send_cmd('socialnt_kill')" class="btn btn-light btn-lg">Social quit</button></td>
-</tr>
-<tr height=40>
-<td width=280>Avvia il social senza utilizzo dei servo</td> 
-<td width=80 align='center'><span id="socialns_status" style="color: red;">OFF</span></td>
-<td><button id="social_start_btn" onclick="send_cmd('socialns_start')" class="btn btn-primary btn-lg">Social Start</button></td>
-<td><button id="social_quit_btn" onclick="send_cmd('socialns_kill')" class="btn btn-light btn-lg">Social quit</button></td>
-</tr>
-
-<tr height=40>
-<td width=280>AUDIO </td> 
-<td width=80 align='center'></td>
-<td><button id="audio_start_btn" onclick="send_cmd('audio_start')" class="btn waves-effect waves-light blue" style="margin-right:10px">Audio start</button></td>
-<td><button id="audio_quit_btn" onclick="send_cmd('audio_kill')"class="btn waves-effect waves-light blue">Audio quit</button></td>
-</tr>
-<tr height=40>
-<td width=280>USB</td> 
-<td width=80 align='center'><span id="usbcam_status" style="color: red;">OFF</span></td>
-<td><button id="usbcam_start_btn" onclick="send_cmd('usbcam_start')" class="btn waves-effect waves-light blue">USB camera start</button></td>
-<td><button id="usbcam_quit_btn" onclick="send_cmd('usbcam_kill')" class="btn waves-effect waves-light blue">USB camera quit</button></td>
-</tr>-->
-<!--
-<tr height=40>
-<td width=80>SPEECH </td> 
-<td width=80 align='center'></td>
-<td><button id="speech_start_btn" onclick="send_cmd('speech_start')" class="btn waves-effect waves-light blue" style="margin-right:10px">Speech start</button></td>
-<td><button id="speech_quit_btn" onclick="send_cmd('speech_kill')"class="btn waves-effect waves-light blue">Speech quit</button></td>
-</tr>-->
-</table>
-
+   Aggiornamento Marrtino Social
 
 </div>
 
-<!--
 
-  <h2>GESTIONE SOCIAL </h2>
-  
- --> 
 
 
   <div class="row">
+  <div class="col">
+      <button id="social_update" onclick="send_cmd('updatesocialapps')" class="btn btn-outline-success btn-lg">Marrtino Social Update</button>  
+   </div>
     <div class="col">
       <button id="social_stop" onclick="send_cmd('shutdown')" class="btn btn-outline-success btn-lg">Shutdown </button>  
    </div>
@@ -184,16 +134,46 @@
  </div>
 
 
- <h2>Apps Update</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Release</th>
+      <th scope="col">Software</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+     $filename = 'release.csv';
 
-<p>
-<button id="btn_upapp" onclick="send_cmd('updatesocialapps')" class="btn waves-effect waves-light blue">marrtino social Update</button>
-</p>
+     $handler = fopen($filename, 'r');
+     
+     while($data = fgetcsv($handler)) {
+         $mydata = implode('', $data);
+         $release =explode(";",$mydata);
+         ?>
+  
+        <tr>
+          <th scope="row"><?php echo $release[0];?></th>
+          <td><?php echo $release[1];?></td>
+         <td><?php echo $release[2];?></td>
+          <td><?php echo $release[3];?></td>
+        </tr>
+         <?php
+
+         #print_r($release);
+     }
+     
+    fclose($handler);
+    ?>
+  
+  </tbody>
+</table>
 
 
-
-
-<br><br><br>
+ 
 
 
 <!-- The Modal -->
