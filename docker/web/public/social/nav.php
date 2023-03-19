@@ -51,7 +51,10 @@
         <a class="nav-link" href="../social/vision.php" tabindex="-1" >Vision</a>
       </li>
 
-	  
+      <li class="nav-item">
+        <a class="nav-link" href="../bringup/config.php" tabindex="-1" >Configuration</a>
+      </li>
+
 	 
     </ul>
 	<p class="text-white">Connection status: <span id="status"></span></p>

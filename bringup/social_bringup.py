@@ -71,6 +71,7 @@ def run_server(port):
                 rfolder = "~/src/marrtino_social/launch"
                 cfolder = "~/src/marrtino_social/config"
                 sfolder = "~/src/marrtino_social/script"
+                homefolder = "~/src/marrtino_social"
              
                 # social normale con pan e tilt
                 if data=='@robotsocial':
@@ -92,6 +93,21 @@ def run_server(port):
                     tmux.cmd(1,'roslaunch socialnotracker.launch')
                 elif data=='@socialnotrackerkill': 
                     tmux.Cc(1)
+
+                 # social no tracker face
+                elif data=='@updatesocialapp': 
+                    tmux.cmd(1,'cd %s' %rfolder)
+                    tmux.cmd(1,'roslaunch socialnotracker.launch')
+                elif data=='@socialnotrackerkill': 
+                    tmux.Cc(1)
+
+                elif (data=='updatesocialapps'):
+                    print('marrtino_apps update')
+                    #self.setStatus('Updating...')
+                    tmux.cmd(3,'cd %s' %homefolder)
+                    tmux.cmd(3,'git pull', blocking=True)
+                    time.sleep(1)
+                    #self.checkStatus()
 
 
                
