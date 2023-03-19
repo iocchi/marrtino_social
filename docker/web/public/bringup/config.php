@@ -119,13 +119,14 @@
   <div class="col">
       <button id="social_update" onclick="send_cmd('updatesocialapps')" class="btn btn-outline-success btn-lg">Marrtino Social Update</button>  
    </div>
+   <!--
     <div class="col">
       <button id="social_stop" onclick="send_cmd('shutdown')" class="btn btn-outline-success btn-lg">Shutdown </button>  
    </div>
    <div class="col">
     <button id="social_reset" onclick="send_cmd('social_reset')" class="btn btn-outline-danger btn-lg">Social Reset </button>  
    </div>
-  
+-->
   </div>
 
  
