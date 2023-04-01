@@ -295,3 +295,7 @@ Blockly.Python['tag_angle'] = function(block) {
   var code = 'tagAngle()';
   return [code, Blockly.Python.ORDER_NONE];
 };
+Blockly.Python['get_image'] = function(block) {
+  var code = 'getImage()';
+  return [code, Blockly.Python.ORDER_NONE];
+};

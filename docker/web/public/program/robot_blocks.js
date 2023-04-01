@@ -569,3 +569,15 @@ Blockly.Blocks['tag_angle'] = {
  this.setHelpUrl("");
   }
 };
+
+
+Blockly.Blocks['get_image'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("getImage()");
+    this.setOutput(true, null);
+    this.setColour(0);
+ this.setTooltip("returns a image (img)");
+ this.setHelpUrl("");
+  }
+};
