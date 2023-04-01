@@ -108,7 +108,7 @@
 <div class="col-md-1"></div>
 <div class="col-md-5">
 
-   Aggiornamento Marrtino Social
+   Update Marrtino Social ( refresh page after update)
 
 </div>
 
