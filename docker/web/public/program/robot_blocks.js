@@ -523,12 +523,49 @@ Blockly.Blocks['wait_user_speaking'] = {
  this.setHelpUrl("");
   }
 };
-/*
-this.appendValueInput("seconds")
-        .setCheck("Number")
-        .appendField("wait");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(120);
- this.setTooltip("robot waits [seconds]");*/
+
+
+Blockly.Blocks['tag_trigger'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("tag_trigger()");
+    this.setOutput(true, null);
+    this.setColour(0);
+ this.setTooltip("returns tag trigger (boolean)");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['tag_id'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("tag_id()");
+    this.setOutput(true, null);
+    this.setColour(0);
+ this.setTooltip("returns tag ID");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.Blocks['tag_distance'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("tag_distance()");
+    this.setOutput(true, null);
+    this.setColour(0);
+ this.setTooltip("returns tag distance (m)");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['tag_angle'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("tag_angle()");
+    this.setOutput(true, null);
+    this.setColour(0);
+ this.setTooltip("returns tag angle (deg)");
+ this.setHelpUrl("");
+  }
+};

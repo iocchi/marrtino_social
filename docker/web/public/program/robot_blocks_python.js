@@ -278,3 +278,20 @@ Blockly.Python['logic_boolean'] = function(block) {
 
 };
 
+Blockly.Python['tag_trigger'] = function(block) {
+  var code = 'tagTrigger()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['tag_id'] = function(block) {
+  var code = 'tagID()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+Blockly.Python['tag_distance'] = function(block) {
+  var code = 'tagDistance()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+Blockly.Python['tag_angle'] = function(block) {
+  var code = 'tagAngle()';
+  return [code, Blockly.Python.ORDER_NONE];
+};

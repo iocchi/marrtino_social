@@ -146,13 +146,13 @@
 <td><button id="usbcam_start_btn" onclick="send_cmd('usbcam_start')" class="btn waves-effect waves-light blue">USB camera start</button></td>
 <td><button id="usbcam_quit_btn" onclick="send_cmd('usbcam_kill')" class="btn waves-effect waves-light blue">USB camera quit</button></td>
 </tr>-->
-<!--
+
 <tr height=40>
-<td width=80>SPEECH </td> 
+<td width=80>Interactive Mode </td> 
 <td width=80 align='center'></td>
-<td><button id="speech_start_btn" onclick="send_cmd('speech_start')" class="btn waves-effect waves-light blue" style="margin-right:10px">Speech start</button></td>
-<td><button id="speech_quit_btn" onclick="send_cmd('speech_kill')"class="btn waves-effect waves-light blue">Speech quit</button></td>
-</tr>-->
+<td><button id="speech_start_btn" onclick="send_cmd('speech_start')" class="btn waves-effect waves-light blue" style="margin-right:10px">Start interactive mode</button></td>
+<td><button id="speech_quit_btn" onclick="send_cmd('speech_kill')"class="btn waves-effect waves-light blue">Stop interactive mode</button></td>
+</tr>
 </table>
 
 

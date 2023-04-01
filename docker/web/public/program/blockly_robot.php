@@ -188,6 +188,7 @@
       <block type="logic_null"></block>
       <block type="logic_ternary"></block>
     </category>
+
 <category colour="50" name="Audio">
 
 <block type="say">
@@ -209,6 +210,14 @@
     </block>
   </value>
 </block>
+
+</category>
+
+<category colour="60" name="Vision">
+   <block type="tag_trigger"></block>
+   <block type="tag_id"></block>
+   <block type="tag_distance"></block>
+   <block type="tag_angle"></block>
 
 </category>
 
