@@ -21,3 +21,4 @@ docker/web/app/vendor/composer/installed.php
 
 
 
+script/secrets.json
