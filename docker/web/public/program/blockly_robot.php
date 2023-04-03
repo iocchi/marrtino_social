@@ -313,7 +313,7 @@
   <tr>
   <td style="color:#0000FF; background-color: #EEFFCC; font-size: 150%;" width=500 height=20>
     <div id="display">
-    </div>    
+    </div>    d
   </td>
   </tr>
 
@@ -323,7 +323,7 @@
   <tr>  <th>Image</th>  </tr>
   <tr>
   <td width=500 height=50 bgcolor=#B0CFB0>
-    <div align='center' > <img height=300 id='image' src="$HONE/src/marrtino_apps/www/viewer/img/lastimage.jpg" alt=""/> </div>
+    <div align='center' > <img height=300 id='image' src="$HOME/src/marrtino_apps/www/viewer/img/lastimage.jpg" alt=""/> </div>
   </td>
   </tr>
   </table>
