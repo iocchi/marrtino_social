@@ -426,7 +426,7 @@
     }
     window.setInterval(function()
     {
-        document.getElementById('image').src = $HOME/src/marrtino_apps/www/viewer/img/lastimage.jpg?random="+new Date().getTime();
+        document.getElementById('image').src = "$HOME/src/marrtino_apps/www/viewer/img/lastimage.jpg?random="+new Date().getTime();
     }, 5000);
 
     function load_from_file() {
