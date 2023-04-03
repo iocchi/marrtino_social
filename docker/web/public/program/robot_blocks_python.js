@@ -299,3 +299,8 @@ Blockly.Python['get_image'] = function(block) {
   var code = 'getImage()';
   return [code, Blockly.Python.ORDER_NONE];
 };
+Blockly.Python['face_detection'] = function(block) {
+  var value_img = Blockly.Python.valueToCode(block, 'img', Blockly.Python.ORDER_ATOMIC);
+  var code = 'faceDetection('+value_img+')';
+  return [code, Blockly.Python.ORDER_NONE];
+};

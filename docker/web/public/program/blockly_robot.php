@@ -219,7 +219,7 @@
    <block type="tag_distance"></block>
    <block type="tag_angle"></block>
    <block type="get_image"></block>
-    
+   <block type="face_detection"></block>
 </category>
 
 <category colour="200" name="Controls">

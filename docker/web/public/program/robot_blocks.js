@@ -581,3 +581,17 @@ Blockly.Blocks['get_image'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['face_detection'] = {
+  init: function() {
+    this.appendValueInput("img")
+        .appendField("face_detection()"); 
+    this.setOutput(true, null);
+    //this.setInputsInline(true);
+    //this.setPreviousStatement(true, null);
+    //this.setNextStatement(true, null);
+    this.setColour(0);
+ this.setTooltip("Img");
+ this.setHelpUrl("");
+  }
+};
