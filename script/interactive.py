@@ -8,7 +8,7 @@ sys.path.append(os.getenv("MARRTINO_APPS_HOME")+"/program")
 
 from robot_cmd_ros import *
 
-TOKEN = '6157401708:AAFLqxZTjeAFg_N3Su7GnNxOqQKEJoIi_aE'
+
 
 
 #IN_TOPIC = "/social/face_nroface"
