@@ -1,10 +1,14 @@
 #! /usr/bin/python
 
+
+import telepot
 import sys,os
 import time
 sys.path.append(os.getenv("MARRTINO_APPS_HOME")+"/program")
 
 from robot_cmd_ros import *
+
+TOKEN = '6157401708:AAFLqxZTjeAFg_N3Su7GnNxOqQKEJoIi_aE'
 
 
 #IN_TOPIC = "/social/face_nroface"
@@ -13,6 +17,17 @@ from robot_cmd_ros import *
 
 tracking = False
 
+def on_chat_message(msg):
+    content_type, chat_type, chat_id = telepot.glance(msg)
+    if content_type == 'text':
+        cmd = msg['text'].split()
+        print cmd
+        mytxt = wait_user_speaking(5)
+        print(mytxt)
+        if cmd[0] == '/start':
+            bot.sendMessage(chat_id, "ciao, benvenuto nella mia chat!")
+        elif cmd[0] == '/ciao':
+            bot.sendMessage(chat_id, "ciao, come stai?")
 
 def reset_face():    
     rospy.loginfo("Time is up, resetting face")
@@ -57,8 +72,11 @@ def listener():
     speech("se vuoi puoi parlare con me ")
     speech("Collega il tablet o il telefono con l'applicazione ")
     speech("Attendo che tu lo faccia")
-    mytxt = wait_user_speaking(5)
-    print(mytxt)
+    
+
+    bot = telepot.Bot(TOKEN)
+    bot.message_loop(on_chat_message)
+
     end()
      
 listener()
