@@ -292,9 +292,12 @@
 
 
       </div>
-      <div class="col-md-3">Face<div class="iframe-container"><iframe loading="lazy" src="/social/marrtina.html"></iframe></div>
+      <div class="col-md-3">Face<div class="iframe-container"><iframe loading="lazy" src="/social/marrtina.html"></iframe>
+                            <div class="iframe-container"><iframe width="100%" height="250" loading="lazy" src="http://10.3.1.1:8080/social/onlyvideo.php"></iframe>
+    
+     </div>
          </div>
-
+      
     </div>
   </div>
 
@@ -317,16 +320,7 @@
   </td>
   </tr>
 
-  
-  </table>
-  <table border=0>
-  <tr>  <th>Image</th>  </tr>
-  <tr>
-  <td width=500 height=50 bgcolor=#B0CFB0>
-    <div align='center' > <img height=300 id='image' src="$HOME/src/marrtino_apps/www/viewer/img/lastimage.jpg" alt=""/> </div>
-  </td>
-  </tr>
-  </table>
+ 
                 <!-- ****** SCRIPTS ****** -->
 
   <script>
@@ -424,10 +418,7 @@
         wsrobot_quit();  // init websocket robot
         setTimeout(check_connection, 1000);
     }
-    window.setInterval(function()
-    {
-        document.getElementById('image').src = "$HOME/src/marrtino_apps/www/viewer/img/lastimage.jpg?random="+new Date().getTime();
-    }, 5000);
+    
 
     function load_from_file() {
       var can_load_file = false;

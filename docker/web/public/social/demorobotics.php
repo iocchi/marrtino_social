@@ -204,7 +204,7 @@ function Presentazione(){
   </div>
   <div class="row">
 	
-		<div class="col-md-3"><button  class="btn btn-outline-danger btn-lg" onclick="Presentazione()">Presentazione</button></div>
+		<div class="col-md-3"><button  class="btn btn-outline-danger btn-lg" onclick="Presentazione()">Presentation</button></div>
  	  <div class="col-md-3">
 			<button  class="btn btn-outline-danger btn-lg" onclick="LeggiMurphy()">
   					<img src="image/quiz.jpeg" class="img-rounded" alt="Murpy" width="60%">
@@ -232,26 +232,25 @@ function Presentazione(){
    <div class="row">
 	
     <div class="col-md-3">
-      <a href="../3domande/index.html"   class="btn btn-danger btn-lg btn-block" role="button">MISURA LA TUA INTELLIGENZA</a>
+      <a href="../3domande/index.html"   class="btn btn-danger btn-lg btn-block" role="button">Measure Your Intelligence</a>
        
 	  </div> 
     <div class="col-md-3">
-      <a href="../quiz/index.html"  class="btn btn-danger btn-lg btn-block" role="button">QUIZ </a>
-      <a href="../quiz/editorquiz.php"  class="btn btn-danger btn-lg btn-block" role="button">MODIFICA QUIZ </a>
+      <a href="../quiz/index.html"  class="btn btn-danger btn-lg btn-block" role="button">Quiz </a>
+      <a href="../quiz/editorquiz.php"  class="btn btn-danger btn-lg btn-block" role="button">Modify Quiz </a>
     </div>
 
     <div class="col-md-3">
- 		    <button  class="btn btn-danger btn-lg btn-block " onclick="LeggiMurphy()">Leggy di Murphy</button>
+ 		    <button  class="btn btn-danger btn-lg btn-block " onclick="LeggiMurphy()">Murphy'S Law</button>
  	  </div>
     <div class="col-md-3">
-         <button  class="btn btn-danger btn-lg btn-block " onclick="Barzelletta()">Barzellette</button>
+         <button  class="btn btn-danger btn-lg btn-block " onclick="Barzelletta()">Joke</button>
     </div>
     
   </div>     
   
             
 </diV>
-
 
  
 

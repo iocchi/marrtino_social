@@ -45,7 +45,7 @@
         <a class="nav-link" href="../social/demorobotics.php" tabindex="-1" >Demo Social</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../social/navigation.php" tabindex="-1" >Telepresenza</a>
+        <a class="nav-link" href="../social/navigation.php" tabindex="-1" >Telepresence</a>
       </li>
 	   <li class="nav-item">
         <a class="nav-link" href="../social/vision.php" tabindex="-1" >Vision</a>
