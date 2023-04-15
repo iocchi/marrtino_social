@@ -18,7 +18,7 @@ RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E
 
 RUN apt-get update && \
     apt-get install -y \
-        v4l-utils  \
+        v4l-utils python-pip \
         cmake g++ git \
         ros-melodic-rgbd-launch ros-melodic-web-video-server \
         ros-melodic-camera-info-manager ros-melodic-libuvc \
@@ -29,6 +29,9 @@ RUN apt-get update && \
 
 USER robot
 
+# Python packages
+
+RUN pip install --user telepot
 
 RUN mkdir -p $HOME/src/dynamixel &&  cd $HOME/src/dynamixel && \
     git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git && \
