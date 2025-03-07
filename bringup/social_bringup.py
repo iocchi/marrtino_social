@@ -72,6 +72,14 @@ def run_server(port):
                 cfolder = "~/src/marrtino_social/config"
                 sfolder = "~/src/marrtino_social/script"
                 homefolder = "~/src/marrtino_social"
+
+
+                # social functions (emotions)
+                if data=='@social':
+                    tmux.cmd(1,'cd %s' %rfolder)
+                    tmux.cmd(1,'roslaunch rosbridge.launch')   
+                elif data=='@socialkill':
+                    tmux.Cc(1)
              
                 # social normale con pan e tilt
                 if data=='@robotsocial':
