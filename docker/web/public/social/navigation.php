@@ -186,16 +186,15 @@ var msg_tilt = new ROSLIB.Message({
   } 
     window.onload = function () {
       initPanTilt();
-      video = document.getElementById('video');
-	   // Populate video source 
-         
-          video.src = 'http://' + window.location.hostname +':29090/stream?topic=/rgb/image_raw&type=mjpeg&quality=100';
+      createJoystick();
+      initTeleopKeyboard();
 
-	  //video.src = "http://192.168.1.119:29090/stream?topic=/usb_cam/image_raw&type=mjpeg&quality=100";
+      video = document.getElementById('video');
+	  // Populate video source   
+      video.src = 'http://' + window.location.hostname +':29090/stream?topic=/rgb/image_raw&type=mjpeg&quality=100';
+
 	  video.onload = function () {
-			createJoystick();
-			initTeleopKeyboard();
-        }	
+      }
 	  
     }
 

@@ -108,6 +108,8 @@ Refresh page (e.g., after restarting social node)
 
     xdotool search --sync --onlyvisible --class "Firefox" windowactivate key F5
 
+    xdotool search --sync --onlyvisible --class "MARRtina Robot Face" windowactivate key F5
+
 Kill firefox page
 
     xdotool search --sync --onlyvisible --class "Firefox" windowkill
