@@ -1,0 +1,24 @@
+<launch>
+ 
+    <arg name="device" default="" />
+    <arg name="min_motor_id" default="1" /> 
+    <arg name="max_motor_id" default="10" />
+
+    <node name="dynamixel_manager" pkg="dynamixel_controllers" type="controller_manager.py" required="true" output="screen">
+        <rosparam>
+            namespace: dxl_manager
+            serial_ports:
+                device_port:
+                    port_name: "/dev/dinamixel"
+                    baud_rate: 1000000
+                    min_motor_id: 1
+                    max_motor_id: 10
+                    update_rate: 20
+        </rosparam>
+    </node>
+
+
+<!-- This will launch the Dynamixel controllers -->
+<include file="joints_controller.launch"/> 
+  
+</launch>

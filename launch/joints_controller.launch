@@ -1,0 +1,21 @@
+<launch>
+    <!-- Start tilt joint controller -->
+    <rosparam file="config/joints.yaml" command="load"/>
+    <rosparam file="config/servo_param.yaml" command="load"/>
+
+    <node name="joints_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port device_port
+		tilt_controller
+		pan_controller
+		shoulderdx_rotate
+		shoulderdx_open
+		elbowdx_open
+		shouldersx_rotate
+		shouldersx_open
+		elbowsx_open
+		elbowdx_rotate
+		elbowsx_rotate"
+          output="screen"/>
+</launch>
+
