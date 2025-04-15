@@ -35,14 +35,14 @@
     });
     // 
   
-	// SONAR
-	var sonar0_listener = new ROSLIB.Topic({
+	// social emotion
+	var emotion_listener = new ROSLIB.Topic({
       ros: ros,
       name: 'social/emotion/',
       messageType: 'std_msgs/String'
   });
 
-  sonar0_listener.subscribe(function (m) {
+  emotion_listener.subscribe(function (m) {
       //document.getElementById("emotion").innerHTML = m.data;
       console.log("Emotion");
       console.log(m.data);
@@ -81,14 +81,9 @@
         eyes.stopBlinking();
       }
    });
-
-   
-
      
     window.onload = function () {
-	  
-      
-	  
+
     }
 
   </script>
