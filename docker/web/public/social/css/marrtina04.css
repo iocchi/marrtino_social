@@ -59,8 +59,8 @@ body {
    
 }
 .bulb {
-  #background-color: black;
-  #border-radius: 100%;
+  /*background-color: black;
+  #border-radius: 100%;*/
   height:  calc(var(--bulb-size)*1.2);
   width:  var(--bulb-size);
   top: 18%;
@@ -100,14 +100,14 @@ body {
   transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-#lower-eyelid-left {
+/*#lower-eyelid-left {
   left: -5%;
 }
 
 #lower-eyelid-right {
   left: -15%;
 }
-
+*/
 .eye.left {
   left: 20%;
 }
@@ -117,7 +117,7 @@ body {
 }
 
 .eyelid {
-  #background-color: var(--eyelid-color);
+  /*#background-color: var(--eyelid-color);*/
   height: var(--eye-size);
   width: calc(var(--eye-size) * 1.75);
   z-index: 2;
@@ -271,3 +271,4 @@ body {
     transform: translateX(-50%) rotate(360deg);
   }
 }
+

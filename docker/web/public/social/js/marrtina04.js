@@ -109,7 +109,6 @@ class EyeController {
     document.documentElement.style.setProperty("--eye-color", "white");
     document.documentElement.style.setProperty("--eye-top", "25%"); 
     document.documentElement.style.setProperty("--bulb-size", "33.33vmin");
-
     document.getElementById("lower-eyelid-left").style.opacity = "0";
     document.getElementById("lower-eyelid-right").style.opacity = "0";
     document.documentElement.style.setProperty("--lower-eyelid-color", "whitesmoke");
@@ -139,9 +138,9 @@ class EyeController {
     document.querySelector(".confused-spiral").style.display = "none";
   }	 
   focused() {
-	  document.getElementById("soprdx").src = "image/face01/Surprise/eyebrowdxsurprise.png"; 
+    document.getElementById("soprdx").src = "image/face01/Surprise/eyebrowdxsurprise.png"; 
     document.getElementById("soprsx").src = "image/eyebrowsx1.gif"; 
-	  document.getElementById("occhiodx").src = "image/eyedx.png"; 
+    document.getElementById("occhiodx").src = "image/eyedx.png"; 
     document.getElementById("occhiosx").src = "image/eyesx.png"; 	
     document.getElementById("bocca").src = "image/face03/normal/boccainv.png"; 
     document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
@@ -158,11 +157,32 @@ class EyeController {
     light.style.display = "block"; 
     light.style.animation = "glow 1s infinite alternate";
     document.querySelector(".confused-spiral").style.display = "none";
-  }	 
+  }
+  
+  closeEyes() {
+    if (!this._leftEye) {  // assumes all elements are always set together
+      console.warn('Eye elements are not set; return;');
+      return;
+    }
+
+    document.getElementById("occhiodx").src = "image/eyedx_closed.png"; 
+    document.getElementById("occhiosx").src = "image/eyesx_closed.png"; 	
+	document.getElementById("soprdx").src = "image/face01/Happy/eyebrowdx.png"; 
+    document.getElementById("soprsx").src = "image/face01/Happy/eyebrowsx.png"; 
+    document.getElementById("bocca").src = "image/face01/Sad/mouthclosed.png"; 
+
+    const eyeElem = document.querySelectorAll('.eye');
+    eyeElem.forEach(element => {
+      element.style.width = '0px';
+    });
+  }
+
+
+	 
   angry() {
-	  document.getElementById("soprdx").src = "image/face01/Angry/eyebrowdxangry.png"; 
+    document.getElementById("soprdx").src = "image/face01/Angry/eyebrowdxangry.png"; 
     document.getElementById("soprsx").src = "image/face01/Angry/eyebrowsxangry.png"; 
-	  document.getElementById("occhiodx").src = "image/face01/Angry/eyedxangry.png"; 
+    document.getElementById("occhiodx").src = "image/face01/Angry/eyedxangry.png"; 
     document.getElementById("occhiosx").src = "image/face01/Angry/eyesxangry.png"; 	
     document.getElementById("bocca").src = "image/face01/Angry/mouthangry.png"; 
     document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
@@ -179,9 +199,9 @@ class EyeController {
     document.querySelector(".confused-spiral").style.display = "none";
   }	 
   sad() {
-	  document.getElementById("soprsx").src = "image/eyebrowsx3.gif"; 
+    document.getElementById("soprsx").src = "image/eyebrowsx3.gif"; 
     document.getElementById("soprdx").src = "image/eyebrowdx3.gif"; 
-	  document.getElementById("occhiodx").src = "image/face01/Sad/eyedxsad.png"; 
+    document.getElementById("occhiodx").src = "image/face01/Sad/eyedxsad.png"; 
     document.getElementById("occhiosx").src = "image/face01/Sad/eyesxsad.png"; 	
     document.getElementById("bocca").src = "image/face03/sad/bocca.png"; 
     document.getElementById("naso").src = "image/nosetalkmarrtina1.gif";
@@ -199,9 +219,9 @@ class EyeController {
     
   }	   
   surprise() {
-	  document.getElementById("soprdx").src = "image/face01/Surprise/eyebrowdxsurprise.png"; 
+    document.getElementById("soprdx").src = "image/face01/Surprise/eyebrowdxsurprise.png"; 
     document.getElementById("soprsx").src = "image/face01/Surprise/eyebrowsxsurprise.png"; 
-	  document.getElementById("occhiodx").src = "image/face01/Surprise/eyedxsurprise.png"; 
+    document.getElementById("occhiodx").src = "image/face01/Surprise/eyedxsurprise.png"; 
     document.getElementById("occhiosx").src = "image/face01/Surprise/eyesxsurprise.png"; 	
     document.getElementById("bocca").src = "image/face01/Surprise/mouthsurprise.png"; 
     document.getElementById("naso").src = "image/nosetalkmarrtina1.gif";
@@ -209,7 +229,6 @@ class EyeController {
     document.documentElement.style.setProperty("--eye-color", "white");
     document.documentElement.style.setProperty("--eye-top", "25%"); 
     document.documentElement.style.setProperty("--bulb-size", "33.33vmin");
-
     document.getElementById("lower-eyelid-left").style.opacity = "0";
     document.getElementById("lower-eyelid-right").style.opacity = "0";
     document.documentElement.style.setProperty("--lower-eyelid-color", "whitesmoke");
@@ -222,7 +241,7 @@ class EyeController {
   embarrassed() {
     document.getElementById("soprdx").src = "image/face01/Surprise/eyebrowdxsurprise.png"; 
     document.getElementById("soprsx").src = "image/face01/Surprise/eyebrowsxsurprise.png"; 
-	  document.getElementById("occhiodx").src = "image/eyedx.png"; 
+    document.getElementById("occhiodx").src = "image/eyedx.png"; 
     document.getElementById("occhiosx").src = "image/eyesx.png"; 	
     document.getElementById("bocca").src = "image/mouthclosed.png"; 
     document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
@@ -230,7 +249,6 @@ class EyeController {
     document.documentElement.style.setProperty("--eye-color", "white");
     document.documentElement.style.setProperty("--eye-top", "12%"); 
     document.documentElement.style.setProperty("--bulb-size", "33.33vmin");
-
     document.getElementById("lower-eyelid-left").style.opacity = "0.5";
     document.getElementById("lower-eyelid-right").style.opacity = "0.5";
     document.documentElement.style.setProperty("--lower-eyelid-color", "whitesmoke");
@@ -244,7 +262,7 @@ class EyeController {
     document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
     document.getElementById("soprdx").src = "image/eyebrowdx1.gif"; 
     document.getElementById("soprsx").src = "image/eyebrowsx1.gif"; 
-	  document.getElementById("occhiodx").src = "image/eyedx.png"; 
+    document.getElementById("occhiodx").src = "image/eyedx.png"; 
     document.getElementById("occhiosx").src = "image/eyesx.png"; 	
     document.documentElement.style.setProperty("--eye-size", "16.00vmin");
     document.documentElement.style.setProperty("--eye-color", "white");
@@ -259,9 +277,9 @@ class EyeController {
     document.querySelector(".confused-spiral").style.display = "none";
   }	
   confused() {
-	  document.getElementById("soprdx").src = "image/eyebrowdx.png"; 
+    document.getElementById("soprdx").src = "image/eyebrowdx.png"; 
     document.getElementById("soprsx").src = "image/face01/Surprise/eyebrowsxsurprise.png"; 
-	  document.getElementById("occhiodx").src = "image/eyedx.png"; 
+    document.getElementById("occhiodx").src = "image/eyedx.png"; 
     document.getElementById("occhiosx").src = "image/eyesx.png"; 	
     document.getElementById("bocca").src = "image/mouthclosed.png"; 
     document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
@@ -298,28 +316,6 @@ class EyeController {
     clearTimeout(this._blinkTimeoutID);
     this._blinkTimeoutID = null;
   }
-  closeEyes() {
-    if (!this._leftEye) {  // assumes all elements are always set together
-      console.warn('Eye elements are not set; return;');
-      return;
-    }
-
-    console.log('marrtina.js close eyes test')
-    document.getElementById("occhiodx").src = "image/eyedx_closed.png"; 
-    document.getElementById("occhiosx").src = "image/eyesx_closed.png"; 	
-	document.getElementById("soprdx").src = "image/face01/Happy/eyebrowdx.png"; 
-    document.getElementById("soprsx").src = "image/face01/Happy/eyebrowsx.png"; 
-    document.getElementById("bocca").src = "image/face01/Sad/mouthclosed.png"; 
-
-    const eyeElem = document.querySelectorAll('.eye');
-    eyeElem.forEach(element => {
-      element.style.width = '0px';
-    });
-  }
-  
-
-
-
 
   setEyePosition(eyeElem, x, y, isRight = false) {
     if (!eyeElem) {  // assumes all elements are always set together

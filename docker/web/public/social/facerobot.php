@@ -210,6 +210,7 @@ initPanTilt= function() {
   <div class="row">
     
     <div class="col-md-1"><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('normal')">Normal</button><br><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('angry')">angry</button></div>
+    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('close')">Close eyes</button><br>
     <div class="col-md-1"><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('happy')">Happy</button><br><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('sad')">sad</button></div>
     <div class="col-md-1"><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('surprise')">Surprise</button><br><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('sings')">sings</button></div>
     <div class="col-md-1"><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('startblinking')">Start Blinking</button><br><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('stopblinking')">Stop Blinking</button></div>
