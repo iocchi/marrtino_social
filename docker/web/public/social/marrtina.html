@@ -31,14 +31,14 @@
     });
     // 
   
-	// SONAR
-  var sonar0_listener = new ROSLIB.Topic({
+    // social emotion
+    var emotion_listener = new ROSLIB.Topic({
       ros: ros,
       name: 'social/emotion/',
       messageType: 'std_msgs/String'
-  });
+    });
 
-  sonar0_listener.subscribe(function (m) {
+  emotion_listener.subscribe(function (m) {
       //document.getElementById("emotion").innerHTML = m.data;
       console.log("Emotion");
       console.log(m.data);
@@ -56,6 +56,9 @@
       if (m.data == "angry") {
         eyes.angry();
       } 
+      if (m.data == "close") {
+        eyes.closeEyes();
+      }
       if (m.data == "sad") {
         eyes.sad();
       } 
@@ -68,9 +71,6 @@
       if (m.data == "startblinking") {
         eyes.startBlinking();
       }
-      if (m.data == "close") {
-        eyes.closeEyes();
-      } 
       if (m.data == "stopblinking") {
         eyes.stopBlinking();
       }
@@ -84,9 +84,6 @@
         eyes.embarrassed();
       }
    });
-
-   
-
      
    window.onload = function () {
     // Verifica se c'è un'espressione salvata nel localStorage
@@ -143,7 +140,7 @@
       <div class="lower-eyelid" id="lower-eyelid-left"></div> 
     </div>
    </div>	
-   <div class="eyebrow right"><img id="soprsx" src="image/eyebrowdx1.gif" width="100%"></div>
+   <div class="eyebrow right"><img id="soprdx" src="image/eyebrowdx1.gif" width="100%"></div>
    <div class="bulb right">
    <img id="occhiodx" src="image/eyedx.png" width="100%">
     <div class="eye right">
@@ -161,7 +158,7 @@
     <div class="blush left"></div>
     <div class="blush right"></div>
     <div  class="mouth">
-	  <img id="bocca" src="image/bocca.gif" width="170%">
+	  <img id="bocca" src="image/face01/Happy/mouthsmile.png" width="170%">
      
     </div>
     

@@ -42,7 +42,6 @@ body {
 }
 
 .eyebrow {
-  
   height:  10vmin;
   width:  50vmin;
   transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -51,13 +50,13 @@ body {
 .eyebrow.left {
   left: 5%;
   transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
-   
 }
+
 .eyebrow.right {
   right: 5%;
   transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
-   
 }
+
 .bulb {
   #background-color: black;
   #border-radius: 100%;
@@ -70,10 +69,12 @@ body {
   left: 10%;
   width: calc(var(--bulb-size)*1.5);
 }
+
 .bulb.right {
   right: 10%;
   width: calc(var(--bulb-size)*1.5);
 }
+
 .eye {
   background-color: var(--eye-color);
   border-radius: 100%;
@@ -130,12 +131,13 @@ body {
 }
 
 .eyelid.lower {
+  #background-color: red;
   border-radius: 100%;
   bottom: calc(var(--eye-size) * -1);
   left: calc(var(--eye-size) * -0.375);
 }
 
- 
+
 .mouth {
   height: var(--mouth-height);
   width:  var(--mouth-width);
@@ -146,8 +148,6 @@ body {
   transform: rotateX(0);
   transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-
-
 
 .nose {
   height: var(--nose-height);
@@ -271,3 +271,5 @@ body {
     transform: translateX(-50%) rotate(360deg);
   }
 }
+
+

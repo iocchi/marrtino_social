@@ -16,8 +16,8 @@ class EyeController {
     upperRightEyelid,
     lowerLeftEyelid,
     lowerRightEyelid,
-    upperLeftMouthlid,
-    upperRightMouthlid,
+    upperMouthlid,
+    lowerMouthlid,
   } = {}) {
     this._leftEye = leftEye;
     this._rightEye = rightEye;
@@ -25,8 +25,8 @@ class EyeController {
     this._upperRightEyelid = upperRightEyelid;
     this._lowerLeftEyelid = lowerLeftEyelid;
     this._lowerRightEyelid = lowerRightEyelid;
-    this._upperLeftMouthlid = upperLeftMouthlid;
-    this._upperRightMouthlid = upperRightMouthlid;
+    this._upperMouthlid = upperMouthlid;
+    this._lowerMouthlid = lowerMouthlid;
     return this;
   }
 
@@ -62,8 +62,27 @@ class EyeController {
     
   }
 
+  closeEyes() {
+    if (!this._leftEye) {  // assumes all elements are always set together
+      console.warn('Eye elements are not set; return;');
+      return;
+    }
+
+    document.getElementById("occhiodx").src = "image/eyedx_closed.png"; 
+    document.getElementById("occhiosx").src = "image/eyesx_closed.png"; 	
+	document.getElementById("soprdx").src = "image/face01/Happy/eyebrowdx.png"; 
+    document.getElementById("soprsx").src = "image/face01/Happy/eyebrowsx.png"; 
+    document.getElementById("bocca").src = "image/face01/Sad/mouthclosed.png"; 
+
+    const eyeElem = document.querySelectorAll('.eye');
+    eyeElem.forEach(element => {
+      element.style.width = '0px';
+    });
+  }
+
+
   blink({
-    duration = 150,  // in ms
+    duration = 200,  // in ms
   } = {}) {
     if (!this._leftEye) {  // assumes all elements are always set together
       console.warn('Eye elements are not set; return;');
@@ -97,7 +116,13 @@ class EyeController {
     }
     blinkRandomly(Math.random() * maxInterval);
   }
-  
+
+  stopBlinking() {
+    clearTimeout(this._blinkTimeoutID);
+    this._blinkTimeoutID = null;
+  }
+
+
   normal() {
     document.getElementById("soprdx").src = "image/eyebrowdx1.gif"; 
     document.getElementById("soprsx").src = "image/eyebrowsx1.gif"; 
@@ -117,8 +142,8 @@ class EyeController {
     document.querySelector(".anger-marks").style.display = "none";
     document.querySelector(".thinking-light").style.display = "none";
     document.querySelector(".confused-spiral").style.display = "none";
-  }	 
-  
+  }
+
   happy() {
     document.getElementById("soprdx").src = "image/eyebrowdx5.gif"; 
     document.getElementById("soprsx").src = "image/eyebrowsx5.gif"; 
@@ -137,7 +162,8 @@ class EyeController {
     document.querySelector(".anger-marks").style.display = "none";
     document.querySelector(".thinking-light").style.display = "none";
     document.querySelector(".confused-spiral").style.display = "none";
-  }	 
+  }
+
   focused() {
 	  document.getElementById("soprdx").src = "image/face01/Surprise/eyebrowdxsurprise.png"; 
     document.getElementById("soprsx").src = "image/eyebrowsx1.gif"; 
@@ -158,7 +184,8 @@ class EyeController {
     light.style.display = "block"; 
     light.style.animation = "glow 1s infinite alternate";
     document.querySelector(".confused-spiral").style.display = "none";
-  }	 
+  }
+
   angry() {
 	  document.getElementById("soprdx").src = "image/face01/Angry/eyebrowdxangry.png"; 
     document.getElementById("soprsx").src = "image/face01/Angry/eyebrowsxangry.png"; 
@@ -177,7 +204,8 @@ class EyeController {
     document.querySelector(".anger-marks").style.display = "block";
     document.querySelector(".thinking-light").style.display = "none";
     document.querySelector(".confused-spiral").style.display = "none";
-  }	 
+  }
+
   sad() {
 	  document.getElementById("soprsx").src = "image/eyebrowsx3.gif"; 
     document.getElementById("soprdx").src = "image/eyebrowdx3.gif"; 
@@ -196,8 +224,8 @@ class EyeController {
     document.querySelector(".anger-marks").style.display = "none";
     document.querySelector(".thinking-light").style.display = "none";
     document.querySelector(".confused-spiral").style.display = "none";
-    
-  }	   
+  }
+
   surprise() {
 	  document.getElementById("soprdx").src = "image/face01/Surprise/eyebrowdxsurprise.png"; 
     document.getElementById("soprsx").src = "image/face01/Surprise/eyebrowsxsurprise.png"; 
@@ -217,8 +245,8 @@ class EyeController {
     document.querySelector(".anger-marks").style.display = "none";
     document.querySelector(".thinking-light").style.display = "none";
     document.querySelector(".confused-spiral").style.display = "none";
-    
-  }	 
+  }
+
   embarrassed() {
     document.getElementById("soprdx").src = "image/face01/Surprise/eyebrowdxsurprise.png"; 
     document.getElementById("soprsx").src = "image/face01/Surprise/eyebrowsxsurprise.png"; 
@@ -238,7 +266,8 @@ class EyeController {
     document.querySelector(".anger-marks").style.display = "none";
     document.querySelector(".thinking-light").style.display = "none";
     document.querySelector(".confused-spiral").style.display = "none";
-  } 
+  }
+
   speak() {
     document.getElementById("bocca").src = "image/mouthtalkmarrtina2.gif"; 
     document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
@@ -257,7 +286,8 @@ class EyeController {
     document.querySelector(".anger-marks").style.display = "none";
     document.querySelector(".thinking-light").style.display = "none";
     document.querySelector(".confused-spiral").style.display = "none";
-  }	
+  }
+
   confused() {
 	  document.getElementById("soprdx").src = "image/eyebrowdx.png"; 
     document.getElementById("soprsx").src = "image/face01/Surprise/eyebrowsxsurprise.png"; 
@@ -276,7 +306,7 @@ class EyeController {
     document.querySelector(".anger-marks").style.display = "none";
     document.querySelector(".thinking-light").style.display = "none";
     document.querySelector(".confused-spiral").style.display = "block";
-  }	 
+  }
 
   sings() {
     document.getElementById("bocca").src = "image/boccachecanta.gif"; 
@@ -292,12 +322,8 @@ class EyeController {
     document.querySelector(".anger-marks").style.display = "none";
     document.querySelector(".thinking-light").style.display = "none";
     document.querySelector(".confused-spiral").style.display = "none";
-  }  
-
-  stopBlinking() {
-    clearTimeout(this._blinkTimeoutID);
-    this._blinkTimeoutID = null;
   }
+
   closeEyes() {
     if (!this._leftEye) {  // assumes all elements are always set together
       console.warn('Eye elements are not set; return;');
@@ -316,9 +342,6 @@ class EyeController {
       element.style.width = '0px';
     });
   }
-  
-
-
 
 
   setEyePosition(eyeElem, x, y, isRight = false) {
@@ -343,11 +366,10 @@ class EyeController {
 const eyes = new EyeController({
   leftEye: document.querySelector('.left.bulb'),
   rightEye: document.querySelector('.right.bulb'),
-  upperLeftEyelid: document.querySelector('.left .eyelid.upper'),
-  upperRightEyelid: document.querySelector('.right .eyelid.upper'),
-  lowerLeftEyelid: document.querySelector('.left .eyelid.lower'),
-  lowerRightEyelid: document.querySelector('.right .eyelid.lower'),
-  upperLeftMouthlid: document.querySelector('.mouthid.upper'),
-  lowerLeftMouthlid: document.querySelector('.mouthid.lower'),
-  
+  upperLeftEyelid: document.querySelector('.left.eyelid.upper'),
+  upperRightEyelid: document.querySelector('.right.eyelid.upper'),
+  lowerLeftEyelid: document.querySelector('.left.eyelid.lower'),
+  lowerRightEyelid: document.querySelector('.right.eyelid.lower'),
+  upperMouthlid: document.querySelector('.mouthid.upper'),
+  lowerMouthlid: document.querySelector('.mouthid.lower'),
 });
