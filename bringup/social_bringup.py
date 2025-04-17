@@ -68,21 +68,24 @@ def run_server(port):
                 connected = False
             else:
                 print("rec [%s]" %data)
-                rfolder = "~/src/marrtino_social/launch"
-                cfolder = "~/src/marrtino_social/config"
-                sfolder = "~/src/marrtino_social/script"
-                homefolder = "~/src/marrtino_social"
-
+                rfolder = os.getenv('MARRTINO_SOCIAL')+"/launch"
+                cfolder = os.getenv('MARRTINO_SOCIAL')+"/config"
+                sfolder = os.getenv('MARRTINO_SOCIAL')+"/script"
+                homefolder = os.getenv('MARRTINO_SOCIAL')
 
                 # social functions (emotions)
                 if data=='@social':
                     tmux.cmd(1,'cd %s' %rfolder)
-                    tmux.cmd(1,'roslaunch rosbridge.launch')   
+                    tmux.cmd(1,'roslaunch websocket.launch')   
                 elif data=='@socialkill':
                     tmux.Cc(1)
-             
+
+                else:
+                    print('Unknown command %s' %data)
+
+'''             
                 # social normale con pan e tilt
-                if data=='@robotsocial':
+                elif data=='@robotsocial':
                     tmux.cmd(1,'cd %s' %rfolder)
                     tmux.cmd(1,'roslaunch social.launch')   
                 elif data=='@robotsocialkill':
@@ -101,9 +104,9 @@ def run_server(port):
                     tmux.cmd(1,'roslaunch socialnotracker.launch')
                 elif data=='@socialnotrackerkill': 
                     tmux.Cc(1)
+'''
 
-                
-
+'''
                 elif (data=='@updatesocialapps'):
                     print('marrtino_apps update')
                     #self.setStatus('Updating...')
@@ -111,18 +114,18 @@ def run_server(port):
                     tmux.cmd(3,'git pull', blocking=True)
                     time.sleep(1)
                     #self.checkStatus()
+'''
 
 
-               
+'''               
                 # start speech_start ( 2 speech)
                 elif data=='@speech': 
                     tmux.cmd(2,'cd %s' %sfolder)
                     tmux.cmd(2,'python interactive.py')
                 elif data=='@speechkill':
                     tmux.Cc(2)
-                                
-                else:
-                    print('Unknown command %s' %data)
+'''
+
 
 
 
