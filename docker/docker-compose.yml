@@ -40,6 +40,8 @@ services:
     privileged: true
     environment:
     - ROS_IP=$ROS_IP
+    - MARRTINO_APPS_HOME=/home/robot/src/marrtino_apps
+    - MARRTINO_SOCIAL=/home/robot/src/marrtino_social
     volumes:
     - /dev:/dev
     - $MARRTINO_APPS_HOME:/home/robot/src/marrtino_apps
