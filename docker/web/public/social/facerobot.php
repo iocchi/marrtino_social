@@ -111,13 +111,7 @@ var msg_speak = new ROSLIB.Message({
  console.log("speech");   
 }
 
-function normal(){
-var msg_happy = new ROSLIB.Message({
-      data :  'happy'   
- });
- emotionTopic.publish(msg_happy); // error here als
- console.log("happy");   
-}
+
 
 function start_speak(){
 var msg_speak = new ROSLIB.Message({
@@ -128,36 +122,16 @@ var msg_speak = new ROSLIB.Message({
 }
 
 
-function FaceExpression( face){
-  var mymsg = new ROSLIB.Message({
+function FaceExpression(face){
+  var msg = new ROSLIB.Message({
        data :  face   
   });
-  emotionTopic.publish(mymsg); // error here als
+  emotionTopic.publish(msg); // error here als
 
   console.log(face);   
 }
 
 
-
-
-function normal(){
-  var mymsg = new ROSLIB.Message({
-       data :  'normal'   
-  });
-  emotionTopic.publish(mymsg); // error here als
-
-  console.log("normal");   
-}
-
-
-function startBlinking(){
-  var mymsg = new ROSLIB.Message({
-       data :   'startblinking'   
-  });
-  emotionTopic.publish(mymsg); // error here als
-
-  console.log("startblinking");   
-}
 
   
 initPanTilt= function() {
@@ -209,17 +183,35 @@ initPanTilt= function() {
   </div>
   <div class="row">
     
-    <div class="col-md-1"><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('normal')">Normal</button><br><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('angry')">angry</button></div>
-    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('close')">Close eyes</button><br>
-    <div class="col-md-1"><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('happy')">Happy</button><br><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('sad')">sad</button></div>
     <div class="col-md-1">
-    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('surprise')">Surprise</button><br>
-    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('close')">Close eyes</button><br>
-    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('speak')">speak</button>
-    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('sings')">sings</button>
+    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('normal')">Normal</button>
+    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('happy')">Happy</button>
+    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('angry')">Angry</button>
+    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('sad')">Sad</button>
     </div>
-    <div class="col-md-1"><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('startblinking')">Start Blinking</button><br><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('stopblinking')">Stop Blinking</button></div>
-	  <div class="col-md-1"></div>
+    
+    <div class="col-md-1">  
+    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('surprise')">Surprise</button>
+    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('focused')">Focussed</button>
+    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('embarrassed')">Embarrassed</button>
+    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('confused')">Confused</button>
+    
+    
+    
+    
+    
+    </div>
+
+    <div class="col-md-1">
+    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('speak')">Speak</button>
+    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('sings')">Sing</button>
+    <button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('close')">Close eyes</button><br>
+    </div>
+    
+    <div class="col-md-1"><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('startblinking')">Start Blinking</button><br><button class="btn btn-outline-danger btn-lg" onclick="FaceExpression('stopblinking')">Stop Blinking</button>
+    </div>
+    
+	<div class="col-md-1"></div>
     <div class="col-md-1"></div>
     <div class="col-md-1"></div>
     <div class="col-md-1"></div>
