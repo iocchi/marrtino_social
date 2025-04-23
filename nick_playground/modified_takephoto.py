@@ -116,6 +116,16 @@ class TakePhoto:
         else:
             rospy.loginfo("No images received")
             return False
+    
+    def receive_data(self, sock):
+        data = b""
+        while True:
+            packet = sock.recv(4096)  # Receive 4KB of data at a time
+            if not packet:
+                break
+            data += packet
+        return data
+
 
     def send_image(self, width, height):
         if self.image_received:
@@ -135,7 +145,7 @@ class TakePhoto:
                 sock.sendall("RGB %d %d\n\r" %(w,h))
                 rospy.sleep(0.2)
                 sock.sendall(stringData);
-                data = sock.recv(256)
+                data = self.receive_data(sock)
                 data = data.strip().decode('UTF-8')
                 print(data)
                 if (rospy.has_param(PARAM_takephoto_image_folder)):
