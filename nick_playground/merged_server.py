@@ -115,6 +115,11 @@ def handle_move_robot(conn, data):
             data = data[len("move_robot "):]
 
         cmd_data = json.loads(data)
+
+        # If it is still a string, deserialize a second layer
+        if isinstance(cmd_data, str):
+            cmd_data = json.loads(cmd_data)
+            
         log("[INFO] Received movement command: %s" % cmd_data)
 
         # Extract all values as floats
@@ -187,6 +192,10 @@ def handle_set_face(conn, data):
     Publishes the emotion to the ROS topic /social/emotion.
     """
     try:
+        # If there is the prefix, I remove it 
+        if data.startswith("set_face "):
+            data = data[len("set_face "):]
+
         parsed = json.loads(data)
         emotion = parsed.get('emotion')
         if emotion:

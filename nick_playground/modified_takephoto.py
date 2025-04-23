@@ -229,7 +229,7 @@ if __name__ == '__main__':
         camera.sendimage_server = '192.168.110.45'
         camera.sendimage_port = 9300
 
-        camera.send_image()
+        camera.send_image(width=640, height=640)
 
         # Sleep to give the last log messages time to be sent
         time.sleep(1)
