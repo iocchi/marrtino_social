@@ -114,12 +114,8 @@ def handle_move_robot(conn, data):
         if data.startswith("move_robot "):
             data = data[len("move_robot "):]
 
-        cmd_data = json.loads(data)
+        cmd_data = json.loads(json.loads(data))
 
-        # If it is still a string, deserialize a second layer
-        if isinstance(cmd_data, str):
-            cmd_data = json.loads(cmd_data)
-            
         log("[INFO] Received movement command: %s" % cmd_data)
 
         # Extract all values as floats
