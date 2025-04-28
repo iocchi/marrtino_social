@@ -116,7 +116,7 @@ def handle_move_robot(conn, data):
 
         cmd_data = json.loads(json.loads(data))
 
-        log("[INFO] Received movement command: %s" % cmd_data)
+        log("[INFO] Received movement command in handle_move_robot: %s" % cmd_data)
 
         # Extract all values as floats
         pan_controller = float(cmd_data.get('pan_controller'))
@@ -250,7 +250,7 @@ def main():
         while True:
             client_conn, addr = s.accept()
             print("[INFO] New client connected from %s:%d" % (addr[0], addr[1]))
-            client_handler(client_conn)
+            threading.Thread(target=client_handler, args=(client_conn,)).start()
             flush_logs()
     except KeyboardInterrupt:
         print("[INFO] Shutting down server (CTRL+C received)")
