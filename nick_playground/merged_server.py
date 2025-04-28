@@ -118,19 +118,7 @@ def handle_move_robot(conn, data):
 
         log("[INFO] Received movement command in handle_move_robot: %s" % cmd_data)
 
-        # Extract all values as floats
-        pan_controller = float(cmd_data.get('pan_controller'))
-        tilt_controller = float(cmd_data.get('tilt_controller'))
-        shoulder_dx_rotate = float(cmd_data.get('shoulder_dx_rotate'))
-        shoulder_sx_rotate = float(cmd_data.get('shoulder_sx_rotate'))
-        shoulder_dx_open = float(cmd_data.get('shoulder_dx_open'))
-        shoulder_sx_open = float(cmd_data.get('shoulder_sx_open'))
-        elbow_dx_rotate = float(cmd_data.get('elbow_dx_rotate'))
-        elbow_sx_rotate = float(cmd_data.get('elbow_sx_rotate'))
-        elbow_dx_open = float(cmd_data.get('elbow_dx_open'))
-        elbow_sx_open = float(cmd_data.get('elbow_sx_open'))
-        
-        # For demonstration, we assume the JSON includes a cmd_vel field
+        # Handle cmd_vel if present
         if 'cmd_vel' in cmd_data:
             cmd_vel_msg = Twist()
             cmd_vel_msg.linear.x = float(cmd_data["cmd_vel"]["linear"]["x"])
@@ -141,41 +129,29 @@ def handle_move_robot(conn, data):
             cmd_vel_msg.angular.z = float(cmd_data["cmd_vel"]["angular"]["z"])
             movement_publishers['cmd_vel'].publish(cmd_vel_msg)
 
-        else:
-            if pan_controller is not None:
-                movement_publishers['pan_controller'].publish(Float64(float(cmd_data['pan_controller'])))
-                
-            if tilt_controller is not None:
-                movement_publishers['tilt_controller'].publish(Float64(float(cmd_data['tilt_controller'])))
-                
-            if shoulder_dx_rotate is not None:
-                movement_publishers['shoulderdx_rotate'].publish(Float64(float(cmd_data['shoulder_dx_rotate'])))
-                
-            if shoulder_sx_rotate is not None:
-                movement_publishers['shouldersx_rotate'].publish(Float64(float(cmd_data['shoulder_sx_rotate'])))
-                
-            if shoulder_dx_open is not None:
-                movement_publishers['shoulderdx_open'].publish(Float64(float(cmd_data['shoulder_dx_open'])))
-                
-            if shoulder_sx_open is not None:
-                movement_publishers['shouldersx_open'].publish(Float64(float(cmd_data['shoulder_sx_open'])))
-                
-            if elbow_dx_rotate is not None:
-                movement_publishers['elbowdx_rotate'].publish(Float64(float(cmd_data['elbow_dx_rotate'])))
-               
-            if elbow_sx_rotate is not None:
-                movement_publishers['elbowsx_rotate'].publish(Float64(float(cmd_data['elbow_sx_rotate'])))
-                
-            if elbow_dx_open is not None:
-                movement_publishers['elbowdx_open'].publish(Float64(float(cmd_data['elbow_dx_open'])))
-                
-            if elbow_sx_open is not None:
-                movement_publishers['elbowsx_open'].publish(Float64(float(cmd_data['elbow_sx_open'])))
-                
+        # Define a mapping between keys in the JSON and ROS publishers
+        joint_publishers = {
+            'pan_controller': 'pan_controller',
+            'tilt_controller': 'tilt_controller',
+            'shoulder_dx_rotate': 'shoulderdx_rotate',
+            'shoulder_sx_rotate': 'shouldersx_rotate',
+            'shoulder_dx_open': 'shoulderdx_open',
+            'shoulder_sx_open': 'shouldersx_open',
+            'elbow_dx_rotate': 'elbowdx_rotate',
+            'elbow_sx_rotate': 'elbowsx_rotate',
+            'elbow_dx_open': 'elbowdx_open',
+            'elbow_sx_open': 'elbowsx_open'
+        }
+
+        # Loop over all joint controls
+        for key, topic in joint_publishers.items():
+            if key in cmd_data:
+                movement_publishers[topic].publish(Float64(float(cmd_data[key])))
 
     except Exception as e:
         log("[ERROR] in handle_move_robot: %s" % e)
         conn.sendall("Error in move_robot")
+
 
 # ---------------------------
 # Marrtina FACE functions
