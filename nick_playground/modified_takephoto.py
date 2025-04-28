@@ -117,7 +117,7 @@ class TakePhoto:
             rospy.loginfo("No images received")
             return False
     
-    def receive_all(sock, buffer_size=1024):
+    def receive_all(self, sock, buffer_size=1024):
         data = b""
         while True:
             part = sock.recv(buffer_size)
