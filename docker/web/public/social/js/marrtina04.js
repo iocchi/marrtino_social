@@ -2,6 +2,7 @@ class EyeController {
   constructor(elements = {}, eyeSize = '33.33vmin') {
     this._eyeSize = eyeSize;
     this._blinkTimeoutID = null;
+    this._currentEmotion = 'normal'; // Track current emotion
 
     this.setElements(elements);
   }
@@ -104,12 +105,13 @@ class EyeController {
   }
   
   normal() {
+    this._currentEmotion = 'normal';
     document.getElementById("soprdx").src = "image/eyebrowdx1.gif"; 
     document.getElementById("soprsx").src = "image/eyebrowsx1.gif"; 
     document.getElementById("occhiodx").src = "image/eyedx.png"; 
     document.getElementById("occhiosx").src = "image/eyesx.png"; 	
     document.getElementById("bocca").src = "image/face01/Happy/mouthsmile.png"; 
-    document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
+    document.getElementById("naso").src = "image/nose.png"; 
     document.documentElement.style.setProperty("--eye-size", "16.00vmin");
     document.documentElement.style.setProperty("--eye-color", "white");
     document.documentElement.style.setProperty("--eye-top", "25%"); 
@@ -127,12 +129,13 @@ class EyeController {
   }	 
   
   happy() {
+    this._currentEmotion = 'happy';
     document.getElementById("soprdx").src = "image/eyebrowdx5.gif"; 
     document.getElementById("soprsx").src = "image/eyebrowsx5.gif"; 
     document.getElementById("occhiodx").src = "image/face01/Happy/eyedx.png"; 
     document.getElementById("occhiosx").src = "image/face01/Happy/eyesx.png"; 	
     document.getElementById("bocca").src = "image/bocca.gif"; 
-    document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
+    document.getElementById("naso").src = "image/nose.png"; 
     document.documentElement.style.setProperty("--eye-size", "18.00vmin");
     document.documentElement.style.setProperty("--eye-color", "white");
     document.documentElement.style.setProperty("--eye-top", "25%"); 
@@ -147,12 +150,13 @@ class EyeController {
   }
 	 
   angry() {
+    this._currentEmotion = 'angry';
     document.getElementById("soprdx").src = "image/face01/Angry/eyebrowdxangry.png"; 
     document.getElementById("soprsx").src = "image/face01/Angry/eyebrowsxangry.png"; 
     document.getElementById("occhiodx").src = "image/face01/Angry/eyedxangry.png"; 
     document.getElementById("occhiosx").src = "image/face01/Angry/eyesxangry.png"; 	
     document.getElementById("bocca").src = "image/face01/Angry/mouthangry.png"; 
-    document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
+    document.getElementById("naso").src = "image/nose.png"; 
     document.documentElement.style.setProperty("--eye-size", "16.00vmin");
     document.documentElement.style.setProperty("--eye-color", "#b81414");
     document.documentElement.style.setProperty("--eye-top", "25%"); 
@@ -167,12 +171,13 @@ class EyeController {
   }
 
   sad() {
+    this._currentEmotion = 'sad';
     document.getElementById("soprsx").src = "image/eyebrowsx3.gif"; 
     document.getElementById("soprdx").src = "image/eyebrowdx3.gif"; 
     document.getElementById("occhiodx").src = "image/face01/Sad/eyedxsad.png"; 
     document.getElementById("occhiosx").src = "image/face01/Sad/eyesxsad.png"; 	
     document.getElementById("bocca").src = "image/face03/sad/bocca.png"; 
-    document.getElementById("naso").src = "image/nosetalkmarrtina1.gif";
+    document.getElementById("naso").src = "image/nose.png";
     document.documentElement.style.setProperty("--eye-size", "10.00vmin");
     document.documentElement.style.setProperty("--eye-color", "white");
     document.documentElement.style.setProperty("--eye-top", "50%"); 
@@ -187,12 +192,13 @@ class EyeController {
   }
 
   focused() {
+    this._currentEmotion = 'focused';
     document.getElementById("soprdx").src = "image/face01/Surprise/eyebrowdxsurprise.png"; 
     document.getElementById("soprsx").src = "image/eyebrowsx1.gif"; 
     document.getElementById("occhiodx").src = "image/eyedx.png"; 
     document.getElementById("occhiosx").src = "image/eyesx.png"; 	
     document.getElementById("bocca").src = "image/face03/normal/boccainv.png"; 
-    document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
+    document.getElementById("naso").src = "image/nose.png"; 
     document.documentElement.style.setProperty("--eye-size", "16.00vmin");
     document.documentElement.style.setProperty("--eye-color", "white");
     document.documentElement.style.setProperty("--bulb-size", "28.00vmin");
@@ -209,12 +215,13 @@ class EyeController {
   }
   
   surprise() {
+    this._currentEmotion = 'surprise';
     document.getElementById("soprdx").src = "image/face01/Surprise/eyebrowdxsurprise.png"; 
     document.getElementById("soprsx").src = "image/face01/Surprise/eyebrowsxsurprise.png"; 
     document.getElementById("occhiodx").src = "image/face01/Surprise/eyedxsurprise.png"; 
     document.getElementById("occhiosx").src = "image/face01/Surprise/eyesxsurprise.png"; 	
     document.getElementById("bocca").src = "image/face01/Surprise/mouthsurprise.png"; 
-    document.getElementById("naso").src = "image/nosetalkmarrtina1.gif";
+    document.getElementById("naso").src = "image/nose.png";
     document.documentElement.style.setProperty("--eye-size", "16.00vmin");
     document.documentElement.style.setProperty("--eye-color", "white");
     document.documentElement.style.setProperty("--eye-top", "25%"); 
@@ -230,12 +237,13 @@ class EyeController {
   }
    
   embarrassed() {
+    this._currentEmotion = 'embarrassed';
     document.getElementById("soprdx").src = "image/face01/Surprise/eyebrowdxsurprise.png"; 
     document.getElementById("soprsx").src = "image/face01/Surprise/eyebrowsxsurprise.png"; 
     document.getElementById("occhiodx").src = "image/eyedx.png"; 
     document.getElementById("occhiosx").src = "image/eyesx.png"; 	
     document.getElementById("bocca").src = "image/mouthclosed.png"; 
-    document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
+    document.getElementById("naso").src = "image/nose.png"; 
     document.documentElement.style.setProperty("--eye-size", "18.00vmin");
     document.documentElement.style.setProperty("--eye-color", "white");
     document.documentElement.style.setProperty("--eye-top", "12%"); 
@@ -250,12 +258,13 @@ class EyeController {
   }
 
   confused() {
+    this._currentEmotion = 'confused';
     document.getElementById("soprdx").src = "image/eyebrowdx.png"; 
     document.getElementById("soprsx").src = "image/face01/Surprise/eyebrowsxsurprise.png"; 
     document.getElementById("occhiodx").src = "image/eyedx.png"; 
     document.getElementById("occhiosx").src = "image/eyesx.png"; 	
     document.getElementById("bocca").src = "image/mouthclosed.png"; 
-    document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
+    document.getElementById("naso").src = "image/nose.png"; 
     document.documentElement.style.setProperty("--eye-size", "21.00vmin");
     document.documentElement.style.setProperty("--eye-color", "#d7d7d7");
     document.documentElement.style.setProperty("--bulb-size", "35.33vmin");
@@ -289,24 +298,29 @@ class EyeController {
     });*/
   }
 
-  speak() {
-    document.getElementById("bocca").src = "image/mouthtalkmarrtina2.gif"; 
+  speak(emotion = 'normal') {
+    // Apply the specified emotion first to restore all its properties
+    if (emotion === "normal") this.normal();
+    else if (emotion === "happy") this.happy();
+    else if (emotion === "surprise") this.surprise();
+    else if (emotion === "angry") this.angry();
+    else if (emotion === "sad") this.sad();
+    else if (emotion === "focused") this.focused();
+    else if (emotion === "confused") this.confused();
+    else if (emotion === "embarrassed") this.embarrassed();
+    else this.normal();
+    
+    // Then change only the mouth and nose to talking
     document.getElementById("naso").src = "image/nosetalkmarrtina1.gif"; 
-    document.getElementById("soprdx").src = "image/eyebrowdx1.gif"; 
-    document.getElementById("soprsx").src = "image/eyebrowsx1.gif"; 
-    document.getElementById("occhiodx").src = "image/eyedx.png"; 
-    document.getElementById("occhiosx").src = "image/eyesx.png"; 	
-    document.documentElement.style.setProperty("--eye-size", "16.00vmin");
-    document.documentElement.style.setProperty("--eye-color", "white");
-    document.documentElement.style.setProperty("--eye-top", "25%"); 
-    document.documentElement.style.setProperty("--bulb-size", "33.33vmin");
-    document.getElementById("lower-eyelid-left").style.opacity = "0";
-    document.getElementById("lower-eyelid-right").style.opacity = "0";
-    document.documentElement.style.setProperty("--lower-eyelid-color", "whitesmoke");
-    document.documentElement.style.setProperty("--blush-opacity", "0.0");
-    document.querySelector(".anger-marks").style.display = "none";
-    document.querySelector(".thinking-light").style.display = "none";
-    document.querySelector(".confused-spiral").style.display = "none";
+    // Use a different mouth accoring to the emotion
+    if (emotion === "surprise" || emotion === "angry" || emotion === "embarassed")
+    {
+      document.getElementById("bocca").src = "image/mouthtalkmarrtina1.gif"; 
+    }
+    else{
+      document.getElementById("bocca").src = "image/mouthtalkmarrtina2.gif"; 
+    }
+      
   }
 
 
